@@ -1,0 +1,23 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(180deg, rgb(77, 100, 143) 10%, white 80%);
+    background-repeat: no-repeat;
+}
+
+header {
+    color: #fff;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.hero {
+    height: 20dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+}

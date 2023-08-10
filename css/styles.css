@@ -9,6 +9,8 @@ html, body {
   font-size: 16px;
   font-family: Oswald, sans-serif;
   background-size: 100% 100%;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 
 h1 {
@@ -18,7 +20,7 @@ h1 {
 
 h1, h2 {
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
 }
 
 h1 {
@@ -40,12 +42,21 @@ a {
   background: #111;
   border: 30px solid #fff;
   margin: 5rem auto;
-  padding: 5vh 2vw;
+  padding: 3vh 2vw;
   color: #fff;
+}
+.thing-i-did h2 {
+  margin: 1rem 0;
+  text-transform: uppercase;
 }
 .thing-i-did p {
   margin: 0 auto;
   width: 80%;
   font-size: 1.2rem;
   font-weight: 300;
+}
+.thing-i-did iframe {
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
 }/*# sourceMappingURL=styles.css.map */

@@ -2,22 +2,51 @@ html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: linear-gradient(180deg, rgb(77, 100, 143) 10%, white 80%);
+    background-image: linear-gradient(90deg, #111 70%, white 70%);
     background-repeat: no-repeat;
+    min-height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-family: Oswald, sans-serif;
+    background-size: 100% 100%;
 }
 
-header {
-    color: #fff;
-    padding: 20px;
-    font-size: 1.5rem;
+h1 {
+    mix-blend-mode: difference;
+    color: white;
 }
 
-.hero {
-    height: 20dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
+h1,h2 {
     text-align: center;
+    letter-spacing: 5px;
+}
+
+h1 {
+    font-size: calc(5rem + 10vw);
+}
+
+h2 {
+    font-size: calc(4rem + 2vw);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid #777;
+}
+
+.thing-i-did {
+    width: 80%;
+    background: #111;
+    border: 30px solid #fff;
+    margin: 5rem auto;
+    padding: 5vh 2vw;
+    color: #fff;
+
+    p {
+        margin: 0 auto;
+        width: 80%;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
 }

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1703456106367,
+  "timestamp": 1703456688122,
   "index": "/danlock3/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/danlock3/index.html",
-        "/danlock3/main.1a37dc4f461b90bf0276.js",
+        "/danlock3/main.602f1352b4ad06269377.js",
         "/danlock3/manifest.webmanifest",
         "/danlock3/polyfills.c8940254001863e2eec9.js",
         "/danlock3/runtime.aefd16966cb1ec2dfd2c.js",
@@ -190,9 +190,9 @@
     "/danlock3/fork.468dd7e52c271acf4d9e.png": "ef21ea92f1e41dc122325435304b2e09ac202ac0",
     "/danlock3/heycomic.ba2c9ce08aaf5a420da6.woff2": "0d115280ff3d336f3dfb859e94c57e1cb2fec7ca",
     "/danlock3/hoe.ae2db27fdb8771eabe21.png": "3c1f6eaf1e3fccefcacab217b5860c80cf287aa4",
-    "/danlock3/index.html": "51990d4c36bbefd9b3be7934e5871bdf01485782",
+    "/danlock3/index.html": "e1fe8f16b84e21375a747d80f2efc5e9c7f2de10",
     "/danlock3/komica.2cddbadd5f2fbab3a211.woff2": "f8f1c9b1b46b641c445a21987247ed63b5b098cb",
-    "/danlock3/main.1a37dc4f461b90bf0276.js": "5cdcb553e368c4a170d1915638365a0095c24edc",
+    "/danlock3/main.602f1352b4ad06269377.js": "86b5403b61328b2c503022f47b4fd02bef630e72",
     "/danlock3/manifest.webmanifest": "731d1700fbdb759d62263355726fbcf690cf5c96",
     "/danlock3/polyfills.c8940254001863e2eec9.js": "1daf8669285d1b9ca67d57d13fb697292c39ca6e",
     "/danlock3/retry.5559b1d09692a43b09f2.svg": "ca17fe1fd55dbcac40a3a3ad1c1889c865700f78",

@@ -22,6 +22,16 @@
 <body>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script>
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      console.log("This is running as standalone.");
+      document.body.style.setProperty('--app-height', '100vh')
+      document.documentElement.style.setProperty('--app-height', '100vh')
+    } else {
+      document.body.style.setProperty('--app-height', '100dvh')
+    }
+    
+  </script>
 <script src="runtime.aefd16966cb1ec2dfd2c.js" defer></script><script src="polyfills.c8940254001863e2eec9.js" defer></script><script src="main.602f1352b4ad06269377.js" defer></script>
 
 </body></html>

@@ -18,10 +18,18 @@
   <link rel="preload" as="image" href="/danlock3/assets/svg/machine.svg">
   <link rel="preload" as="image" href="/danlock3/assets/svg/review.svg">
   <link rel="preload" as="image" href="/danlock3/assets/svg/play.svg">
-<style>body,html{width:100%;max-height:100vh;height:100dvh;overflow-x:hidden;margin:0;padding:0;font-family:Karla,sans-serif;font-size:16pt;overscroll-behavior:none;position:absolute;inset:0;background-image:url(bg.5e4a6aa98e18b0372d68.png);background-size:cover;background-position:50%}*{-webkit-user-select:none;user-select:none}@font-face{font-family:Komica;src:url(komica.2cddbadd5f2fbab3a211.woff2) format("woff2")}body{height:100%;overflow:hidden;background-color:#3788ca;font-family:Komica,sans-serif}*{touch-action:manipulation;box-sizing:border-box}</style><link rel="stylesheet" href="styles.f3a8784bfbfeeef6a4b2.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f3a8784bfbfeeef6a4b2.css"></noscript></head>
+<style>body,html{width:100%;max-height:100vh;height:var(--app-height,100dvh);overflow-x:hidden;margin:0;padding:0;font-family:Karla,sans-serif;font-size:16pt;overscroll-behavior:none;position:absolute;inset:0;background-image:url(bg.5e4a6aa98e18b0372d68.png);background-size:cover;background-position:50%}*{-webkit-user-select:none;user-select:none}@font-face{font-family:Komica;src:url(komica.2cddbadd5f2fbab3a211.woff2) format("woff2")}body{height:100%;overflow:hidden;background-color:#3788ca;font-family:Komica,sans-serif}*{touch-action:manipulation;box-sizing:border-box}</style><link rel="stylesheet" href="styles.ef33a78b6cafc355a3ec.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.ef33a78b6cafc355a3ec.css"></noscript></head>
 <body>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script>
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      console.log("This is running as standalone.");
+      document.body.style.setProperty('--app-height', '100vh')
+    } else {
+      document.body.style.setProperty('--app-height', '100dvh')
+    }
+  </script>
 <script src="runtime.aefd16966cb1ec2dfd2c.js" defer></script><script src="polyfills.c8940254001863e2eec9.js" defer></script><script src="main.1a37dc4f461b90bf0276.js" defer></script>
 
 </body></html>

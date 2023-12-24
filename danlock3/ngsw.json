@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1703454936665,
+  "timestamp": 1703456106367,
   "index": "/danlock3/index.html",
   "assetGroups": [
     {
@@ -16,7 +16,7 @@
         "/danlock3/manifest.webmanifest",
         "/danlock3/polyfills.c8940254001863e2eec9.js",
         "/danlock3/runtime.aefd16966cb1ec2dfd2c.js",
-        "/danlock3/styles.f3a8784bfbfeeef6a4b2.css"
+        "/danlock3/styles.ef33a78b6cafc355a3ec.css"
       ],
       "patterns": []
     },
@@ -190,7 +190,7 @@
     "/danlock3/fork.468dd7e52c271acf4d9e.png": "ef21ea92f1e41dc122325435304b2e09ac202ac0",
     "/danlock3/heycomic.ba2c9ce08aaf5a420da6.woff2": "0d115280ff3d336f3dfb859e94c57e1cb2fec7ca",
     "/danlock3/hoe.ae2db27fdb8771eabe21.png": "3c1f6eaf1e3fccefcacab217b5860c80cf287aa4",
-    "/danlock3/index.html": "4fa9caab3c4be94b8a3702dc00441a561f174123",
+    "/danlock3/index.html": "51990d4c36bbefd9b3be7934e5871bdf01485782",
     "/danlock3/komica.2cddbadd5f2fbab3a211.woff2": "f8f1c9b1b46b641c445a21987247ed63b5b098cb",
     "/danlock3/main.1a37dc4f461b90bf0276.js": "5cdcb553e368c4a170d1915638365a0095c24edc",
     "/danlock3/manifest.webmanifest": "731d1700fbdb759d62263355726fbcf690cf5c96",
@@ -198,7 +198,7 @@
     "/danlock3/retry.5559b1d09692a43b09f2.svg": "ca17fe1fd55dbcac40a3a3ad1c1889c865700f78",
     "/danlock3/runtime.aefd16966cb1ec2dfd2c.js": "34d7324945cb24015e3d4477c68467fdd7696b0c",
     "/danlock3/spade.2f28cdff4131e021842a.png": "c2a4f2913c1effbbe0a9cd4c89a925278e69b865",
-    "/danlock3/styles.f3a8784bfbfeeef6a4b2.css": "5994de8c404bb0554d9bd5ca30fbb976b7de1150",
+    "/danlock3/styles.ef33a78b6cafc355a3ec.css": "f273eae0b526fcf38d95bd7b9fe9e59960645f24",
     "/danlock3/tick.ad13800b53ff31048d7e.svg": "2714e3bbdc998d6800be15de941c9d6fe06dce5d",
     "/danlock3/waiter.01b2d674548bf45a2472.png": "0bce38e5d98c814cdecb75ac1ff950f13e18aa20",
     "/danlock3/weapon-fork.d3f4f13a1ec00a1c127b.png": "f28749b8d7483d88b0ea5fa9cb54fb7c6247e9aa",

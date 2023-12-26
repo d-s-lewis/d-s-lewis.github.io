@@ -1,0 +1,375 @@
+{
+    "0": 
+        {
+        "id": "0",
+        "name": "Intro",
+        "hint": "Why are you getting a hint on the intro card?"
+        },
+    "1": 
+        {
+        "id": "1",
+        "name": "Bedroom",
+        "hint": "Nothing to do but pick up the cards."
+        },
+    "2": 
+        {
+        "id": "2",
+        "name": "Clock",
+        "hint": "Listen to what Shauni says, and apply it to the machine. Listen for the correct time / card.",
+        "machine": "clock",
+        "answer": "Nice! Take card 318"
+        },
+    "3": 
+        {
+        "id": "3",
+        "name": "Dog Bowl",
+        "hint": "There is a hidden number on the radiator"
+        },
+    "4": 
+        {
+        "id": "4",
+        "name": "Cheermy",
+        "hint": "Reverse the colours of Mochi by reversing the number of Oscar - 91 becomes 19."
+        },
+    "5": 
+        {
+        "id": "5",
+        "name": "Archie",
+        "hint": "This is the best dog to have ever walked the Earth."
+        },
+    "7": 
+        {
+        "id": "7",
+        "name": "Coal",
+        "hint": "Ah Christmas lumps of coal. One for everyone, but mostly for the fireplace."
+        },
+    "8": 
+        {
+        "id": "8",
+        "name": "Key",
+        "hint": "This opens one indoor outdoor place. Keep it safe."
+        },
+    "10": 
+        {
+        "id": "10",
+        "name": "Harper",
+        "hint": "She works for treats."
+        },
+    "13": 
+        {
+        "id": "13",
+        "name": "Archie + Key Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? I randomly decided to go dogging. Not sure what came over me."
+        },
+    "14": 
+        {
+        "id": "14",
+        "name": "Liv with no cocktail",
+        "hint": "The stain on her dress is purple. How can you make purple?"
+        },
+    "15": 
+        {
+        "id": "15",
+        "name": "Rope toy",
+        "hint": "Archie would pull this rope toy with all his might, and move even unmovable objects."
+        },
+    "18": 
+        {
+        "id": "18",
+        "name": "Kitchen",
+        "hint": "So many cards to pick up, I'm sorry. MAke sure you get them all."
+        },
+    "19": 
+        {
+        "id": "19",
+        "name": "Mochi",
+        "hint": "Warming up the handsome darling golden boy is essential to finding the turkey."
+        },
+    "20": 
+        {
+        "id": "18",
+        "name": "Archie + Rope Toy Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? Harvey Dent would never become the mayor of Gotham City, because he was too facetious."
+        },
+    "23": 
+        {
+        "id": "23",
+        "name": "Hedge Rose Mug",
+        "hint": "You'll need this at the end of the story."
+        },
+    "24": 
+        {
+        "id": "24",
+        "name": "Hedge Rose Plate",
+        "hint": "You'll need this at the end of the story."
+        },
+    "25": 
+        {
+        "id": "25",
+        "name": "Turkey toy",
+        "hint": "A cheap stuffed toy from a cracker couldn't last against the blunt, recessed fangs of a certain wondrous dog."
+        },
+    "27": 
+        {
+        "id": "27",
+        "name": "Stickless pig in a blanket",
+        "hint": "This delicious treat will make all kinds of things come out of a dog's mouth."
+        },
+    "29": 
+        {
+        "id": "29",
+        "name": "Outside",
+        "hint": "All that white makes this card the cheapest to print."
+        },
+    "30": 
+        {
+        "id": "30",
+        "name": "Destroyed toy",
+        "hint": "This came from a cracker. Something else from a cracker needs a code. Hmmmmmmmmmmmmmmmmmmmmm."
+        },
+    "32": 
+        {
+        "id": "32",
+        "name": "Grandad got locked in the loo",
+        "hint": "When Grandad got locked in the loo, we didn't know what to do. So the players of Danlock! tied a rope to the handle for leverage."
+        },
+    "36": 
+        {
+        "id": "36",
+        "name": "Fireplace",
+        "hint": "When you need a fire, you have to be naughty. Christmas naughty."
+        },
+    "37": 
+        {
+        "id": "37",
+        "name": "Harper is speaking!",
+        "hint": "She is incredibly articulate. Very well-raised. All hail Harper."
+        },
+     "40": 
+        {
+        "id": "40",
+        "name": "Lock + Key Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? I thought I'd always want to be a rhythmic gymnast, but recently I've just been going through the motions."
+        },
+    "41": 
+        {
+        "id": "41",
+        "name": "Liv with a cocktail",
+        "hint": "You solved the puzzle, I don't think you need a hint. If I am wrong, write a postcard to 'Santa, North Pole'."
+        },
+    "42": 
+        {
+        "id": "42",
+        "name": "Key + Fire",
+        "hint": "A hint on a penalty? Are you looking for a joke? Stop trying to impress the dead. They're beneath you."
+        },
+    "43": 
+        {
+        "id": "42",
+        "name": "Lit Fireplace",
+        "hint": "Perfect for warming up cold dogs. Probably other cold things, too. Probably."
+        },
+    "44": 
+        {
+        "id": "44",
+        "name": "Fireplace + Key",
+        "hint": "A hint on a penalty? Are you looking for a joke? Dating Pinocchio was dreadful - his nose kept growing and growing! In the end, I broke it off."
+        },
+    "45": 
+        {
+        "id": "45",
+        "name": "Christmas Present",
+        "hint": "Fun fact: this penalty was originally not so meta. It was punishing the players for opening the gifts before dinner, but I can't remember the actual order of events."
+        },
+    "47": 
+        {
+        "id": "47",
+        "name": "Loo + rope toy",
+        "hint": "Now you just need some unrelenting four-legged force of nature to pull the rope."
+        },
+    "51": 
+        {
+        "id": "51",
+        "name": "Key in the hot fire Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? Once I was given total control of the weather, I really did have free reign."
+        },
+    "52": 
+        {
+        "id": "52",
+        "name": "Grandad is free",
+        "hint": "I bet you're glad he's clothed."
+        },
+    "53": 
+        {
+        "id": "53",
+        "name": "Hedge Rose Bowl",
+        "hint": "You'll need it at the end."
+        },
+    "54": 
+        {
+        "id": "54",
+        "name": "Pig in a blanket",
+        "hint": "That stick is too sharp to give to a dog. Listen to what Gran says about the value of sharp things vs. dull things."
+        },
+    "57": 
+        {
+        "id": "57",
+        "name": "Angry Mum",
+        "machine": "stove",
+        "hint": "Use the recipe books to sovle this machine. I think I captured the Christmas kitchen anger in this drawing."
+        },
+    "59": 
+        {
+        "id": "59",
+        "name": "Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? I went to a vegetable-themed fancy dress party as a tomato. Boy, was my face red."
+        },
+    "60": 
+        {
+        "id": "60",
+        "name": "Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? I was going to see a couple of West End shows, so I got some new glasses. I have to say, they were a great pair of spectacles."
+        },
+    "62": 
+        {
+        "id": "62",
+        "name": "Napping Mochi",
+        "hint": "Arrange the backs of the remaining indoor location cards until you can see a number. (If you can't see it, it's the square root of 4225)."
+        },
+    "63": 
+        {
+        "id": "63",
+        "name": "Open cupboard",
+        "hint": "If you were to rotate the bottle of cola, you would see they've misspelt DIET using numbers, which happen to be the square root of 18769."
+        },
+    "65": 
+        {
+        "id": "65",
+        "name": "Motorhome",
+        "hint": "I hope you haven't lost the key, because it's a very easy puzzle to get in."
+        },
+    "66": 
+        {
+        "id": "66",
+        "name": "Mug in the fire",
+        "hint": "Hot mugs, do you get it? Because you're all so attractive. Hope nobody gets acid in the face just before reading this. That would be so unfortunate."
+        },
+    "67": 
+        {
+        "id": "67",
+        "name": "Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? I wanted to speak out against the random, but brutal dismemberment of the population, but in the end I held my tongue."
+        },
+    "68": 
+        {
+        "id": "68",
+        "name": "Calm(er) Mum",
+        "hint": "Why would she entrust the care of the turkey to Gran? Why is Gran in the living room? These questions simply cannot be answered."
+        },
+    "73": 
+        {
+        "id": "73",
+        "name": "Inside the motorhome",
+        "code": "1100",
+        "solved": "You've got everything you need to enjoy Christmas. But maybe you had it with you all along. Take card <i class='card-number'>138</i>",
+        "hint": "You should have three bits of Hedge Rose tableware. Add up that set, and multiply by all the people (beings with personalities, such as humans and pets). The answer is also the square root of 1210000"
+        },
+    "75": 
+        {
+        "id": "75",
+        "name": "Bottles on shelves",
+        "hint": "The colour you need can be made from overlapping coloured bottles. Look for the number that these bottles make."
+        },
+    "77": 
+        {
+        "id": "77",
+        "name": "Downstairs cupboard",
+        "code": "0134",
+        "answer": "Core blimey! You cracked the cracking Christmas cracker code! Take card <i class='card-number'>63</i>",
+        "hint": "Christmas cracker lock can probably be opened withe a Christmas cracker code from a Christmas cracker toy. Also 90's years of sibling births."
+        },
+    "84": 
+        {
+        "id": "84",
+        "name": "Shauni",
+        "hint": "Apply this information to the clock, and you'll sort of time travel."
+        },
+    "87": 
+        {
+        "id": "87",
+        "name": "Becky",
+        "hint": "What's the easiest way to get a dog to listen? With a treat, of course!"
+        },
+    "88": 
+        {
+        "id": "88",
+        "name": "Snowmen",
+        "hint": "Orange you glad you can infer lines from a starting point and a direction, and that those lines might make up a number?"
+        },
+    "89": 
+        {
+        "id": "89",
+        "name": "Living Room",
+        "hint": "A ghost's least favourite room, possibly. I don't think a hint is required."
+        },
+    "90": 
+        {
+        "id": "90",
+        "name": "Gran 1",
+        "hint": "These cards are the only ones to have left-aligned text... but WHYYYY????"
+        },
+    "91": 
+        {
+        "id": "91",
+        "name": "Oscar",
+        "hint": "The reverse of the darkest cat in the darkest place is probably the whitest dog in the whitest place."
+        },
+    "92": 
+        {
+        "id": "92",
+        "name": "Gran 2",
+        "hint": "Things that are <i>too</i> sharp can be made less sharp by halving their value."
+        },
+    "93": 
+        {
+        "id": "93",
+        "name": "Gran 3",
+        "hint": "If you're reading this one, you're desperate. Read the first letter of each line. Half the number of the pig in a blanket with the sharp toothpick."
+        },
+    "95": 
+        {
+        "id": "95",
+        "name": "Garage",
+        "hint": "Does a garage count as indoors? I wrestled with this question because I didn't want to admit the truth to myself. In the end, I just made it get discarded."
+        },
+    "98": 
+        {
+        "id": "98",
+        "name": "Recipe books",
+        "hint": "Scrap paper is pretty useful here. Pay attention to the words \"EVENly\", \"ODDly\", \"near\", and \"middle\". The answer, clockwise from the top left, is 5231."
+        },
+    "99": 
+        {
+        "id": "99",
+        "name": "Fridge Penalty",
+        "hint": "A hint on a penalty? Are you looking for a joke? A man stole my luggage so I took him to court. It was a brief case."
+        },
+    "137": 
+        {
+        "id": "137",
+        "name": "Dining Room",
+        "hint": "If you're looking for hints on these cards it's probably because you're looking for the numbers on the back WHOOPS"
+        },
+    "138": 
+        {
+        "id": "138",
+        "name": "Merry Christmas!",
+        "hint": "You've already finished the game. And you're getting a hint on the card that tells you that? Are you bored? If so, there's one more hint for a card that doesn't exist. I bet you can guess the number."
+        },
+    "318":
+        {
+        "id": "318",
+        "name": "I love you guys",
+        "hint": "I'm so bad at expressing myself that I have to say how much I love you guys in a hidden hint for a card not even in the game. It's true, though - I do love you. Hope you all live very happy lives forever. Thanks for playing!"
+        }
+}

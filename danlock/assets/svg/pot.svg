@@ -1,0 +1,20 @@
+<svg width="100%" height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+           <defs>
+           <filter id="Filter_0">
+               <feOffset in="SourceAlpha" dx="8.776" dy="-8.184" />
+               <feGaussianBlur result="blurOut" stdDeviation="6.782" />
+               <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
+               <feComposite operator="out" in="floodOut" in2="blurOut" result="compOut" />
+               <feComposite operator="in" in="compOut" in2="SourceAlpha" />
+               <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+               <feBlend mode="normal" in2="SourceGraphic" />
+           </filter>
+           
+           </defs>
+           <g filter="url(#Filter_0)">
+           <path fill-rule="evenodd"  fill="rgb(161, 161, 161)"
+            d="M345.000,169.000 C345.000,169.000 291.466,178.000 238.000,178.000 C185.474,178.000 133.000,169.000 133.000,169.000 L133.000,93.000 L15.500,93.000 C9.701,93.000 5.000,88.299 5.000,82.500 C5.000,76.701 9.701,72.000 15.500,72.000 L133.000,72.000 L133.000,69.000 L220.763,25.807 C217.882,23.717 216.000,20.332 216.000,16.500 C216.000,10.149 221.149,5.000 227.500,5.000 L251.500,5.000 C257.851,5.000 263.000,10.149 263.000,16.500 C263.000,20.518 260.936,24.051 257.813,26.107 L345.000,69.000 L345.000,169.000 ZM249.194,28.000 L229.818,28.000 L140.364,69.000 L339.166,69.000 L249.194,28.000 Z"/>
+           </g>
+           </svg>

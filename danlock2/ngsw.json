@@ -1,0 +1,151 @@
+{
+  "configVersion": 1,
+  "timestamp": 1671486124244,
+  "index": "/danlock2/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/danlock2/index.html",
+        "/danlock2/main.a2e8e8bc021c938fa592.js",
+        "/danlock2/manifest.webmanifest",
+        "/danlock2/polyfills.c8940254001863e2eec9.js",
+        "/danlock2/runtime.aefd16966cb1ec2dfd2c.js",
+        "/danlock2/styles.84c9838d516116cb806e.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/danlock2/assets/audio/chimes.pkf",
+        "/danlock2/assets/audio/chimes.wav",
+        "/danlock2/assets/audio/correct.wav",
+        "/danlock2/assets/audio/dogsbarking.mp3",
+        "/danlock2/assets/audio/giant.m4a",
+        "/danlock2/assets/audio/giant.mp3",
+        "/danlock2/assets/audio/ivory-off-white-paper-texture.jpg",
+        "/danlock2/assets/audio/penalty.wav",
+        "/danlock2/assets/audio/solved.mp3",
+        "/danlock2/assets/audio/yahaha.mp3",
+        "/danlock2/assets/cards.json",
+        "/danlock2/assets/icons/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png",
+        "/danlock2/assets/icons/icon-128x128.png",
+        "/danlock2/assets/icons/icon-144x144.png",
+        "/danlock2/assets/icons/icon-152x152.png",
+        "/danlock2/assets/icons/icon-192x192.png",
+        "/danlock2/assets/icons/icon-384x384.png",
+        "/danlock2/assets/icons/icon-512x512.png",
+        "/danlock2/assets/icons/icon-72x72.png",
+        "/danlock2/assets/icons/icon-96x96.png",
+        "/danlock2/assets/img/bg.png",
+        "/danlock2/assets/img/chocolates.png",
+        "/danlock2/assets/img/coconut.png",
+        "/danlock2/assets/img/dandelion.png",
+        "/danlock2/assets/img/doughnut.png",
+        "/danlock2/assets/img/jawbreaker.png",
+        "/danlock2/assets/img/lychee.png",
+        "/danlock2/assets/img/onion.png",
+        "/danlock2/assets/img/pattern.png",
+        "/danlock2/assets/img/pizza.png",
+        "/danlock2/assets/svg/camera.svg",
+        "/danlock2/assets/svg/code.svg",
+        "/danlock2/assets/svg/hint.svg",
+        "/danlock2/assets/svg/machine.svg",
+        "/danlock2/assets/svg/pause.svg",
+        "/danlock2/assets/svg/penalty.svg",
+        "/danlock2/assets/svg/play.svg",
+        "/danlock2/assets/svg/retry.svg",
+        "/danlock2/assets/svg/review.svg",
+        "/danlock2/assets/svg/tick.svg",
+        "/danlock2/bg.570b20f9d39c3bdae4fe.png",
+        "/danlock2/camera.906285ea6a5d8e5a4f58.svg",
+        "/danlock2/retry.5559b1d09692a43b09f2.svg",
+        "/danlock2/tick.ad13800b53ff31048d7e.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/danlock2/assets/audio/chimes.pkf": "6e8ddca9b57ab986fcaec26cdecbd71e48937f99",
+    "/danlock2/assets/audio/chimes.wav": "401baf9ee9830e82e300437a04dee75f55211a9b",
+    "/danlock2/assets/audio/correct.wav": "afcec2df5ed1039c5db84c802ef81c8434fc845d",
+    "/danlock2/assets/audio/dogsbarking.mp3": "257617db21c780a33e22e02e1cc824a723b254b4",
+    "/danlock2/assets/audio/giant.m4a": "1b0c55c3ee76e3998b79330be83b6bf63612a517",
+    "/danlock2/assets/audio/giant.mp3": "6e65371decbe48df0a12fae0e149bce427b0f222",
+    "/danlock2/assets/audio/ivory-off-white-paper-texture.jpg": "1da9cdbc1e225cc4248c8ec28215a4d316df9229",
+    "/danlock2/assets/audio/penalty.wav": "ae60ff9510f8d9e1d220d8dd48511e53586a5a5a",
+    "/danlock2/assets/audio/solved.mp3": "395095c9f6b7b59f96dbaf54e75a42e0869d8373",
+    "/danlock2/assets/audio/yahaha.mp3": "bb1e134c671e3873aa31f8b17bd0bdd5e0e5396e",
+    "/danlock2/assets/cards.json": "203c25b1974edad7e8a103f32da52bd1d9d4019a",
+    "/danlock2/assets/icons/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png": "ff74f3439f51e0090be34e31780516ca7b1ba762",
+    "/danlock2/assets/icons/icon-128x128.png": "5a0a723edab73d41f07c2fe8b6c899a1f056e644",
+    "/danlock2/assets/icons/icon-144x144.png": "e3878f161ccb6d57c86b0e1a0443ed43db8ad432",
+    "/danlock2/assets/icons/icon-152x152.png": "aaa4f0c4519a47eed8954b3f280d9cb68044c951",
+    "/danlock2/assets/icons/icon-192x192.png": "910694676f3338758a9acf7ff56b1bfe4a717c66",
+    "/danlock2/assets/icons/icon-384x384.png": "9701ee1891e37dfa5aeaeb88d11615e0a9168493",
+    "/danlock2/assets/icons/icon-512x512.png": "09680c904481c63b5a712e03f191147d0e800fe3",
+    "/danlock2/assets/icons/icon-72x72.png": "1a8a8e2eb4ade86eeae73345c8dc36e649cbea1d",
+    "/danlock2/assets/icons/icon-96x96.png": "f0a18b81822a75998e987eb65cd01a37b0eceaf2",
+    "/danlock2/assets/img/bg.png": "d261da285dcc5c57df61760bed971f538791e148",
+    "/danlock2/assets/img/chocolates.png": "9ef3fbaacd153fe835fcf0f88732a025ecc0e292",
+    "/danlock2/assets/img/coconut.png": "da7833bda40ae62d4f336fbdce5496a157207698",
+    "/danlock2/assets/img/dandelion.png": "82b9c0d39f55590a1b99ae2e2135a49f3e7f65ec",
+    "/danlock2/assets/img/doughnut.png": "06f8e05bc4e0cd19542cfbd2551627e8afbe543a",
+    "/danlock2/assets/img/jawbreaker.png": "4aef9f8ce2a85edec60f47db24d93de8ef96298e",
+    "/danlock2/assets/img/lychee.png": "2c8b9df2c526ade9003b50191887f5c31f618915",
+    "/danlock2/assets/img/onion.png": "67d649aff20938c8beecd5d96b807a5304a878d2",
+    "/danlock2/assets/img/pattern.png": "c0c420d7a7dd4f8cf3d3f245abb3d6b1dbfe0b6f",
+    "/danlock2/assets/img/pizza.png": "8bd3a9f56af056dbc540c4f1c4ea1e5cb7bdfca1",
+    "/danlock2/assets/svg/camera.svg": "a062727b988fa20ad764ca6a0ff18d896ddc24fb",
+    "/danlock2/assets/svg/code.svg": "0d0151e07d84c18b087541605926cb05ab17ce57",
+    "/danlock2/assets/svg/hint.svg": "f0685f89a045c3e11320f776165869a562be3910",
+    "/danlock2/assets/svg/machine.svg": "783e1ecf4301ca795b0af7e68d019be6e86a776c",
+    "/danlock2/assets/svg/pause.svg": "21b68d3c8e8c1c8b4c62625c816a46c25a175f26",
+    "/danlock2/assets/svg/penalty.svg": "bca78e56e9b9625ee311bc6b0fb0fcf1f639afe6",
+    "/danlock2/assets/svg/play.svg": "13872134214d4c9de103a1677578d8e7ebac2a96",
+    "/danlock2/assets/svg/retry.svg": "ca17fe1fd55dbcac40a3a3ad1c1889c865700f78",
+    "/danlock2/assets/svg/review.svg": "fe477ccac90f57c77d3f1cf6f1cc88886ab18995",
+    "/danlock2/assets/svg/tick.svg": "2714e3bbdc998d6800be15de941c9d6fe06dce5d",
+    "/danlock2/bg.570b20f9d39c3bdae4fe.png": "d261da285dcc5c57df61760bed971f538791e148",
+    "/danlock2/camera.906285ea6a5d8e5a4f58.svg": "a062727b988fa20ad764ca6a0ff18d896ddc24fb",
+    "/danlock2/index.html": "4b5affd94c47ef00f23388eee5ed8b5d16b70b5d",
+    "/danlock2/main.a2e8e8bc021c938fa592.js": "791af19475917fef6e0427242c5e5d8e549448d5",
+    "/danlock2/manifest.webmanifest": "6469b4f8994ad881bf796e2611d9347abf60cc8a",
+    "/danlock2/polyfills.c8940254001863e2eec9.js": "1daf8669285d1b9ca67d57d13fb697292c39ca6e",
+    "/danlock2/retry.5559b1d09692a43b09f2.svg": "ca17fe1fd55dbcac40a3a3ad1c1889c865700f78",
+    "/danlock2/runtime.aefd16966cb1ec2dfd2c.js": "34d7324945cb24015e3d4477c68467fdd7696b0c",
+    "/danlock2/styles.84c9838d516116cb806e.css": "65240c65b75662e3fde5132d5e5ac123c628a1bd",
+    "/danlock2/tick.ad13800b53ff31048d7e.svg": "2714e3bbdc998d6800be15de941c9d6fe06dce5d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

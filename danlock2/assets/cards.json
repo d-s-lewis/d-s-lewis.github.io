@@ -1,0 +1,580 @@
+{
+    "0": 
+    {
+    "id": "0",
+    "name": "Intro",
+    "hints": {
+        "0": "Do you go NORTH, or SOUTH? You can split the party if you like."
+        },
+    "codes": {
+        "0": "NORTH",
+        "1": "SOUTH"
+        },
+    "answers": {
+        "0": "You head North. Take card <i class='card-number'>14</i><br /><br /><strong>You should not take any cards with letters on the back for this route.</strong>",
+        "1": "You head South. Take card <i class='card-number'>35</i>"
+        }
+    },
+    "1": 
+    {
+    "id": "1",
+    "name": "F1 Wine",
+    "hints": {
+        "0": "Formula One is also known as F1."
+        }
+    },
+    "2": 
+    {
+    "id": "2",
+    "name": "Dogs",
+    "hints": {
+        "0": "Such amazingly curious creatures!",
+        "1": "Send them into the smallest of exits!"
+        }
+    },
+    "3": 
+    {
+    "id": "3",
+    "name": "Board",
+    "hints": {
+        "0": "It's Tricky to spot the number on this one"
+        },
+        "code": "BOARD",
+        "answer": "You found a secret code! I will try not to use these secrets as ineffective self-therapy devices."
+    },
+    "4": 
+    {
+    "id": "4",
+    "name": "Gloves",
+    "hints": {
+        "0": "How many fingers am I holding up on each hand?"
+        }
+    },
+    "5": 
+    {
+    "id": "5",
+    "name": "Rope ladder",
+    "hints": {
+        "0": "Sorry you don't get a Korok seed."
+        }
+    },
+    "6": 
+    {
+    "id": "6",
+    "name": "Dogs with gloves",
+    "hints": {
+        "0": "Dogs don't have thumbs. You should have known that."
+        }
+    },
+    "7": 
+    {
+    "id": "7",
+    "name": "Gloved board",
+    "hints": {
+        "0": "What are you, a cool guy, wearing a board and snowgloving down the mountain?"
+        }
+    },
+    "8": 
+    {
+    "id": "8",
+    "name": "Bridge of letters",
+    "hints": {
+        "0": "Step on one tile per row and get across with pace",
+        "1": "The first letter is S, the last is D",
+        "2": "Get across with SPEED"
+    },
+    "hints2": {
+        "0": "Go back the way you came, but, backwards.",
+        "1": "DEEPS. It's a palamino"
+    },
+    "softReq": "8",
+    "code": "SPEED",
+    "code2": "DEEPS",
+    "answer": "You jump across the bridge, avoiding the loose tiles, and find yourself in another room.<br /><br />Discard <i class='card-number'>%%discard%%</i><br /><br />Take card <i class='card-number'>71</i>",
+    "answer2": "You race back across the bridge, but the ceiling collapses and you find yourself falling into the depths below.<br /><br />You conveniently land on %%vessel%% which takes you along the freezing river until you come to a giant door.<br /><br />Take card <i class='card-number'>28</i>"
+    },
+    "9": 
+    {
+    "id": "9",
+    "name": "Door to exit",
+    "hints": {
+        "0": "Have the dogs brought the weird keys?",
+        "1": "Unlock the french door, with those weird locks.",
+        "2": "Open with PORTE"
+    },
+    "code": "PORTE",
+    "answer": "You find a wonderful vista through the unlocked door (not Windows). Take card <i class='card-number'>56</i>",
+    "req": "85"
+    },
+    "10": 
+    {
+    "id": "10",
+    "name": "Fridge",
+    "hints": {
+        "0": "Throwback to old phones",
+        "1": "Did you notice the 'sick's?",
+        "2": "Open with YUMMY"
+    },
+    "code": "YUMMY",
+    "answer": "You open the fridge. Take card <i class='card-number'>90</i>"
+    },
+    "14": 
+    {
+    "id": "14",
+    "name": "Lost Josh",
+    "hints": {
+        "0": "Think back to Josh's Dobble cards. They are full of things he has, or is familiar with.",
+        "1": "Look at the backs of the cards you have",
+        "2": "Open with BRAIN"
+    },
+    "code": "BRAIN",
+    "answer": "You help Josh recover his memory and take him to the meeting place. Take card <i class='card-number'>46</i>.<br /><br />Discard <i class='card-number'>14</i> and <i class='card-number'>78</i>."
+    },
+    "16": 
+    {
+    "id": "16",
+    "name": "Slip of paper",
+    "hints": {
+        "0": "I love a good anagram, but this will have to do",
+        "1": "CARVE, like a turkey, or the snow"
+        },
+    "code": "CARVE",
+    "answer": "You found a secret code card. This one entitles you to a free meal at Dan's home."
+    },
+    "17": 
+    {
+    "id": "17",
+    "name": "Slip of paper",
+    "hints": {
+        "0": "You have to invert the letters",
+        "1": "INVERT is a snowbaording term, right?"
+        }
+    },
+    "18": 
+    {
+    "id": "18",
+    "name": "Bunker",
+    "hints": {
+        "0": "Do bunkers have bunk beds or is that too much nonsense?"
+        }
+    },
+    "20": 
+    {
+    "id": "20",
+    "name": "Kitchen",
+    "hints": {
+        "0": "Must have been a shared living space."
+        }
+    },
+    "21": 
+    {
+    "id": "21",
+    "name": "Fragrant meal",
+    "hints": {
+        "0": "Only something very hungry could eat something like this. Something with a big, strong appetite."
+        }
+    },
+    "22": 
+    {
+    "id": "22",
+    "name": "Old landline",
+    "hints": {
+        "0": "At least it isn't a rotary phone. Texting on those must have taken all month."
+        },
+        "code": "PHONE",
+        "answer": "You found a secret code! The print of this card got a bit messed up, as did a few others. Spot me £120 and I'll order a new set with the errors corrected."
+    },
+    "23": 
+    {
+    "id": "23",
+    "name": "Dogs eat the meal",
+    "hints": {
+        "0": "Oh my dog, how could you? It isn't even seasoned."
+        }
+    },
+    "24": 
+    {
+    "id": "24",
+    "name": "Meal goes snowboarding",
+    "hints": {
+        "0": "I'd be very piste off if my meal snowboarded out on me."
+        }
+    },
+    "25": 
+    {
+    "id": "25",
+    "name": "Wiseau's note",
+    "hints": {
+        "0": "This has no bearing on the rest of the game."
+        },
+        "code": "TOMMY",
+        "answer": "You found a secret code! This is so stupid, but is probably my favourite thing in the game."
+    },
+    "26": 
+    {
+    "id": "26",
+    "name": "Frozen Wheel",
+    "hints": {
+        "0": "Don't touch it with bare hands, bear hands, or bare hands fam."
+        }
+    },
+    "27": 
+    {
+    "id": "27",
+    "name": "Serving plate",
+    "hints": {
+        "0": "Don't question the logic here. You have to put the food somewhere."
+        }
+    },
+    "28": 
+    {
+    "id": "28",
+    "name": "Stone door",
+    "hints": {
+        "0": "I hope you've been collecting paper.",
+        "1": "Solve the anagrams, stick them in, and see who comes out in a line",
+        "2": "LEWIS opens the door"
+        },
+        "code": "LEWIS",
+        "answer": "Was this puzzle made for you? The door starts to slide down. Take card <i class='card-number'>29</i>. Discard all the slip of paper cards."
+    },
+    "29": 
+    {
+    "id": "29",
+    "name": "Stone door opens",
+    "hints": {
+        "0": "Mmmmm, discards."
+        }
+    },
+    "30": 
+    {
+    "id": "30",
+    "name": "Ceiling falls",
+    "hints": {
+        "0": "I keep using the word 'back' for hints. I need to reverse this situation.",
+        "1": "Do you still have access to the bridge? You should."
+        }
+    },
+    "31": 
+    {
+    "id": "31",
+    "name": "Gloves on the plate",
+    "hints": {
+        "0": "The disappointment when you hear a great song by a band to find the rest of their discography isn't great. That's the feeling I get when I find gloves on a plate when hoping for food."
+        }
+    },
+    "35": 
+    {
+    "id": "35",
+    "name": "Evil skiier",
+    "hints": {
+        "0": "You have to follow the path the evil skiier would take.",
+        "1": "You did something to this man, what was it? The cards should help you.",
+        "2": "CHASE is the thing you gave to this wretched soul."
+    },
+    "code": "CHASE",
+    "answer": "Now that you've properly given chase, as in any 80's ski movie, you can go to the meeting point. Take card <i class='card-number'>46</i><br /><br />Discard <i class='card-number'>35</i> and all letter cards."
+    },
+    "36": 
+    {
+    "id": "36",
+    "name": "Dining room",
+    "hints": {
+        "0": "If you collected all the food particles from the floors of every dining room in the world, how much food would you have?",
+        "1": "Look at the FLOOR!"
+        },
+    "code": "FLOOR",
+    "answer": "You found a secret code card. Thank you for putting in the effort - making this was not easy, and I really, really appreciate it."
+    },
+    "38": 
+    {
+    "id": "38",
+    "name": "Slip of paper",
+    "hints": {
+        "0": "Easiest anagram of them all. Has something to do with skiing. And snowboarding. And winter."
+        }
+    },
+    "42": 
+    {
+    "id": "42",
+    "name": "Wine rack",
+    "hints": {
+        "0": "How can you make a 5-letter word out of given coordinates? Do you have enough wine?",
+        "1": "A2 = _ A _ _ _",
+        "2": "FACED will open the secret door for you"
+        },
+    "code": "FACED",
+    "answer": "The wine rack swings open to reveal a hidden room.<br /><br />Take card <i class='card-number'>36</i>"
+    },
+    "43": 
+    {
+    "id": "43",
+    "name": "Slip of paper",
+    "hints": {
+        "0": "The disappointment when you hear a great song by a band to find the rest of their discography isn't great. That's the feeling I get when I find gloves on a plate when hoping for food."
+        }
+    },
+    "46": 
+    {
+    "id": "46",
+    "name": "Bridge",
+    "hints": {
+        "0": "We are all now part phone. I'm sure you can figure out how to take a photo. I was going to use facial recognition for this, but it is too expensive."
+        },
+    "machine": "bridge"
+    },
+    "47": 
+    {
+    "id": "47",
+    "name": "Keys",
+    "hints": {
+        "0": "Due to a lack of foresight by the security team, each key clearly denotes which lock it is used for."
+        }
+    },
+    "48": 
+    {
+    "id": "48",
+    "name": "Bear breaks down the door",
+    "hints": {
+        "0": "Originally there was a side-quest here, but it was taking too long to make."
+        }
+    },
+    "49": 
+    {
+    "id": "49",
+    "name": "Turkey",
+    "hints": {
+        "0": "Do we even have turkey at Christmas? I know we don't have christmas in Turkey."
+        }
+    },
+    "51": 
+    {
+    "id": "51",
+    "name": "Dogs eat the turkey",
+    "hints": {
+        "0": "If trains ever become driverless it will be a real problem for me"
+        }
+    },
+    "52": 
+    {
+    "id": "52",
+    "name": "Turkey goes snowboarding",
+    "hints": {
+        "0": "The missing SSX character?"
+        }
+    },
+    "55": 
+    {
+    "id": "55",
+    "name": "Beanstalk",
+    "hints": {
+        "0": "I remember going to the panto every Christmas. I even remember enjoying it. I guess this is a feeble reference to that."
+        },
+        "code": "GIANT",
+        "answer": "You found a secret code! I have BIG HUGE MASSIVE love for my siblings and their partners."
+    },
+    "56": 
+    {
+    "id": "56",
+    "name": "Vista",
+    "hints": {
+        "0": "What could we use to get down a mountain? Oh, the turkey is red too? Damn..."
+        }
+    },
+    "59": 
+    {
+    "id": "59",
+    "name": "Solved",
+    "hints": {
+        "0": "There are a few secret code cards..."
+        },
+    "code": "PARTY",
+    "solved": "Congratulations! You managed to have the perfect snowboarding Christmas. Thank you so much for playing, I hope you enjoyed it at least as much as I enjoy you."
+    },
+    "62": 
+    {
+    "id": "62",
+    "name": "Dandelion",
+    "hints": {
+        "0": "I think Cheermy likes these."
+        },
+        "code": "BLAND",
+        "answer": "You found a secret code! Him?"
+    },
+    "63": 
+    {
+    "id": "63",
+    "name": "Jawbreaker",
+    "hints": {
+        "0": "Liv's favourite!"
+        }
+    },
+    "64": 
+    {
+    "id": "64",
+    "name": "Coconut",
+    "hints": {
+        "0": "Lolle has cracked one of these"
+        }
+    },
+    "65": 
+    {
+    "id": "65",
+    "name": "Doughnuts",
+    "hints": {
+        "0": "Sam's greatest love?"
+        },
+        "code": "BECKY",
+        "answer": "You found a secret code! Sam and Becky raised Harper very well, it is truly inspirational."
+    },
+    "66": 
+    {
+    "id": "66",
+    "name": "Chocolates",
+    "hints": {
+        "0": "Josh would probably die for these."
+        }
+    },
+    "67": 
+    {
+    "id": "67",
+    "name": "Mario's pizza",
+    "hints": {
+        "0": "Becky's preference, for sure"
+        },
+    "code": "PIZZA",
+    "answer": "You found a secret code! If you don't feel my love, let me know. I hold love for you, but might need tipping over to spill it."
+    },
+    "68": 
+    {
+    "id": "68",
+    "name": "French onion",
+    "hints": {
+        "0": "Shauni would love one of these. Good thing there's only one."
+        },
+    "code": "LOLLE",
+    "answer": "You found a secret code! We ought to feel grateful that childhood disagreements and misunderstandings can be forgiven, forgotten, and brought out when drinking."
+    },
+    "69": 
+    {
+    "id": "69",
+    "name": "Lychee",
+    "hints": {
+        "0": "Nice.",
+        "1": "That hint is too cheap. Unlike Dan's love for one of these."
+        }
+    },
+    "71": 
+    {
+    "id": "71",
+    "name": "Room with wheel",
+    "hints": {
+        "0": "I wish my house was big enough to have a wheel room. I wouldn't have a wheel room, but I'd like the space."
+        }
+    },
+    "72": 
+    {
+    "id": "72",
+    "name": "Bear cave",
+    "hints": {
+        "0": "It really doesn't matter which you choose, due to having a full-time job."
+        },
+        "codes": {
+            "0": "SWORD",
+            "1": "BEANS"
+            },
+        "answers": {
+            "0": "Yahaha! A rope ladder appears! Take card <i class='card-number'>5</i>",
+            "1": "Fee Fi Fo Fum, I hope you're having fun! A beanstalk appears.<br /><br />Take card <i class='card-number'>55</i>"
+            }
+    },
+    "75": 
+    {
+    "id": "75",
+    "name": "Turkey on the wheel",
+    "hints": {
+        "0": "I wheely have turkey-p in mind that this might go unread."
+        }
+    },
+    "76": 
+    {
+    "id": "76",
+    "name": "Turkey on the plate",
+    "hints": {
+        "0": "I can only assume at this point you're getting hints on all the cards. Were suitcases originally made to carry only suits?"
+        }
+    },
+    "78": 
+    {
+    "id": "78",
+    "name": "Dobble card",
+    "hints": {
+        "0": "Look around for clues!",
+        "1": "You can solve this without clues, if you're good enough at anagrams."
+        }
+    },
+    "79": 
+    {
+    "id": "79",
+    "name": "Slip of paper",
+    "hints": {
+        "0": "I hope you solve this quicker than a slow moving wall of ice.",
+        "1": "The answer is GLACIER, you glacier."
+        }
+    },
+    "80": 
+    {
+    "id": "80",
+    "name": "Stove",
+    "hints": {
+        "0": "Some ingredients pair very well. Just read the descriptions. Maybe read them aloud.",
+        "1": "'...be key' sounds a bit like 'Becky'."
+        },
+    "machine": "stove",
+    "req": "10"
+    },
+    "83": 
+    {
+    "id": "83",
+    "name": "Vents",
+    "hints": {
+        "0": "If they won't go in willingly, you could always throw a bit of that turkey down there.",
+        "1": "Look closely, assuming the print comes out well."
+        }
+    },
+    "85": 
+    {
+    "id": "85",
+    "name": "Dogs running into the vent",
+    "hints": {
+        "0": "They will come back... I hope..."
+        },
+    "code": "VENTS",
+    "answer": "I guess you're just going to have to hope they will come back.<br /><br />Discard <i class='card-number'>85</i>"
+    },
+    "86": 
+    {
+    "id": "86",
+    "name": "Board in the vents",
+    "hints": {
+        "0": "I'd get board of these vents too."
+        }
+    },
+    "90": 
+    {
+    "id": "90",
+    "name": "Open fridge",
+    "hints": {
+        "0": "Who labels the items in their fridge?"
+        }
+    },
+    "318": 
+    {
+    "id": "318",
+    "name": "Family",
+    "hints": {
+        "0": "Thank you so much for playing this game. I really hope you enjoyed it. So much love!"
+        }
+    }
+}
+    

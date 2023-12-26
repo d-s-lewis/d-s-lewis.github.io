@@ -1,0 +1,127 @@
+{
+  "configVersion": 1,
+  "timestamp": 1657658849911,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.9d37248b3a14306ff69f.js",
+        "/manifest.webmanifest",
+        "/polyfills.06e8ebf88bda9eba8061.js",
+        "/runtime.4e3d1a638b5fc1aa9afc.js",
+        "/styles.8d2177587fd50cd5d2d9.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/audio/chimes.pkf",
+        "/assets/audio/chimes.wav",
+        "/assets/audio/correct.wav",
+        "/assets/audio/penalty.wav",
+        "/assets/audio/solved.mp3",
+        "/assets/cards.json",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/img/clock.png",
+        "/assets/img/clock230.png",
+        "/assets/img/flame.gif",
+        "/assets/img/flame.png",
+        "/assets/img/hand.png",
+        "/assets/img/pattern.png",
+        "/assets/img/pot.png",
+        "/assets/svg/code.svg",
+        "/assets/svg/hint.svg",
+        "/assets/svg/machine.svg",
+        "/assets/svg/pause.svg",
+        "/assets/svg/penalty.svg",
+        "/assets/svg/play.svg",
+        "/assets/svg/pot.svg",
+        "/assets/svg/review.svg",
+        "/assets/timepicker.js",
+        "/pattern.f33f8a2bb81483bf76e1.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/audio/chimes.pkf": "6e8ddca9b57ab986fcaec26cdecbd71e48937f99",
+    "/assets/audio/chimes.wav": "401baf9ee9830e82e300437a04dee75f55211a9b",
+    "/assets/audio/correct.wav": "afcec2df5ed1039c5db84c802ef81c8434fc845d",
+    "/assets/audio/penalty.wav": "ae60ff9510f8d9e1d220d8dd48511e53586a5a5a",
+    "/assets/audio/solved.mp3": "395095c9f6b7b59f96dbaf54e75a42e0869d8373",
+    "/assets/cards.json": "0227c8ad7c61ac8b2c35756668f8061b78b2d927",
+    "/assets/icons/icon-128x128.png": "20373a71d2e0c39055f8954b1936d7e4a16232f4",
+    "/assets/icons/icon-144x144.png": "323a7c3080b51649602c17da4ac054d97a78119c",
+    "/assets/icons/icon-152x152.png": "63324dd307a83e88b69ac4b8043d4b7fac47fa6b",
+    "/assets/icons/icon-192x192.png": "b06e037683d308c7b9a09ce6405f2fde54f55ad2",
+    "/assets/icons/icon-384x384.png": "8dd8368d60d5e9dc652b240061730a5a6e257fed",
+    "/assets/icons/icon-512x512.png": "f448f46da8369c900b59628983318cf49ab8f519",
+    "/assets/icons/icon-72x72.png": "06f27a37943e52c1766bea711e69abe8434d2ffc",
+    "/assets/icons/icon-96x96.png": "ea984a63758dbb11e17736917ac044d09f59cc2d",
+    "/assets/img/clock.png": "7ffbbeac6249336a52d6f0944eac5fb724aa9125",
+    "/assets/img/clock230.png": "bb37c06ea4058b677bfe0b739b9935684d66fd0e",
+    "/assets/img/flame.gif": "8dc5cbc8c3eacdc2516f3579c055f97092bb8484",
+    "/assets/img/flame.png": "184ad60155429a6dae40dce330f97f5de2c4155a",
+    "/assets/img/hand.png": "89fc44edb405e8e8534c5ba64f98e743bc46d284",
+    "/assets/img/pattern.png": "c0c420d7a7dd4f8cf3d3f245abb3d6b1dbfe0b6f",
+    "/assets/img/pot.png": "0457bde62b02a5c57b6b089051249f3285a56998",
+    "/assets/svg/code.svg": "0d0151e07d84c18b087541605926cb05ab17ce57",
+    "/assets/svg/hint.svg": "f0685f89a045c3e11320f776165869a562be3910",
+    "/assets/svg/machine.svg": "783e1ecf4301ca795b0af7e68d019be6e86a776c",
+    "/assets/svg/pause.svg": "21b68d3c8e8c1c8b4c62625c816a46c25a175f26",
+    "/assets/svg/penalty.svg": "bca78e56e9b9625ee311bc6b0fb0fcf1f639afe6",
+    "/assets/svg/play.svg": "13872134214d4c9de103a1677578d8e7ebac2a96",
+    "/assets/svg/pot.svg": "be9b65a5a92887dec79c40fdc65cad220a9e4aaa",
+    "/assets/svg/review.svg": "fe477ccac90f57c77d3f1cf6f1cc88886ab18995",
+    "/assets/timepicker.js": "c1b9f4c19fab0031a9a55ad9e347a2546ebfba0e",
+    "/favicon.ico": "694451b21db85457c8fc62a7f4ee626c1bdb62ba",
+    "/index.html": "fe65393bade2ed159395131b566519230fc29803",
+    "/main.9d37248b3a14306ff69f.js": "32305eec978c09180107925706130b447529bed8",
+    "/manifest.webmanifest": "4c0b45fd67e73cd25368f159002b514f7c0f1c48",
+    "/pattern.f33f8a2bb81483bf76e1.png": "c0c420d7a7dd4f8cf3d3f245abb3d6b1dbfe0b6f",
+    "/polyfills.06e8ebf88bda9eba8061.js": "0ea43ba5ac38f1180b642f84d18849e0631367b5",
+    "/runtime.4e3d1a638b5fc1aa9afc.js": "297a43bdf0616fbcbc15f3a062300f3ada2bf11a",
+    "/styles.8d2177587fd50cd5d2d9.css": "758e1e3c6646bef67472309d717f6b986021eb0c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

@@ -124,24 +124,39 @@
             const targetValue = board[y][x];
 
             function checkDirection(dx, dy) {
-                let count = 0;
-                let currentX = x;
-                let currentY = y;
-                let winningPositionsInDirection = [];
-                
-                while (currentX >= 0 && currentX < cols && currentY >= 0 && currentY < rows && board[currentY] && board[currentY][currentX] == targetValue) {
-                    count++;
-                    winningPositionsInDirection.push({y: currentY, x: currentX})
-                    currentX += dx;
-                    currentY += dy;
-                    
+                function checkOneDirection(directionX, directionY) {
+                    let count = 0;
+                    let currentX = x;
+                    let currentY = y;
+                    let winningPositionsInDirection = [];
+
+                    while (
+                        currentX >= 0 &&
+                        currentX < cols &&
+                        currentY >= 0 &&
+                        currentY < rows &&
+                        board[currentY][currentX] === targetValue
+                    ) {
+                        count++;
+                        winningPositionsInDirection.push({ x: currentX, y: currentY });
+                        currentX += directionX;
+                        currentY += directionY;
+                    }
+
+                    return { count, winningPositionsInDirection };
                 }
 
-                if (count >= 3) {
-                    console.log(winningPositionsInDirection)
-                    winningPositions = winningPositionsInDirection
+                const direction1 = checkOneDirection(dx, dy);
+                const direction2 = checkOneDirection(-dx, -dy);
+
+                const totalCount = direction1.count + direction2.count - 1; // Subtract 1 to avoid double counting the current move
+
+                if (totalCount >= 3) {
+                    winningPositions = direction1.winningPositionsInDirection.concat(direction2.winningPositionsInDirection);
                     return true;
                 }
+
+                return false;
             }
 
             // let winningPositions = [];

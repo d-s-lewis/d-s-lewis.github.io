@@ -1,4 +1,5 @@
 $bg: #101216;
+$primary: #e69191;
 
 html, body {
     padding: 0;
@@ -8,9 +9,10 @@ html, body {
     min-height: 100%;
     width: 100%;
     font-size: 16px;
-    font-family: Oswald, sans-serif;
+    font-family: Roboto slab, Roboto, sans-serif;
     background-size: 100% 100%;
     overscroll-behavior: none;
+    margin-bottom: 100px;
 }
 
 header {
@@ -143,7 +145,7 @@ header {
 
 @keyframes smoke {
     from {
-        background-position: left var(--bg-posx) top var(--bg-posy), left var(--bg-posx) top var(--bg-posy);
+        background-position: left var(--bg-posx, 0) top var(--bg-posy, 0), left var(--bg-posx) top var(--bg-posy);
     }
 
     to {
@@ -151,52 +153,94 @@ header {
     }
 }
 
-h1 {
-    mix-blend-mode: difference;
-    color: white;
-}
-
 h1,h2 {
-    text-align: center;
-    letter-spacing: 10px;
+    color: $primary;
+    text-transform: lowercase;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: .5rem 0;
 }
 
 h1 {
-    font-size: calc(5rem + 10vw);
+    font-size: calc(3rem + 10vw);
+    
 }
 
 h2 {
-    font-size: calc(4rem + 2vw);
+    font-size: calc(2rem + 2vw);
+}
+
+p {
+    color: white;
 }
 
 a {
     text-decoration: none;
     color: #fff;
     border-bottom: 2px solid #777;
+    transition: .3s;
+
+    &:hover {
+        border-color: $primary;
+    }
 }
 
-.thing-i-did {
-    width: 80%;
-    background: #111;
-    border: 30px solid #fff;
-    margin: 5rem auto;
-    padding: 3vh 2vw;
-    color: #fff;
+iframe {
+    display: block;
+    margin: 0 auto;
+}
 
-    h2 {
-        margin: 1rem 0;
-        text-transform: uppercase;
-    }
+.section {
+    width: 90vw;
+    margin: 0 auto;
 
-    p {
-        margin: 0 auto;
-        width: 80%;
-        font-size: 1.2rem;
-        font-weight: 300;
+    .container {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        &.centered {
+            align-items: center;
+            justify-content: center;
+        }
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .text {
+            // width: 100%;
+            flex: 1 1 70%;
+            
+            @media screen and (max-width: 490px) {
+                text-align: center;
+            }
+        }
     }
-    iframe {
-        display: block;
-        margin: 0 auto;
-        margin-top: 3rem;
+    
+}
+
+.block-marker {
+    width: 200px;
+    height: 190px;
+    background-image: url(../img/header-3.png), url(../img/header-3.png);
+    background-size: 200%, 200%;
+    background-position: left top, right top;
+    animation: markerSmoke 180s linear infinite;
+    background-repeat: repeat-y;
+    border-radius: 10px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+@keyframes markerSmoke {
+    from {
+        background-position: left 0, right 0;
+    }
+    to {
+        background-position: left -2000px, right -1000px;
     }
 }

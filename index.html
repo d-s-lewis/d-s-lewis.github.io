@@ -51,6 +51,12 @@
         </div>
     </header>
 
+    <div class="section">
+        <div class="container">
+            <div class="block"></div>
+        </div>
+    </div>
+
     <div class="thing-i-did">
         <h2>Pale White Dot</h2>
         <p>A short sci-fi fiction told through a collection of human stories showing the aftermath of an unexpected
@@ -95,8 +101,8 @@
                 const imgCenterX = width / 2;
                 const frameCenterY = fBounds.height / 2;
                 const imgCenterY = height / 2;
-                const bx = tBounds.left - (frameCenterX - imgCenterX)//fBounds.left;
-                const by = tBounds.top - (frameCenterY - imgCenterY);
+                const bx = window.pageXOffset + tBounds.left - (frameCenterX - imgCenterX)//fBounds.left;
+                const by = window.pageYOffset + tBounds.top - (frameCenterY - imgCenterY);
                 // block.querySelector('.box .front').style.backgroundPosition = `left ${-bx}px top ${-by}px`;
                 block.querySelector('.box .front').style.setProperty('--bg-posx', `${-bx}px`)
                 block.querySelector('.box .front').style.setProperty('--bg-posy', `${-by}px`)
@@ -206,7 +212,7 @@
 
             if (checkWin(x, y)) {
                 winningPositions.forEach(pos => {
-                    const winningElement = document.querySelector(`.block-row:nth-child(${pos.y + 1}) .block:nth-child(${pos.x + 1})`);
+                    const winningElement = header.querySelector(`.block-row:nth-child(${pos.y + 1}) .block:nth-child(${pos.x + 1})`);
                     winningElement.classList.add('winning');
                 });
                 header.style.pointerEvents = 'none'

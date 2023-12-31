@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,215 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>D-S-Lewis</title>
 </head>
+
 <body>
-    <h1>D S LEWIS</h1>
+
+    <header>
+        <div class="block-row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="block-row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="block-row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="block-row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+    </header>
 
     <div class="thing-i-did">
         <h2>Pale White Dot</h2>
-        <p>A short sci-fi fiction told through a collection of human stories showing the aftermath of an unexpected image returned from Voyager-1, years after it went beyond function. <a href="https://www.amazon.co.uk/Pale-White-Dot-Daniel-Lewis-ebook/dp/B0C7D5GYK1/ref=sr_1_1?crid=38GPMV6HANJSV">Free on Kindle Unlimited.</a></p>
-        <iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.co.uk/kp/card?asin=B0C7D5GYK1&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_QRFD4ZDGVGPQ9A3Z7KER" ></iframe>
+        <p>A short sci-fi fiction told through a collection of human stories showing the aftermath of an unexpected
+            image returned from Voyager-1, years after it went beyond function. <a
+                href="https://www.amazon.co.uk/Pale-White-Dot-Daniel-Lewis-ebook/dp/B0C7D5GYK1/ref=sr_1_1?crid=38GPMV6HANJSV">Free
+                on Kindle Unlimited.</a></p>
+        <!-- <iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.co.uk/kp/card?asin=B0C7D5GYK1&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_QRFD4ZDGVGPQ9A3Z7KER" ></iframe> -->
     </div>
+
+    <script>
+        const createBlock = (block) => {
+            const box = document.createElement('div');
+            box.classList.add('box');
+            block.appendChild(box)
+            const sides = ['front', 'back']
+            sides.forEach(side => {
+                const el = document.createElement('div');
+                el.classList.add(side, 'face');
+                box.appendChild(el)
+            })
+        }
+
+        const header = document.querySelector('header');
+        const src = '/img/header.png';
+        const img = new Image()
+        img.src = src;
+
+        const updateBlocks = () => {
+            
+            const blocks = header.querySelectorAll('.block');
+
+            const fBounds = header.getBoundingClientRect();
+            let width = Math.min(fBounds.width, img.width);
+            let height = Math.min(fBounds.height, img.height);
+
+            blocks.forEach(block => {
+                block.innerHTML = '';
+                createBlock(block);
+                const tBounds = block.getBoundingClientRect();
+                //Position background to frame's center
+                const frameCenterX = fBounds.width / 2;
+                const imgCenterX = width / 2;
+                const frameCenterY = fBounds.height / 2;
+                const imgCenterY = height / 2;
+                const bx = tBounds.left - (frameCenterX - imgCenterX)//fBounds.left;
+                const by = tBounds.top - (frameCenterY - imgCenterY);
+                block.querySelector('.box .front').style.backgroundPosition = `left ${-bx}px top ${-by}px`;
+                block.querySelector('.box .front').style.backgroundSize = `${width}px ${height}px`;
+                block.querySelector('.box .back').style.backgroundPosition = `left ${-bx}px top ${-by}px, center`;
+                block.querySelector('.box .back').style.backgroundSize = `${width}px ${height}px, auto`;
+            });
+        }
+
+        updateBlocks();
+
+        window.addEventListener('resize', () => {
+            updateBlocks()
+        })
+
+        let currentPlayer = 0;
+        let gameInProgress = false;
+        let board = [];
+        let winningPositions = [];
+
+        const checkWin = (x, y) => {
+            const player = currentPlayer;
+            let count = 0;
+            const rows = board.length;
+            const cols = board[0].length;
+
+            const targetValue = board[y][x];
+
+            function checkDirection(dx, dy) {
+                let count = 0;
+                let currentX = x;
+                let currentY = y;
+                let winningPositionsInDirection = [];
+                
+                while (currentX >= 0 && currentX < cols && currentY >= 0 && currentY < rows && board[currentY] && board[currentY][currentX] == targetValue) {
+                    count++;
+                    winningPositionsInDirection.push({y: currentY, x: currentX})
+                    currentX += dx;
+                    currentY += dy;
+                    
+                }
+
+                if (count >= 3) {
+                    console.log(winningPositionsInDirection)
+                    winningPositions = winningPositionsInDirection
+                    return true;
+                }
+            }
+
+            // let winningPositions = [];
+
+            // Check horizontally
+            if (checkDirection(0, 1) || checkDirection(0, -1)) {
+                return true;
+            }
+
+            // Check vertically
+            if (checkDirection(1, 0) || checkDirection(-1, 0)) {
+                return true;
+            }
+
+            // Check diagonally (top-left to bottom-right)
+            if (checkDirection(1, 1) || checkDirection(-1, -1)) {
+                return true;
+            }
+
+            // Check diagonally (top-right to bottom-left)
+            if (checkDirection(1, -1) || checkDirection(-1, 1)) {
+                return true;
+            }
+
+            // If no three in a row is found
+            return false;
+
+        }
+
+        const playMove = (el, x, y) => {
+            const playerClass = currentPlayer == 0 ? 'nought' : 'cross';
+            el.classList.add(playerClass);
+
+            board[y][x] = currentPlayer;
+            
+            if (checkWin(x,y)) {
+                winningPositions.forEach(pos => {
+                    const winningElement = document.querySelector(`.block-row:nth-child(${pos.y + 1}) .block:nth-child(${pos.x + 1})`);
+                    winningElement.classList.add('winning');
+                });
+                header.style.pointerEvents = 'none'
+                setTimeout(() => {
+                    header.style.pointerEvents = 'unset'
+                    resetBoard();
+                }, 1000);
+            }
+            currentPlayer = 1 - currentPlayer;
+        }
+
+        const resetBoard = () => {
+            board = [];
+            currentPlayer = 0;
+            document.querySelectorAll('.block-row').forEach((row, y) => {
+                board.push([]);
+                row.querySelectorAll('.block').forEach((col, x) => {
+                    board[y].push(null)
+                    col.classList.remove('played')
+                    col.classList.remove('winning')
+                    col.classList.remove('nought')
+                    col.classList.remove('cross')
+                })
+            })
+        }
+        document.querySelectorAll('.block-row').forEach((row, y) => {
+            board.push([]);
+            row.querySelectorAll('.block').forEach((col, x) => {
+                board[y].push(null)
+                col.addEventListener('click', () => {
+                    col.classList.add('played')
+                    playMove(col, x, y)
+                })
+            })
+        })
+
+    </script>
 </body>
+
 </html>

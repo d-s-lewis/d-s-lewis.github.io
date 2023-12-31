@@ -1,15 +1,140 @@
+$bg: #101216;
+
 html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: linear-gradient(90deg, #111 70%, white 70%);
-    background-repeat: no-repeat;
+    background: $bg;
     min-height: 100%;
     width: 100%;
     font-size: 16px;
     font-family: Oswald, sans-serif;
     background-size: 100% 100%;
     overscroll-behavior: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+
+    .block-row {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .block {
+            position: relative;
+            width: calc(100% / 6);
+            height: min(20vw, 20vh);
+            border-radius: 10px;
+            transition: .5s;
+            
+            .box {
+                position: absolute;
+                inset: 0;
+                border-radius: 10px;
+                transition: .6s;
+                transform-style: preserve-3d;
+
+                .face {
+                    position: absolute;
+                    border-radius: 10px;
+                    backface-visibility: hidden;
+                }
+
+                .front {
+                    transform: rotateY(0deg);
+                    background-image: url(../img/header.png);
+                }
+
+                .back {
+                    transform: rotateY(180deg);
+                    background-image: url(../img/header-2.png), linear-gradient(45deg, $bg,  rgb(38, 48, 60), rgb(40,54,80));
+                    // background-image: url(../img/header-2.png)
+                }
+
+                .front, .back {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &:hover {
+                .box {
+                    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
+                    cursor: pointer;
+                }
+            }
+            
+            &.played {
+                
+                .box {
+                    transform: translateZ(-50px) rotateY(180deg) scale(1.05);
+                }
+
+                &.nought, &.cross {
+
+                    .box {
+                        animation: playToken .5s forwards;
+                    }
+
+                    &:after {
+                        content:'';
+                        color: white;
+                        font-size:3rem;
+                        position: absolute;
+                        inset: 0;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.8273 3 17.35 4.30367 19 6.34267' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                &.cross:after {
+                    content:'';
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5L5 19M5 5L9.5 9.5M12 12L19 19' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                }
+                &.winning {
+
+                    .back {
+                        background-image: url(../img/header-2.png),linear-gradient(45deg, rgb(35, 43, 35),  rgb(45, 61, 47), rgb(115, 158, 117))
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        gap: 5px;
+
+        .block-row {
+            gap: 5px;
+        }
+    }
+}
+
+@keyframes playToken {
+    0% {
+        transform: translateZ(-50px) rotateY(180deg) scale(1.02);
+    }
+
+    20% {
+        transform: translateZ(-50px) rotateY(180deg) scale(.9);
+    }
+
+    50% {
+        transform: translateZ(-50px) rotateY(180deg) scale(1.05);
+    }
+
+    100% {
+        transform: translateZ(-50px) rotateY(180deg) scale(1.02);
+    }
 }
 
 h1 {

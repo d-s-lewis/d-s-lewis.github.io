@@ -46,7 +46,11 @@ header {
 
                 .front {
                     transform: rotateY(0deg);
-                    background-image: url(../img/header.png);
+                    background-image: url(../img/header-3.png), url(../img/header.png);
+                    background-size: var(--bg-size), var(--bg-size);
+                    background-position: left var(--bg-posx) top var(--bg-posy), left var(--bg-posx) top var(--bg-posy);
+                    animation: smoke 150s linear infinite;
+                    background-repeat: repeat-y;
                 }
 
                 .back {
@@ -134,6 +138,16 @@ header {
 
     100% {
         transform: translateZ(-50px) rotateY(180deg) scale(1.02);
+    }
+}
+
+@keyframes smoke {
+    from {
+        background-position: left var(--bg-posx) top var(--bg-posy), left var(--bg-posx) top var(--bg-posy);
+    }
+
+    to {
+        background-position: left var(--bg-posx) top calc(var(--bg-posy) + 130%), left var(--bg-posx) top var(--bg-posy);
     }
 }
 

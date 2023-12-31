@@ -76,10 +76,10 @@
         const header = document.querySelector('header');
         const src = '/img/header.png';
         const img = new Image()
-        img.src = src;
+
 
         const updateBlocks = () => {
-            
+
             const blocks = header.querySelectorAll('.block');
 
             const fBounds = header.getBoundingClientRect();
@@ -97,17 +97,29 @@
                 const imgCenterY = height / 2;
                 const bx = tBounds.left - (frameCenterX - imgCenterX)//fBounds.left;
                 const by = tBounds.top - (frameCenterY - imgCenterY);
-                block.querySelector('.box .front').style.backgroundPosition = `left ${-bx}px top ${-by}px`;
-                block.querySelector('.box .front').style.backgroundSize = `${width}px ${height}px`;
+                // block.querySelector('.box .front').style.backgroundPosition = `left ${-bx}px top ${-by}px`;
+                block.querySelector('.box .front').style.setProperty('--bg-posx', `${-bx}px`)
+                block.querySelector('.box .front').style.setProperty('--bg-posy', `${-by}px`)
+                // block.querySelector('.box .front').style.backgroundSize = `${width}px ${height}px`;
+                block.querySelector('.box .front').style.setProperty('--bg-size', `${width}px ${height}px`)
                 block.querySelector('.box .back').style.backgroundPosition = `left ${-bx}px top ${-by}px, center`;
                 block.querySelector('.box .back').style.backgroundSize = `${width}px ${height}px, auto`;
             });
         }
-
-        updateBlocks();
-
-        window.addEventListener('resize', () => {
+        img.src = src;
+        if (img.complete) {
             updateBlocks()
+        } else {
+            img.onload = () => {
+                updateBlocks()
+            }
+        }
+        
+        window.addEventListener('resize', () => {
+            
+            setTimeout(() => {
+                updateBlocks()
+            }, 300)
         })
 
         let currentPlayer = 0;
@@ -191,8 +203,8 @@
             el.classList.add(playerClass);
 
             board[y][x] = currentPlayer;
-            
-            if (checkWin(x,y)) {
+
+            if (checkWin(x, y)) {
                 winningPositions.forEach(pos => {
                     const winningElement = document.querySelector(`.block-row:nth-child(${pos.y + 1}) .block:nth-child(${pos.x + 1})`);
                     winningElement.classList.add('winning');

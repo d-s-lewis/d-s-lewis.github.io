@@ -36,6 +36,20 @@
 .box-container .versions .danlock.selected, .box-container .versions .danlock:hover {
   filter: brightness(1);
 }
+@media screen and (max-width: 750px) {
+  .box-container .versions {
+    flex-direction: row;
+    height: 100px;
+    width: min(400px, 80%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
+  .box-container .versions .danlock {
+    width: 100px;
+    height: 100%;
+  }
+}
 
 .box-holder {
   display: flex;
@@ -48,6 +62,11 @@
   transition: transform 0.6s;
   pointer-events: none;
   padding: 20px;
+}
+@media screen and (max-width: 750px) {
+  .box-holder {
+    padding-top: 150px;
+  }
 }
 .box-holder.show {
   transform: scale(0.7);

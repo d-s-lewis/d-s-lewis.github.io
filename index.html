@@ -353,12 +353,16 @@
         //box selection
         const icons = document.querySelectorAll('.versions .danlock');
         icons.forEach(icon => {
+            const version = icon.getAttribute('version');
             icon.addEventListener('mouseover', () => {
-                const version = icon.getAttribute('version');
                 box.className = `box danlock-${version}`
                 icons.forEach(icon => icon.classList.remove('selected'))
                 icon.classList.add('selected')
             })
+
+            // icon.addEventListener('touchstart', () => {
+            //     window.location = `/danlock${version == '1' ? '' : version}`
+            // })
         })
     </script>
     

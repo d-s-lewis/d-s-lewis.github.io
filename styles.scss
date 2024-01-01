@@ -63,7 +63,6 @@ header {
                 .back {
                     transform: rotateY(180deg);
                     background-image: url(../img/header-2.png), linear-gradient(45deg, $bg,  rgb(38, 48, 60), rgb(40,54,80));
-                    // background-image: url(../img/header-2.png)
                 }
 
                 .front, .back {
@@ -90,6 +89,9 @@ header {
 
                     .box {
                         animation: playToken .5s forwards;
+                        .back {
+                            background-image: url(../img/header-2.png), linear-gradient(45deg, $bg,  rgb(34, 46, 59), rgb(59, 102, 128));
+                        }
                         &:after {
                             content:'';
                             color: white;
@@ -108,16 +110,21 @@ header {
                         
                     }
 
-                    &.cross .box:after {
-                        content:'';
-                        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5L5 19M5 5L9.5 9.5M12 12L19 19' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                    &.cross .box {
+                        .back {
+                            background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(50,25,40),  rgb(54, 34, 59), $primary);
+                        }
+                        &:after {
+                            content:'';
+                            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5L5 19M5 5L9.5 9.5M12 12L19 19' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                        }
                     }                    
                 }
                 
                 &.winning {
 
                     .back {
-                        background-image: url(../img/header-2.png),linear-gradient(45deg, rgb(35, 43, 35),  rgb(45, 61, 47), rgb(115, 158, 117))
+                        background-image: url(../img/header-2.png),linear-gradient(45deg, rgb(35, 43, 35),  rgb(45, 61, 47), rgb(115, 158, 117)) !important
                     }
                     
                 }

@@ -1,5 +1,54 @@
 .box-container {
   cursor: pointer;
+  position: relative;
+}
+.box-container .versions {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+}
+.box-container .versions .danlock {
+  aspect-ratio: 1/1;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  filter: brightness(0.4);
+  transition: 0.5s;
+}
+.box-container .versions .danlock-1 {
+  background-image: url(../img/danlock1/icon.png);
+}
+.box-container .versions .danlock-2 {
+  background-image: url(../img/danlock2/icon.png);
+}
+.box-container .versions .danlock-3 {
+  background-image: url(../img/danlock3/icon.png);
+}
+.box-container .versions .danlock.selected, .box-container .versions .danlock:hover {
+  filter: brightness(1);
+}
+@media screen and (max-width: 750px) {
+  .box-container .versions {
+    flex-direction: row;
+    height: 100px;
+    width: min(400px, 80%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
+  .box-container .versions .danlock {
+    width: 100px;
+    height: 100%;
+  }
 }
 
 .box-holder {
@@ -13,6 +62,11 @@
   transition: transform 0.6s;
   pointer-events: none;
   padding: 20px;
+}
+@media screen and (max-width: 750px) {
+  .box-holder {
+    padding-top: 150px;
+  }
 }
 .box-holder.show {
   transform: scale(0.7);
@@ -76,16 +130,73 @@
   transform: translateZ(-51px) translateY(-51px) rotateX(90deg);
   top: 0;
 }
-.box-holder .box .top .overlay {
-  position: absolute;
-  inset: 0;
-  color: pink;
-  filter: brightness(10.5);
-}
 .box-holder .box .bottom {
   background-image: url(../img/danlock3/box-bottom.png);
   transform: translateZ(-51px) translateY(51px) rotateX(90deg) rotateY(180deg);
   bottom: 0;
+}
+.box-holder .box.danlock-1 .front {
+  background-image: url(../img/danlock1/box-front.png);
+}
+.box-holder .box.danlock-1 .back {
+  background-image: url(../img/danlock1/box-back.png);
+}
+.box-holder .box.danlock-1 .left {
+  background-image: url(../img/danlock1/box-side.png);
+}
+.box-holder .box.danlock-1 .right {
+  background-image: url(../img/danlock1/box-side.png);
+}
+.box-holder .box.danlock-1 .top {
+  background-image: url(../img/danlock1/box-top.png);
+}
+.box-holder .box.danlock-1 .bottom {
+  background-image: url(../img/danlock1/box-top.png);
+}
+.box-holder .box.danlock-1 .card {
+  background-image: url(../img/danlock1/card.png);
+}
+.box-holder .box.danlock-2 .front {
+  background-image: url(../img/danlock2/box-front.png);
+}
+.box-holder .box.danlock-2 .back {
+  background-image: url(../img/danlock2/box-back.png);
+}
+.box-holder .box.danlock-2 .left {
+  background-image: url(../img/danlock2/box-side.png);
+}
+.box-holder .box.danlock-2 .right {
+  background-image: url(../img/danlock2/box-side.png);
+}
+.box-holder .box.danlock-2 .top {
+  background-image: url(../img/danlock2/box-top.png);
+}
+.box-holder .box.danlock-2 .bottom {
+  background-image: url(../img/danlock2/box-bottom.png);
+}
+.box-holder .box.danlock-2 .card {
+  background-image: url(../img/danlock2/card.png);
+}
+.box-holder .box.danlock-3 .front {
+  background-image: url(../img/danlock3/box-front.png);
+}
+.box-holder .box.danlock-3 .back {
+  background-image: url(../img/danlock3/box-back.png);
+}
+.box-holder .box.danlock-3 .left {
+  background-image: url(../img/danlock3/box-side.png);
+}
+.box-holder .box.danlock-3 .right {
+  background-image: url(../img/danlock3/box-side.png);
+}
+.box-holder .box.danlock-3 .top {
+  background-image: url(../img/danlock3/box-top.png);
+}
+.box-holder .box.danlock-3 .bottom {
+  background-image: url(../img/danlock3/box-bottom.png);
+}
+.box-holder .box.danlock-3 .card {
+  background-image: url(../img/danlock3/card.png);
 }
 
 html, body {
@@ -167,6 +278,9 @@ header .block-row .block.played.nought .box, header .block-row .block.played.cro
   -webkit-animation: playToken 0.5s forwards;
           animation: playToken 0.5s forwards;
 }
+header .block-row .block.played.nought .box .back, header .block-row .block.played.cross .box .back {
+  background-image: url(../img/header-2.png), linear-gradient(45deg, #101216, rgb(34, 46, 59), rgb(59, 102, 128));
+}
 header .block-row .block.played.nought .box:after, header .block-row .block.played.cross .box:after {
   content: "";
   color: white;
@@ -183,12 +297,15 @@ header .block-row .block.played.nought .box:after, header .block-row .block.play
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
+header .block-row .block.played.nought.cross .box .back, header .block-row .block.played.cross.cross .box .back {
+  background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(50, 25, 40), rgb(54, 34, 59), #e69191);
+}
 header .block-row .block.played.nought.cross .box:after, header .block-row .block.played.cross.cross .box:after {
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5L5 19M5 5L9.5 9.5M12 12L19 19' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 header .block-row .block.played.winning .back {
-  background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(35, 43, 35), rgb(45, 61, 47), rgb(115, 158, 117));
+  background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(35, 43, 35), rgb(45, 61, 47), rgb(115, 158, 117)) !important;
 }
 header .block-row .block.played.won .box {
   -webkit-animation-name: won;

@@ -1,5 +1,46 @@
 .box-container {
     cursor: pointer;
+    position: relative;
+
+    .versions {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index:10;
+
+        .danlock {
+            aspect-ratio: 1/1;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            filter: brightness(.4);
+            transition: .5s;
+
+            &-1 {
+                background-image: url(../img/danlock1/icon.png)
+            }
+
+            &-2 {
+                background-image: url(../img/danlock2/icon.png)
+            }
+
+            &-3 {
+                background-image: url(../img/danlock3/icon.png)
+            }
+
+            &.selected, &:hover {
+                filter: brightness(1);
+            }
+        }
+    }
 }
 .box-holder {
     display: flex;
@@ -84,18 +125,100 @@
             background-image: url(../img/danlock3/box-top.png);
             transform: translateZ(-51px) translateY(-51px) rotateX(90deg);
             top: 0;
-            .overlay {
-                position: absolute;
-                inset: 0;
-                color: pink;
-                filter: brightness(10.5)
-            }
         }
 
         .bottom {
             background-image: url(../img/danlock3/box-bottom.png);
             transform: translateZ(-51px) translateY(51px) rotateX(90deg) rotateY(180deg);
             bottom: 0;
+        }
+
+        &.danlock-1 {
+            .front {
+                background-image: url(../img/danlock1/box-front.png);
+            }
+
+            .back {
+                background-image: url(../img/danlock1/box-back.png);
+            }
+
+            .left {
+                background-image: url(../img/danlock1/box-side.png);
+            }
+
+            .right {
+                background-image: url(../img/danlock1/box-side.png);
+            }
+
+            .top {
+                background-image: url(../img/danlock1/box-top.png);
+            }
+
+            .bottom {
+                background-image: url(../img/danlock1/box-top.png);
+            }
+            .card {
+                background-image: url(../img/danlock1/card.png);
+            }
+        }
+
+        &.danlock-2 {
+            .front {
+                background-image: url(../img/danlock2/box-front.png);
+            }
+
+            .back {
+                background-image: url(../img/danlock2/box-back.png);
+            }
+
+            .left {
+                background-image: url(../img/danlock2/box-side.png);
+            }
+
+            .right {
+                background-image: url(../img/danlock2/box-side.png);
+            }
+
+            .top {
+                background-image: url(../img/danlock2/box-top.png);
+            }
+
+            .bottom {
+                background-image: url(../img/danlock2/box-bottom.png);
+            }
+            .card {
+                background-image: url(../img/danlock2/card.png);
+            }
+        }
+
+        &.danlock-3 {
+            .front {
+                background-image: url(../img/danlock3/box-front.png);
+            }
+
+            .back {
+                background-image: url(../img/danlock3/box-back.png);
+            }
+
+            .left {
+                background-image: url(../img/danlock3/box-side.png);
+            }
+
+            .right {
+                background-image: url(../img/danlock3/box-side.png);
+            }
+
+            .top {
+                background-image: url(../img/danlock3/box-top.png);
+            }
+
+            .bottom {
+                background-image: url(../img/danlock3/box-bottom.png);
+            }
+
+            .card {
+                background-image: url(../img/danlock3/card.png);
+            }
         }
 
         

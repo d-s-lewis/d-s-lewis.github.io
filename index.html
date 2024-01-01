@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/danlock.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -88,8 +89,13 @@
             </div>
         </div>
         <div class="container separate box-container">
+            <div class="versions">
+                <div class="danlock danlock-1" version="1"></div>
+                <div class="danlock danlock-2" version="2"></div>
+                <div class="danlock danlock-3 selected" version="3"></div>
+            </div>
             <div class="box-holder">
-                <div class="box danlock3">
+                <div class="box danlock-3">
                     <div class="face front"></div>
                     <div class="face back"></div>
                     <div class="face left"></div>
@@ -289,7 +295,7 @@
     </script>
     <script>
         //box tilting
-        const box = document.querySelector('.danlock3')
+        const box = document.querySelector('.box-holder .box')
         const boxHolder = document.querySelector('.box-container');
 
         const height = boxHolder.clientHeight
@@ -299,7 +305,7 @@
 
         function handleMove(e) {
             box.style.transition = "0s"
-            boxHolder.style.transition = "0s"
+            boxHolder.querySelector('.box-holder').style.transition = "filter 0s, transform .5s"
 
             const xVal = e.offsetX
             const yVal = e.offsetY
@@ -309,36 +315,51 @@
 
             const brightness = 1 - ((yVal / height) - (xVal / width)) / 1.5
 
-            const string = 'perspective(1000px) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+            const string = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`
 
             box.style.transform = string
-            boxHolder.style.filter = `brightness(${brightness})`
+            boxHolder.querySelector('.box-holder').style.filter = `brightness(${brightness})`
 
         }
 
         boxHolder.addEventListener('mouseout', function () {
-            box.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)'
+            box.style.transform = `perspective(1000px) rotateX(0) rotateY(0)`
             box.style.transition = ".5s"
-            boxHolder.style.transition = ".5s"
+            boxHolder.querySelector('.box-holder').style.transition = ".5s"
+            // boxHolder.style.transition = "filter .5s"
         })
 
         boxHolder.addEventListener('mouseout', function () {
             box.classList.remove('show')
             boxHolder.querySelector('.box-holder').classList.remove('show')
-            boxHolder.style.filter = `brightness(1)`
+            boxHolder.querySelector('.box-holder').style.filter = `brightness(1)`
 
         })
 
         boxHolder.addEventListener('mouseover', function () {
             box.classList.remove('show')
             boxHolder.classList.remove('show')
+
         })
 
-        boxHolder.addEventListener('click', function () {
+        boxHolder.addEventListener('click', (e) => {
+            if (e.target != e.currentTarget) return
             box.classList.toggle('show')
             boxHolder.querySelector('.box-holder').classList.toggle('show')
         })
 
+    </script>
+    <script>
+        //box selection
+        const icons = document.querySelectorAll('.versions .danlock');
+        icons.forEach(icon => {
+            icon.addEventListener('mouseover', () => {
+                const version = icon.getAttribute('version');
+                box.className = `box danlock-${version}`
+                icons.forEach(icon => icon.classList.remove('selected'))
+                icon.classList.add('selected')
+            })
+        })
     </script>
     
 </body>

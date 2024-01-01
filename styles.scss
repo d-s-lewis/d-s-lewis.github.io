@@ -66,13 +66,15 @@ header {
                     height: 100%;
                 }
             }
-
-            &:hover {
-                .box {
-                    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
-                    cursor: pointer;
+            @media (hover: hover) {
+                &:hover {
+                    .box {
+                        transform: translateZ(-50px) rotateY(180deg) scale(1.02);
+                        cursor: pointer;
+                    }
                 }
             }
+            
             
             &.played {
                 
@@ -117,10 +119,10 @@ header {
     }
 
     @media screen and (max-width: 720px) {
-        gap: 5px;
+        gap: 2px;
 
         .block-row {
-            gap: 5px;
+            gap: 2px;
         }
     }
 }
@@ -217,6 +219,36 @@ iframe {
             
             @media screen and (max-width: 490px) {
                 text-align: center;
+            }
+        }
+    }
+
+    @media screen and (max-width: 814px) {
+
+        .container {
+            display: grid;
+            grid-template-areas: "top" "bottom";
+            align-items: center;
+            justify-items: center;
+
+            .block-marker {
+                grid-area: top;
+                width: 100%;
+            }
+
+            .text {
+                display: contents;
+                z-index: 2;
+
+                h2 {
+                    grid-area: top;
+                    z-index:2;
+                    text-shadow: 0 0 15px #223;
+                }
+
+                .paragraphs {
+                    grid-area: bottom;
+                }
             }
         }
     }

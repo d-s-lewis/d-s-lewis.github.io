@@ -61,9 +61,11 @@ header .block-row .block .box .front, header .block-row .block .box .back {
   width: 100%;
   height: 100%;
 }
-header .block-row .block:hover .box {
-  transform: translateZ(-50px) rotateY(180deg) scale(1.02);
-  cursor: pointer;
+@media (hover: hover) {
+  header .block-row .block:hover .box {
+    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
+    cursor: pointer;
+  }
 }
 header .block-row .block.played .box {
   transform: translateZ(-50px) rotateY(180deg) scale(1.05);
@@ -95,10 +97,10 @@ header .block-row .block.played.winning .back {
 }
 @media screen and (max-width: 720px) {
   header {
-    gap: 5px;
+    gap: 2px;
   }
   header .block-row {
-    gap: 5px;
+    gap: 2px;
   }
 }
 
@@ -207,6 +209,30 @@ iframe {
 @media screen and (max-width: 490px) {
   .section .container .text {
     text-align: center;
+  }
+}
+@media screen and (max-width: 814px) {
+  .section .container {
+    display: grid;
+    grid-template-areas: "top" "bottom";
+    align-items: center;
+    justify-items: center;
+  }
+  .section .container .block-marker {
+    grid-area: top;
+    width: 100%;
+  }
+  .section .container .text {
+    display: contents;
+    z-index: 2;
+  }
+  .section .container .text h2 {
+    grid-area: top;
+    z-index: 2;
+    text-shadow: 0 0 15px #223;
+  }
+  .section .container .text .paragraphs {
+    grid-area: bottom;
   }
 }
 

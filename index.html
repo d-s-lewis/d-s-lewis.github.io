@@ -299,6 +299,8 @@
 
         function handleMove(e) {
             box.style.transition = "0s"
+            boxHolder.style.transition = "0s"
+
             const xVal = e.offsetX
             const yVal = e.offsetY
             const yRotation = 105 * ((xVal - width / 2) / width)
@@ -316,7 +318,8 @@
 
         boxHolder.addEventListener('mouseout', function () {
             box.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)'
-            box.style.transition = ".3s"
+            box.style.transition = ".5s"
+            boxHolder.style.transition = ".5s"
         })
 
         boxHolder.addEventListener('mouseout', function () {

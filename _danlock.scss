@@ -43,15 +43,17 @@
 
         @media screen and (max-width: 750px) {
             flex-direction: row;
-            height: 100px;
-            width: min(400px, 80%);
+            height: 80px;
+             
+            width: min(400px, 100%);
             left: 50%;
             transform: translateX(-50%);
             top: 0;
 
             .danlock {
-                width: 100px;
+                width: 80px;
                 height: 100%;
+                aspect-ratio: 1 / 1;
             }
         }
     }
@@ -66,14 +68,18 @@
     aspect-ratio: 400 / 635;
     transition: transform .6s;
     pointer-events:none;
-    padding: 20px;
-
-    @media screen and (max-width: 750px) {
-        padding-top: 150px;
-    }
+    padding: 20px;   
 
     &.show {
         transform: scale(.7);
+    }
+
+    @media screen and (max-width: 750px) {
+        padding-top: 150px;
+        &.show {
+            transform: scale(.5);
+            padding-top: 250px;
+        }
     }
 
     .box {

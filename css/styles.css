@@ -39,15 +39,16 @@
 @media screen and (max-width: 750px) {
   .box-container .versions {
     flex-direction: row;
-    height: 100px;
-    width: min(400px, 80%);
+    height: 80px;
+    width: min(400px, 100%);
     left: 50%;
     transform: translateX(-50%);
     top: 0;
   }
   .box-container .versions .danlock {
-    width: 100px;
+    width: 80px;
     height: 100%;
+    aspect-ratio: 1/1;
   }
 }
 
@@ -63,13 +64,17 @@
   pointer-events: none;
   padding: 20px;
 }
+.box-holder.show {
+  transform: scale(0.7);
+}
 @media screen and (max-width: 750px) {
   .box-holder {
     padding-top: 150px;
   }
-}
-.box-holder.show {
-  transform: scale(0.7);
+  .box-holder.show {
+    transform: scale(0.5);
+    padding-top: 250px;
+  }
 }
 .box-holder .box {
   position: relative;

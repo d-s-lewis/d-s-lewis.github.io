@@ -302,13 +302,14 @@
         const width = boxHolder.clientWidth
 
         boxHolder.addEventListener('mousemove', handleMove)
-
+        boxHolder.addEventListener('touchmove', handleMove)
         function handleMove(e) {
+            e.preventDefault();
             box.style.transition = "0s"
             boxHolder.querySelector('.box-holder').style.transition = "filter 0s, transform .5s"
 
-            const xVal = e.offsetX
-            const yVal = e.offsetY
+            const xVal = e.touches?.length > 1 ? e.touches[0].clientX : e.offsetX
+            const yVal = e.touches?.length > 1 ? e.touches[0].clientY : e.offsetY
             const yRotation = 105 * ((xVal - width / 2) / width)
 
             const xRotation = -55 * ((yVal - height / 2) / height)

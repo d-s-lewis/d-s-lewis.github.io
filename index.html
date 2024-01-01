@@ -304,7 +304,7 @@
         boxHolder.addEventListener('mousemove', handleMove)
         boxHolder.addEventListener('touchmove', handleMove)
         function handleMove(e) {
-            e.preventDefault();
+            if (e.touches?.length > 1) e.preventDefault();
             box.style.transition = "0s"
             boxHolder.querySelector('.box-holder').style.transition = "filter 0s, transform .5s"
 

@@ -12,6 +12,9 @@ html, body {
     font-family: Roboto slab, Roboto, sans-serif;
     background-size: 100% 100%;
     overscroll-behavior: none;
+}
+
+body {
     margin-bottom: 100px;
 }
 
@@ -29,7 +32,7 @@ header {
         .block {
             position: relative;
             width: calc(100% / 6);
-            height: min(20vw, 20vh);
+            height: min(17vw, 20vh);
             border-radius: 10px;
             transition: .5s;
             

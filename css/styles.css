@@ -10,6 +10,9 @@ html, body {
   background-size: 100% 100%;
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
+}
+
+body {
   margin-bottom: 100px;
 }
 
@@ -27,7 +30,7 @@ header .block-row {
 header .block-row .block {
   position: relative;
   width: 16.6666666667%;
-  height: min(20vw, 20vh);
+  height: min(17vw, 20vh);
   border-radius: 10px;
   transition: 0.5s;
 }

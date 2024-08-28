@@ -85,8 +85,7 @@
 }
 .box-holder .box .face {
   position: absolute;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -228,6 +227,9 @@ header {
   width: 90vw;
   margin: 0 auto;
 }
+header * {
+  box-sizing: border-box;
+}
 header .block-row {
   display: flex;
   flex-direction: row;
@@ -250,16 +252,14 @@ header .block-row .block .box {
 header .block-row .block .box .face {
   position: absolute;
   border-radius: 10px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 header .block-row .block .box .front {
   transform: rotateY(0deg);
   background-image: url(../img/header-3.png), url(../img/header.png);
   background-size: var(--bg-size), var(--bg-size);
   background-position: left var(--bg-posx) top var(--bg-posy), left var(--bg-posx) top var(--bg-posy);
-  -webkit-animation: smoke 150s linear infinite;
-          animation: smoke 150s linear infinite;
+  animation: smoke 150s linear infinite;
   background-repeat: repeat-y;
 }
 header .block-row .block .box .back {
@@ -280,8 +280,7 @@ header .block-row .block.played .box {
   transform: rotateY(180deg) scale(1.04);
 }
 header .block-row .block.played.nought .box, header .block-row .block.played.cross .box {
-  -webkit-animation: playToken 0.5s forwards;
-          animation: playToken 0.5s forwards;
+  animation: playToken 0.5s forwards;
 }
 header .block-row .block.played.nought .box .back, header .block-row .block.played.cross .box .back {
   background-image: url(../img/header-2.png), linear-gradient(45deg, #101216, rgb(34, 46, 59), rgb(59, 102, 128));
@@ -299,8 +298,7 @@ header .block-row .block.played.nought .box:after, header .block-row .block.play
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 header .block-row .block.played.nought.cross .box .back, header .block-row .block.played.cross.cross .box .back {
   background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(50, 25, 40), rgb(54, 34, 59), #e69191);
@@ -313,14 +311,10 @@ header .block-row .block.played.winning .back {
   background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(35, 43, 35), rgb(45, 61, 47), rgb(115, 158, 117)) !important;
 }
 header .block-row .block.played.won .box {
-  -webkit-animation-name: won;
-          animation-name: won;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
+  animation-name: won;
+  animation-delay: 0.4s;
+  animation-duration: 0.5s;
+  animation-direction: forwards;
 }
 @media screen and (max-width: 720px) {
   header {
@@ -328,21 +322,6 @@ header .block-row .block.played.won .box {
   }
   header .block-row {
     gap: 2px;
-  }
-}
-
-@-webkit-keyframes playToken {
-  0% {
-    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
-  }
-  20% {
-    transform: translateZ(-50px) rotateY(180deg) scale(0.9);
-  }
-  50% {
-    transform: translateZ(-50px) rotateY(180deg) scale(1.05);
-  }
-  100% {
-    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
   }
 }
 
@@ -360,28 +339,12 @@ header .block-row .block.played.won .box {
     transform: translateZ(-50px) rotateY(180deg) scale(1.02);
   }
 }
-@-webkit-keyframes smoke {
-  from {
-    background-position: left var(--bg-posx, 0) top var(--bg-posy, 0), left var(--bg-posx) top var(--bg-posy);
-  }
-  to {
-    background-position: left var(--bg-posx) top calc(var(--bg-posy) + 130%), left var(--bg-posx) top var(--bg-posy);
-  }
-}
 @keyframes smoke {
   from {
     background-position: left var(--bg-posx, 0) top var(--bg-posy, 0), left var(--bg-posx) top var(--bg-posy);
   }
   to {
     background-position: left var(--bg-posx) top calc(var(--bg-posy) + 130%), left var(--bg-posx) top var(--bg-posy);
-  }
-}
-@-webkit-keyframes won {
-  from {
-    transform: rotateY(180deg) scale(1.05);
-  }
-  to {
-    transform: rotateY(0);
   }
 }
 @keyframes won {
@@ -480,21 +443,11 @@ iframe {
   background-image: url(../img/header-3.png), url(../img/header-3.png);
   background-size: 200%, 200%;
   background-position: left top, right top;
-  -webkit-animation: markerSmoke 180s linear infinite;
-          animation: markerSmoke 180s linear infinite;
+  animation: markerSmoke 180s linear infinite;
   background-repeat: repeat-y;
   border-radius: 10px;
   flex-shrink: 0;
   flex-grow: 0;
-}
-
-@-webkit-keyframes markerSmoke {
-  from {
-    background-position: left 0, right 0;
-  }
-  to {
-    background-position: left -2000px, right -1000px;
-  }
 }
 
 @keyframes markerSmoke {

@@ -126,6 +126,7 @@
 
         const updateBlocks = () => {
 
+            const offset = window.innerWidth > 920 ? 100 : window.innerWidth > 730 ? 50 : 0;
             const blocks = header.querySelectorAll('.block');
 
             const fBounds = header.getBoundingClientRect();
@@ -137,10 +138,10 @@
                 createBlock(block);
                 const tBounds = block.getBoundingClientRect();
                 const frameCenterX = fBounds.width / 2;
-                const imgCenterX = width / 2;
+                const imgCenterX = (width - offset) / 2;
                 const frameCenterY = fBounds.height / 2;
                 const imgCenterY = height / 2;
-                const bx = window.pageXOffset + tBounds.left - (frameCenterX - imgCenterX)//fBounds.left;
+                const bx = window.pageXOffset + tBounds.left - (frameCenterX - imgCenterX);
                 const by = window.pageYOffset + tBounds.top - (frameCenterY - imgCenterY);
                 block.querySelector('.box .front').style.setProperty('--bg-posx', `${-bx}px`)
                 block.querySelector('.box .front').style.setProperty('--bg-posy', `${-by}px`)

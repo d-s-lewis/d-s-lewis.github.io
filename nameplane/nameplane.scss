@@ -1,0 +1,336 @@
+body {
+  background: #223;
+  overflow: hidden;
+  font-family: Lacquer, sans-serif;
+}
+
+.plane {
+  perspective: 100px;
+  transform-style: preserve-3d;
+
+  * {
+    transform-style: preserve-3d;
+  }
+
+  .left,
+  .right {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    .wing {
+      background: var(--wing-col, #eee);
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      &:after {
+        content: "";
+        border-top: 50px solid transparent;
+        border-left: 50px solid var(--wing-col, #eee);
+        width: 0;
+        height: 0;
+        left: 100%;
+        position: absolute;
+      }
+    }
+    .body {
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      background: var(--body-col, #fff);
+      top: 50px;
+
+      &:after {
+        content: "";
+        border-top: 50px solid transparent;
+        border-left: 50px solid var(--body-col, #fff);
+        width: 0;
+        height: 0;
+        left: 100%;
+        position: absolute;
+      }
+
+      .name {
+        backface-visibility: hidden;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
+    }
+    .inner {
+      border-left: 100px solid transparent;
+      border-top: 100px solid white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10000;
+    }
+  }
+  .right {
+    .wing {
+      top: 50px;
+      &:after {
+        content: "";
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid var(--wing-col, #fff);
+        border-top: none;
+      }
+    }
+    .body {
+      top: 0px;
+
+      &:after {
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid var(--body-col, #fff);
+        border-top: none;
+      }
+    }
+    .inner {
+      border-left: 100px solid transparent;
+      border-bottom: 100px solid #fff;
+      border-top: none;
+    }
+  }
+}
+
+.plane {
+  perspective: 2000px;
+
+  transform: rotateY(30deg);
+  //   animation: revolve 50s infinite alternate;
+  transform-origin: center;
+
+  .wing {
+    transform-origin: bottom;
+    transform: rotatex(70deg);
+  }
+
+  .right {
+    transform: rotatex(150deg);
+    transform-origin: top;
+    .wing {
+      transform-origin: top;
+      transform: rotatex(-70deg);
+    }
+  }
+
+  .inner {
+    visibility: hidden;
+    z-index: 10;
+    transform: rotate3d(1, 1, 0, -180deg);
+  }
+
+  .right .inner {
+    transform: rotate3d(1, 1, 100, 180deg);
+  }
+}
+
+.plane-wrapper {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transform: rotatey(30deg) translate(-50%, -50%);
+  animation: flight 5s forwards linear, revolve 5s 5s forwards infinite linear;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  //   position: relative;
+}
+
+.flight-path {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .plane-wrapper {
+    &.wrong,
+    &.right {
+      animation: crumple 1s forwards;
+    }
+  }
+}
+
+.unfold {
+  --animation-speed: 2s;
+  --flap-delay: 0.5s;
+  animation: flight 0s forwards linear;
+  .plane {
+    animation: flatten var(--animation-speed) forwards;
+
+    .right {
+      animation: unfold var(--animation-speed) forwards;
+
+      .inner {
+        animation: unfoldInnerRight var(--animation-speed) var(--flap-delay)
+          forwards;
+      }
+    }
+
+    .wing {
+      animation: unfold var(--animation-speed) forwards;
+    }
+
+    .inner {
+      animation: unfoldInner var(--animation-speed) var(--flap-delay) forwards;
+    }
+  }
+}
+
+@keyframes revolve {
+  0% {
+    transform: translate(-50%, -50%) rotatey(-180deg) rotatex(20deg) scale(2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotatey(180deg) rotatex(20deg) scale(2);
+  }
+}
+
+@keyframes flatten {
+  100% {
+    transform: rotateY(180deg);
+    --wing-col: #fff;
+    --body-col: #fff;
+  }
+}
+
+@keyframes unfold {
+  100% {
+    transform: rotatex(0deg);
+    --wing-col: #fff;
+    --body-col: #fff;
+  }
+}
+
+@keyframes unfoldInner {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 0deg) translate(-0.5px, 0px);
+    visibility: visible;
+    --wing-col: #fff;
+    --body-col: #fff;
+  }
+}
+
+@keyframes unfoldInnerRight {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 180deg) translate(0px, -0.5px);
+    visibility: visible;
+    --wing-col: #fff;
+    --body-col: #fff;
+  }
+}
+
+@keyframes flight {
+  0% {
+    transform: translate3d(-800px, -800px, 0) rotatey(-90deg) rotatex(20deg);
+    --wing-col: #fff;
+    --body-col: #bbb;
+  }
+  40% {
+    transform: translate3d(250px, -200px, 300px) rotatey(-120deg) rotatez(10deg)
+      rotatex(0deg) scale(1.2);
+    --wing-col: #fff;
+    --body-col: #bbb;
+  }
+  60% {
+    transform: translate3d(500px, 200px, 300px) rotatey(-150deg) rotatex(-10deg)
+      scale(1.6);
+    --wing-col: #dedede;
+    --body-col: #ccc;
+  }
+
+  61% {
+    --wing-col: #bbb;
+    --body-col: #ddd;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotatey(-180deg) rotatex(20deg) scale(2);
+    --wing-col: #bbb;
+    --body-col: #ddd;
+  }
+}
+
+button {
+  padding: 10px 30px;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+}
+
+.open,
+.choices {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  visibility: hidden;
+  transform: translateX(-50%);
+}
+
+.open {
+  animation: showButton 0s 5s forwards;
+}
+
+.choices {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+.oops {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 1s;
+  transform: translateX(-50%) scale(0.5);
+  color: #fff;
+  font-size: 22px;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes showButton {
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes crumple {
+  0% {
+    transform: translate(-50%, -50%) rotatey(-180deg) scale(2);
+    --wing-col: #bbb;
+    --body-col: #ddd;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotatey(-180deg) scale(0);
+  }
+}
+
+@keyframes flyOff {
+  100% {
+    transform: translate(-3000px, -50%) rotatey(-180deg) scale(2);
+    --wing-col: #bbb;
+    --body-col: #ddd;
+  }
+}
+
+canvas {
+  z-index: 999;
+  position: absolute;
+  inset: 0;
+}

@@ -1,3 +1,4 @@
+$flightTime: 5s;
 body {
   background: #223;
   overflow: hidden;
@@ -26,11 +27,30 @@ body {
       &:after {
         content: "";
         border-top: 50px solid transparent;
-        border-left: 50px solid var(--wing-col, #eee);
+        border-left: 50px solid #fff; //var(--wing-col, #eee);
         width: 0;
         height: 0;
         left: 100%;
         position: absolute;
+        backface-visibility: hidden;
+        // transform: rotateZ(180deg);
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        backface-visibility: hidden;
+        transition: 0.5s;
+      }
+      .tip {
+        border-top: 50px solid transparent;
+        border-left: 50px solid #bbb;
+        width: 0;
+        height: 0;
+        left: 100%;
+        position: absolute;
+        transform: translateZ(0px);
       }
     }
     .body {
@@ -43,11 +63,31 @@ body {
       &:after {
         content: "";
         border-top: 50px solid transparent;
+        border-left: 50px solid #aaa;
+        width: 0;
+        height: 0;
+        left: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #aaa;
+        backface-visibility: hidden;
+        transition: 0.5s;
+      }
+
+      .nose {
+        border-top: 50px solid transparent;
         border-left: 50px solid var(--body-col, #fff);
         width: 0;
         height: 0;
         left: 100%;
         position: absolute;
+        // backface-visibility: hidden;
       }
 
       .name {
@@ -63,7 +103,6 @@ body {
       position: absolute;
       top: 0;
       right: 0;
-      z-index: 10000;
     }
   }
   .right {
@@ -72,7 +111,14 @@ body {
       &:after {
         content: "";
         border-bottom: 50px solid transparent;
-        border-left: 50px solid var(--wing-col, #fff);
+        border-left: 50px solid #fff; //var(--wing-col, #fff);
+        border-top: none;
+        transform: rotateY(0deg);
+      }
+
+      .tip {
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid #bbb;
         border-top: none;
       }
     }
@@ -80,6 +126,13 @@ body {
       top: 0px;
 
       &:after {
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid #aaa;
+        border-top: none;
+        transform: rotatez(0deg);
+      }
+
+      .nose {
         border-bottom: 50px solid transparent;
         border-left: 50px solid var(--body-col, #fff);
         border-top: none;
@@ -129,7 +182,8 @@ body {
   perspective: 800px;
   transform-style: preserve-3d;
   transform: rotatey(30deg) translate(-50%, -50%);
-  animation: flight 5s forwards linear, revolve 5s 5s forwards infinite linear;
+  animation: flight $flightTime forwards linear,
+    revolve 5s $flightTime forwards infinite linear;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -146,7 +200,7 @@ body {
     &.right {
       animation: crumple 1s forwards;
     }
-  }✈️
+  }
 }
 
 .unfold {
@@ -165,6 +219,16 @@ body {
       }
     }
 
+    .body {
+      &:before {
+        background: #fff;
+      }
+
+      &:after {
+        border-left: 50px solid #fff;
+      }
+    }
+
     .wing {
       animation: unfold var(--animation-speed) forwards;
     }
@@ -172,12 +236,19 @@ body {
     .inner {
       animation: unfoldInner var(--animation-speed) var(--flap-delay) forwards;
     }
+
+    .nose {
+      opacity: 0;
+    }
   }
 }
 
 @keyframes revolve {
   0% {
     transform: translate(-50%, -50%) rotatey(-180deg) rotatex(20deg) scale(2);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotatey(0deg) rotatex(10deg) scale(2);
   }
   100% {
     transform: translate(-50%, -50%) rotatey(180deg) rotatex(20deg) scale(2);
@@ -226,18 +297,19 @@ body {
 
 @keyframes flight {
   0% {
-    transform: translate3d(-800px, -800px, 0) rotatey(-90deg) rotatex(20deg);
+    transform: translate3d(-800px, -800px, 0) rotatey(-90deg) rotatex(20deg)
+      scale(0.4);
     --wing-col: #fff;
     --body-col: #bbb;
   }
   40% {
-    transform: translate3d(250px, -200px, 300px) rotatey(-120deg) rotatez(10deg)
-      rotatex(0deg) scale(1.2);
+    transform: translate3d(250px, -200px, 300px) rotatey(-110deg) rotatez(10deg)
+      rotatex(0deg) scale(1);
     --wing-col: #fff;
     --body-col: #bbb;
   }
   60% {
-    transform: translate3d(500px, 200px, 300px) rotatey(-150deg) rotatex(-10deg)
+    transform: translate3d(500px, 200px, 300px) rotatey(-130deg) rotatex(-10deg)
       scale(1.6);
     --wing-col: #dedede;
     --body-col: #ccc;
@@ -245,13 +317,13 @@ body {
 
   61% {
     --wing-col: #bbb;
-    --body-col: #ddd;
+    --body-col: #ccc;
   }
 
   100% {
     transform: translate(-50%, -50%) rotatey(-180deg) rotatex(20deg) scale(2);
     --wing-col: #bbb;
-    --body-col: #ddd;
+    --body-col: #ccc;
   }
 }
 
@@ -273,7 +345,7 @@ button {
 }
 
 .open {
-  animation: showButton 0s 5s forwards;
+  animation: showButton 0s $flightTime forwards;
 }
 
 .choices {
@@ -318,14 +390,6 @@ button {
 
   100% {
     transform: translate(-50%, -50%) rotatey(-180deg) scale(0);
-  }
-}
-
-@keyframes flyOff {
-  100% {
-    transform: translate(-3000px, -50%) rotatey(-180deg) scale(2);
-    --wing-col: #bbb;
-    --body-col: #ddd;
   }
 }
 

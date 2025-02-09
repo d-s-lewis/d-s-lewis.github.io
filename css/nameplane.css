@@ -29,11 +29,31 @@ body {
 .plane .right .wing:after {
   content: "";
   border-top: 50px solid transparent;
-  border-left: 50px solid var(--wing-col, #eee);
+  border-left: 50px solid #fff;
   width: 0;
   height: 0;
   left: 100%;
   position: absolute;
+  backface-visibility: hidden;
+}
+.plane .left .wing:before,
+.plane .right .wing:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  backface-visibility: hidden;
+  transition: 0.5s;
+}
+.plane .left .wing .tip,
+.plane .right .wing .tip {
+  border-top: 50px solid transparent;
+  border-left: 50px solid #bbb;
+  width: 0;
+  height: 0;
+  left: 100%;
+  position: absolute;
+  transform: translateZ(0px);
 }
 .plane .left .body,
 .plane .right .body {
@@ -46,6 +66,25 @@ body {
 .plane .left .body:after,
 .plane .right .body:after {
   content: "";
+  border-top: 50px solid transparent;
+  border-left: 50px solid #aaa;
+  width: 0;
+  height: 0;
+  left: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.plane .left .body:before,
+.plane .right .body:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #aaa;
+  backface-visibility: hidden;
+  transition: 0.5s;
+}
+.plane .left .body .nose,
+.plane .right .body .nose {
   border-top: 50px solid transparent;
   border-left: 50px solid var(--body-col, #fff);
   width: 0;
@@ -67,7 +106,6 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 10000;
 }
 .plane .right .wing {
   top: 50px;
@@ -75,13 +113,25 @@ body {
 .plane .right .wing:after {
   content: "";
   border-bottom: 50px solid transparent;
-  border-left: 50px solid var(--wing-col, #fff);
+  border-left: 50px solid #fff;
+  border-top: none;
+  transform: rotateY(0deg);
+}
+.plane .right .wing .tip {
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #bbb;
   border-top: none;
 }
 .plane .right .body {
   top: 0px;
 }
 .plane .right .body:after {
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #aaa;
+  border-top: none;
+  transform: rotatez(0deg);
+}
+.plane .right .body .nose {
   border-bottom: 50px solid transparent;
   border-left: 50px solid var(--body-col, #fff);
   border-top: none;
@@ -151,16 +201,28 @@ body {
 .unfold .plane .right .inner {
   animation: unfoldInnerRight var(--animation-speed) var(--flap-delay) forwards;
 }
+.unfold .plane .body:before {
+  background: #fff;
+}
+.unfold .plane .body:after {
+  border-left: 50px solid #fff;
+}
 .unfold .plane .wing {
   animation: unfold var(--animation-speed) forwards;
 }
 .unfold .plane .inner {
   animation: unfoldInner var(--animation-speed) var(--flap-delay) forwards;
 }
+.unfold .plane .nose {
+  opacity: 0;
+}
 
 @keyframes revolve {
   0% {
     transform: translate(-50%, -50%) rotatey(-180deg) rotatex(20deg) scale(2);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotatey(0deg) rotatex(10deg) scale(2);
   }
   100% {
     transform: translate(-50%, -50%) rotatey(180deg) rotatex(20deg) scale(2);
@@ -204,28 +266,28 @@ body {
 }
 @keyframes flight {
   0% {
-    transform: translate3d(-800px, -800px, 0) rotatey(-90deg) rotatex(20deg);
+    transform: translate3d(-800px, -800px, 0) rotatey(-90deg) rotatex(20deg) scale(0.4);
     --wing-col: #fff;
     --body-col: #bbb;
   }
   40% {
-    transform: translate3d(250px, -200px, 300px) rotatey(-120deg) rotatez(10deg) rotatex(0deg) scale(1.2);
+    transform: translate3d(250px, -200px, 300px) rotatey(-110deg) rotatez(10deg) rotatex(0deg) scale(1);
     --wing-col: #fff;
     --body-col: #bbb;
   }
   60% {
-    transform: translate3d(500px, 200px, 300px) rotatey(-150deg) rotatex(-10deg) scale(1.6);
+    transform: translate3d(500px, 200px, 300px) rotatey(-130deg) rotatex(-10deg) scale(1.6);
     --wing-col: #dedede;
     --body-col: #ccc;
   }
   61% {
     --wing-col: #bbb;
-    --body-col: #ddd;
+    --body-col: #ccc;
   }
   100% {
     transform: translate(-50%, -50%) rotatey(-180deg) rotatex(20deg) scale(2);
     --wing-col: #bbb;
-    --body-col: #ddd;
+    --body-col: #ccc;
   }
 }
 button {
@@ -287,13 +349,6 @@ button {
   }
   100% {
     transform: translate(-50%, -50%) rotatey(-180deg) scale(0);
-  }
-}
-@keyframes flyOff {
-  100% {
-    transform: translate(-3000px, -50%) rotatey(-180deg) scale(2);
-    --wing-col: #bbb;
-    --body-col: #ddd;
   }
 }
 canvas {

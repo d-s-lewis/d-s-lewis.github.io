@@ -93,8 +93,15 @@ body {
       .name {
         backface-visibility: hidden;
         position: absolute;
-        left: 50%;
+        left: 100px;
         top: 50%;
+        transform: translatex(-50%) translatez(1px);
+        z-index: 10;
+        max-width: 200px;
+        overflow-wrap: break-word;
+        height: auto;
+        overflow: visible;
+        text-align: center;
       }
     }
     .inner {

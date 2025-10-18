@@ -1,0 +1,551 @@
+{
+  "1": {
+    "id": "1",
+    "name": "River",
+    "hints": {
+      "0": "There Arno hints needed for this card."
+    }
+  },
+  "2": {
+    "id": "2",
+    "name": "Frankie takes off",
+    "hints": {
+      "0": "Have you spotted the hidden number?",
+      "1": "The hose is in the shape of a 9."
+    }
+  },
+  "3": {
+    "id": "3",
+    "name": "Dock",
+    "hints": {
+      "0": "Which dog is that? You get three guesses."
+    }
+  },
+  "4": {
+    "id": "4",
+    "name": "Vision",
+    "machine": "vision",
+    "hints": {
+      "0": "If singing isn't helping, try saying it clearly.",
+      "1": "Sing 'Row, row, row your boat'."
+    }
+  },
+  "5": {
+    "id": "5",
+    "name": "Treasure map",
+    "hints": {
+      "0": "Each clue refers to a different location on the map. Click them in order",
+      "1": "Click the turkey leg, David, the heliocentric model of the solar system, then the Uffizi gallery",
+      "2": "You should see the number 4. Take that card."
+    }
+  },
+  "6": {
+    "id": "6",
+    "name": "Incomplete calendar",
+    "hints": {
+      "0": "A four day work week? Utopia! Add the missing day to this card."
+    }
+  },
+  "7": {
+    "id": "7",
+    "name": "Buoy",
+    "hints": {
+      "0": "One experienced dog is able to retrieve a floating orange ball every time.",
+      "1": "Use Harper to retrieve the ball. Then tell her she's a great girl and will be loved forever and ever."
+    }
+  },
+  "9": {
+    "id": "9",
+    "name": "Hose",
+    "hints": {
+      "0": "It isn't a Spanish boy whose name has been mispronounced, it's a tube that liquids and gases can flow through.",
+      "1": "Add it to the goggles because I don't really understasnd how scuba diving works."
+    }
+  },
+  "10": {
+    "id": "10",
+    "name": "Frankie running",
+    "hints": {
+      "0": "Sorry about this pointless card.",
+      "1": "To make it up to you, let me tell you a story.",
+      "2": "Once there was a little monkey who wanted to play with the horse.",
+      "3": "The horse was willing, but knew he would run too fast for the monkey",
+      "4": "But the monkey insisted on playing anyway. She was a brave but naive monkey.",
+      "5": "The horse mistook her desire for bravery, and fell in love with her.",
+      "6": "To keep his love safe, the horse ran gently, so that his owners felt they could put him in smaller and smaller fields.",
+      "7": "The horse gave up his freedom, and became restless, irascible, and deeply unhappy.",
+      "8": "The monkey thought the horse no longer loved her. But in truth, the horse no longer loved himself.",
+      "9": "The horse didn't have the bravery either. HE could not turn himself into glue, and stick to the monkey. So he left.",
+      "10": "The monkey learned two new emotions, which guided her through her own poorly chosen future riding partners.",
+      "11": "Life is pain. That's why we scream when we give birth."
+    }
+  },
+  "11": {
+    "id": "11",
+    "name": "Goggles",
+    "hints": {
+      "0": "If they can keep out light, I am sure they can keep out water."
+    }
+  },
+  "12": {
+    "id": "12",
+    "name": "Dock",
+    "hints": {
+      "0": "Pay attention to the pink square, and Becky's phrasing."
+    }
+  },
+  "13": {
+    "id": "13",
+    "name": "Dispatched pirates",
+    "hints": {
+      "0": "I know it's a stretch, but check out the name of the boat."
+    }
+  },
+  "14": {
+    "id": "14",
+    "name": "Martin's Pond",
+    "hints": {
+      "0": "Martin has a pond, but did you know about Lewis Island in Scotland?"
+    }
+  },
+  "16": {
+    "id": "16",
+    "name": "Buoy + Hose penalty",
+    "hints": {
+      "0": "I am SO sorry about the text on this one. I am not sure what came over me."
+    }
+  },
+  "19": {
+    "id": "19",
+    "name": "Herbs",
+    "hints": {
+      "0": "No hidden numbers, don't worry. It isn't mint to be useful until later."
+    }
+  },
+  "20": {
+    "id": "20",
+    "name": "Scuba kit",
+    "hints": {
+      "0": "Only rated for still bodies of water."
+    }
+  },
+  "21": {
+    "id": "21",
+    "name": "Thursday",
+    "hints": {
+      "0": "I can only apologise for the tornado she has undoubtedly unleashed today."
+    }
+  },
+  "22": {
+    "id": "22",
+    "name": "Superhero outfit",
+    "hints": {
+      "0": "Look, I know it shouldn't be necessary. But play along, please."
+    }
+  },
+  "23": {
+    "id": "23",
+    "name": "Black powder",
+    "hints": {
+      "0": "Probably just ground pepper, no need to be salty about it."
+    }
+  },
+  "26": {
+    "id": "26",
+    "name": "Harper",
+    "hints": {
+      "0": "She may be spayed but I'm certain she'd bring a buoy home if you let her."
+    }
+  },
+  "27": {
+    "id": "27",
+    "name": "Strong week",
+    "hints": {
+      "0": "Of course this makes no sense at all. A calendog? A canindar? Just accept that it is Christmas magic."
+    }
+  },
+  "28": {
+    "id": "28",
+    "name": "Thursday + Buoy penalty",
+    "hints": {
+      "0": "If she brings a buoy home, you are losing way more than a minute."
+    }
+  },
+  "29": {
+    "id": "29",
+    "name": "Thyme & Spice",
+    "hints": {
+      "0": "The key is in a box. You just need a sign to open it.",
+      "1": "The vision showed you where to look for the code.",
+      "2": "3184, hidden on the sign, upside-down."
+    }
+  },
+  "30": {
+    "id": "30",
+    "name": "Thursday + Hose penalty",
+    "hints": {
+      "0": "She loves the hose, and will often try to tiurn it on by barking at it."
+    }
+  },
+  "32": {
+    "id": "32",
+    "name": "Thursday + Goggles penalty",
+    "hints": {
+      "0": "Why would you try to cover up some of that beautiful face?"
+    }
+  },
+  "33": {
+    "id": "33",
+    "name": "Whirlpool",
+    "hints": {
+      "0": "We can suspend physics for this most special day."
+    }
+  },
+  "34": {
+    "id": "34",
+    "name": "Underwater box",
+    "hints": {
+      "0": "Needing to give someone a ring? Try someone in Italy",
+      "1": "It's on the shop front. Watch the vision carefully.",
+      "2": "3184, hidden on the sign, upside-down."
+    },
+    "code": "3184",
+    "answer": "The mechanism engages, and reveals a key. Take card <i class='card-number'>53</i>"
+  },
+  "35": {
+    "id": "35",
+    "name": "Harper + Hose penalty",
+    "hints": {
+      "0": "Harper is standoffish, but is very swiminish."
+    }
+  },
+  "36": {
+    "id": "36",
+    "name": "Car keys",
+    "hints": {
+      "0": "I like to think that the owner threw their keys away because they wanted no excuse to leave the Christmas celebrations."
+    }
+  },
+  "37": {
+    "id": "37",
+    "name": "Harper + Goggles penalty",
+    "hints": {
+      "0": "I thin Harper would never speak to you again if you tried that."
+    }
+  },
+  "41": {
+    "id": "41",
+    "name": "Thursday + Scuba penalty",
+    "hints": {
+      "0": "At the moment, Thursday does not know she can swim."
+    }
+  },
+  "42": {
+    "id": "42",
+    "name": "Getting home",
+    "hints": {
+      "0": "Time and space! Like a day and a huge extra-terrestrial event.",
+      "1": "2772 - Strong week + Supernova"
+    },
+    "code": "2772",
+    "code2": "2750",
+    "answer2": "Hmmmm. Not spacey enough.",
+    "solved": "She uses the chaotic energy of Thursday and Nova playing to provide enough energy to send you home. Take card <i class='card-number'>89</i>"
+  },
+  "43": {
+    "id": "43",
+    "name": "Thursday + Superhero Outfit penalty",
+    "hints": {
+      "0": "If Thursday could fly, she still wouldn't. She is probably afraid of clouds."
+    }
+  },
+  "46": {
+    "id": "46",
+    "name": "Harper + Scuba penalty",
+    "hints": {
+      "0": "I think Harper would be a great choice for the first scuba diving border collie."
+    }
+  },
+  "47": {
+    "id": "47",
+    "name": "Pirates",
+    "hints": {
+      "0": "What's the matter? Have you never seen river pirates before? Singing river shanties and standing on their riverlegs?"
+    }
+  },
+  "50": {
+    "id": "50",
+    "name": "Nova",
+    "hints": {
+      "0": "I can't be racist! My dog is black!"
+    }
+  },
+  "52": {
+    "id": "52",
+    "name": "Pirates force you aboard",
+    "hints": {
+      "0": "Pay attention to the pink circle, and the way this guy lied to you!"
+    }
+  },
+  "53": {
+    "id": "53",
+    "name": "Key",
+    "hints": {
+      "0": "If you have this before you know what it's for, you must have played before. Stop trying to break it, you'll succeed!"
+    }
+  },
+  "55": {
+    "id": "55",
+    "name": "Captain's log",
+    "hints": {
+      "0": "Read the first word of each line, and listen to Polly.",
+      "1": "The answer is 5. ((7 x 3) + 4) / 5."
+    }
+  },
+  "56": {
+    "id": "56",
+    "name": "Nova + Calendar penalty",
+    "hints": {
+      "0": "Novi dan in Croation means new day. Ahoy!"
+    }
+  },
+  "57": {
+    "id": "57",
+    "name": "Thursday + Car Keys penalty",
+    "hints": {
+      "0": "Thursday would be a terrible driver, she is so afraid of cars."
+    }
+  },
+  "60": {
+    "id": "60",
+    "name": "Driving",
+    "machine": "driving",
+    "answer:": "You did it!",
+    "hints": {
+      "0": "There is a pattern to follow, and symbols you have seen before.",
+      "1": "Triangle means follow the direction, circle means do the opposite, and square is return."
+    }
+  },
+  "61": {
+    "id": "61",
+    "name": "Nova + Goggles penalty",
+    "hints": {
+      "0": "I'd get so googley-eyed at that goggley-eyed dog."
+    }
+  },
+  "62": {
+    "id": "62",
+    "name": "Driving puzzle 1",
+    "hints": {
+      "0": "Triangle means follow the direction of the statue."
+    }
+  },
+  "63": {
+    "id": "63",
+    "name": "Driving puzzle 2",
+    "hints": {
+      "0": "Circle means do not the direction of the statue."
+    }
+  },
+  "64": {
+    "id": "64",
+    "name": "Driving puzzle 3",
+    "hints": {
+      "0": "Square means return (go back)."
+    }
+  },
+  "65": {
+    "id": "65",
+    "name": "Driving puzzle 4",
+    "hints": {
+      "0": "Triangle means follow the direction of the statue."
+    }
+  },
+  "66": {
+    "id": "66",
+    "name": "Driving puzzle 5",
+    "hints": {
+      "0": "Circle means do not the direction of the statue."
+    }
+  },
+  "67": {
+    "id": "67",
+    "name": "Driving puzzle 6",
+    "hints": {
+      "0": "Triangle means follow the direction of the statue."
+    }
+  },
+  "68": {
+    "id": "68",
+    "name": "Driving puzzle 7",
+    "hints": {
+      "0": "Square means return (go back)."
+    }
+  },
+  "69": {
+    "id": "69",
+    "name": "Driving puzzle 8",
+    "hints": {
+      "0": "Circle means do not the direction of the statue, but nicely."
+    }
+  },
+  "70": {
+    "id": "70",
+    "name": "Nova + Scuba penalty",
+    "hints": {
+      "0": "She would probably reconstruct a better version. Either way, a minute has passed."
+    }
+  },
+  "71": {
+    "id": "71",
+    "name": "Invoice",
+    "hints": {
+      "0": "Some of those names should be ignored.",
+      "1": "Take card 52 - and take note of the names that should not be neglected, as well as the scribbled-out message."
+    }
+  },
+  "72": {
+    "id": "72",
+    "name": "Supernova",
+    "hints": {
+      "0": "Circle means do not the direction of the statue, but nicely."
+    }
+  },
+  "74": {
+    "id": "74",
+    "name": "Thursday + Key penalty",
+    "hints": {
+      "0": "I don't know why I'm providing hints for penalty cards. But I applaud you for the effort of reading them."
+    }
+  },
+  "76": {
+    "id": "76",
+    "name": "Shop owner",
+    "hints": {
+      "0": "You have herbs and powders, use the numbers!",
+      "1": "1923. Herbs + Powder = Thyme + Space"
+    },
+    "code": "1923",
+    "answer": "She takes the herbs and spices, and prepares her recipe. Take card <i class='card-number'>99</i>"
+  },
+  "78": {
+    "id": "78",
+    "name": "Polly",
+    "machine": "polly",
+    "answer:": "Did you know tht Polly wants to kill Jacob?",
+    "hints": {
+      "0": "The numbers are not just filler, but they are filler.",
+      "1": "Insert the numbers into the gaps in the captains log and follow the maths operation using the first word of each line."
+    }
+  },
+  "79": {
+    "id": "79",
+    "name": "Harper + Key penalty",
+    "hints": {
+      "0": "Toby opened doors. Harper just shames you into opening them."
+    }
+  },
+  "80": {
+    "id": "80",
+    "name": "Map",
+    "machine": "map",
+    "answer:": "The pirates are killed yay.",
+    "hints": {
+      "0": "Knock three times on the Enormous Eagle",
+      "1": "Follow the treasure map, it will reveal a number"
+    }
+  },
+  "82": {
+    "id": "82",
+    "name": "Inside the shop",
+    "hints": {
+      "0": "Why is there an old lady working on Christmas Day?."
+    }
+  },
+  "89": {
+    "id": "89",
+    "name": "Home",
+    "hints": {
+      "0": "What's that? You don't want only turkey for Christmas dinner? You should probably play a different game then."
+    }
+  },
+  "96": {
+    "id": "96",
+    "name": "Driving",
+    "machine": "driving",
+    "answer:": "You make it all the way to the shop from your vision. Take card...",
+    "hints": {
+      "0": "Look through the revealed cards for symbols.",
+      "1": "Triangles mean follow directions, circles mean lies, squares mean return."
+    }
+  },
+
+  "98": {
+    "id": "98",
+    "name": "Fishing",
+    "machine": "fishing",
+    "answer:": "",
+    "hints": {
+      "0": "Got to find the right combination, like Goldilocks.",
+      "1": "Magnet, Pine, Medium"
+    }
+  },
+  "99": {
+    "id": "99",
+    "name": "Shop owner cooking",
+    "hints": {
+      "0": "It takes 9 months or so to get the perfect little turkey."
+    }
+  },
+  "101": {
+    "id": "101",
+    "name": "Sonogram 1",
+    "hints": {
+      "0": "We're going to have a baby!"
+    }
+  },
+  "102": {
+    "id": "102",
+    "name": "Sonogram 2",
+    "hints": {
+      "0": "We could have told you months ago, but I hope this reveal was worth it."
+    }
+  },
+  "103": {
+    "id": "103",
+    "name": "Sonogram 3",
+    "hints": {
+      "0": "To be honest, if it was news to you, then I am impressed Cheermy has managed to keep it from you."
+    }
+  },
+  "104": {
+    "id": "104",
+    "name": "Sonogram 4",
+    "hints": {
+      "0": "Can you believe it? A baby!"
+    }
+  },
+  "105": {
+    "id": "105",
+    "name": "Sonogram 5",
+    "hints": {
+      "0": "I suppose all animals do it in one way or another. I hope they grow up as cool as their aunts and uncles."
+    }
+  },
+  "106": {
+    "id": "106",
+    "name": "Sonogram 6",
+    "hints": {
+      "0": "There's a hidden number here, representing that this baby is now the answer to life, the universe, and everything.",
+      "1": "The number 42 will take you forwards."
+    }
+  },
+  "318": {
+    "id": "318",
+    "name": "Thanks",
+    "hints": {
+      "0": "Thank you all so fucking much for playing. This one has been a real labour of love, pun accurate and intended.",
+      "1": "I hope you'll excuse me if there won't be one next year, but feel free to play with our little one instead. I am sure they will be even more challenging."
+    }
+  }
+}

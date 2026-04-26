@@ -1,372 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Lacquer&family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <title>d-s-lewis - things I am doing</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <div class="block-row">
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-        </div>
-        <div class="block-row">
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-        </div>
-        <div class="block-row">
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-        </div>
-        <div class="block-row">
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-        </div>
+      <div class="name">D S Lewis</div>
     </header>
-
-    <div class="section">
-        <div class="container">
-            <div class="block-marker"></div>
-            <div class="text">
-                <h2>Pale White Dot</h2>
-                <p>
-                    A short sci-fi fiction told through a collection of human stories showing the aftermath of an
-                    unexpected
-                    image returned from Voyager-1, years after it went beyond function. <a
-                        href="https://www.amazon.co.uk/Pale-White-Dot-Daniel-Lewis-ebook/dp/B0C7D5GYK1/ref=sr_1_1?crid=38GPMV6HANJSV">Free
-                        on Kindle Unlimited.</a>
-                </p>
-
-            </div>
-        </div>
-        <div class="container centered">
-            <iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550"
-                frameborder="0" allowfullscreen style="max-width:100%"
-                src="https://read.amazon.co.uk/kp/card?asin=B0C7D5GYK1&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_QRFD4ZDGVGPQ9A3Z7KER"></iframe>
-        </div>
+    <div class="waves">
+      <div class="wave-1"></div>
+      <div class="wave-2"></div>
+      <div class="wave-3"></div>
     </div>
 
-    <div class="section">
-        <div class="container reverse">
-            <div class="block-marker"></div>
-            <div class="text">
-                <h2>Danlock!</h2>
-                <div class="paragraphs">
-                    <p>A collection of holiday games based entirely on my family. Cards painfully made in Photoshop
-                        and printed in lovely looking boxes.</p>
-                    <p>The apps were written in various versions of Angular. <a href="/danlock/"
-                            target="_blank">Danlock!</a> <a href="/danlock2/" target="_blank">Danlock!2</a> <a
-                            href="/danlock3/" target="_blank">Danlock!3</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="container separate box-container">
-            <div class="versions">
-                <div class="danlock danlock-1" version="1"></div>
-                <div class="danlock danlock-2" version="2"></div>
-                <div class="danlock danlock-3 selected" version="3"></div>
-            </div>
-            <div class="box-holder">
-                <div class="box danlock-3">
-                    <div class="face front"></div>
-                    <div class="face back"></div>
-                    <div class="face left"></div>
-                    <div class="face right"></div>
-                    <div class="face top"></div>
-                    <div class="face bottom"></div>
-                    <div class="card"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        const createBlock = (block) => {
-            const box = document.createElement('div');
-            box.classList.add('box');
-            block.appendChild(box)
-            const sides = ['front', 'back']
-            sides.forEach(side => {
-                const el = document.createElement('div');
-                el.classList.add(side, 'face');
-                box.appendChild(el)
-            })
-
-        }
-
-        const header = document.querySelector('header');
-        const src = '/img/header.png';
-        const img = new Image()
-
-        const updateBlocks = () => {
-
-            const offset = window.innerWidth > 920 ? 100 : window.innerWidth > 730 ? 50 : 0;
-            const blocks = header.querySelectorAll('.block');
-
-            const fBounds = header.getBoundingClientRect();
-            let width = Math.min(fBounds.width, img.width);
-            let height = Math.min(fBounds.height, img.height);
-
-            blocks.forEach(block => {
-                block.innerHTML = '';
-                createBlock(block);
-                const tBounds = block.getBoundingClientRect();
-                const frameCenterX = fBounds.width / 2;
-                const imgCenterX = (width - offset) / 2;
-                const frameCenterY = fBounds.height / 2;
-                const imgCenterY = height / 2;
-                const bx = window.pageXOffset + tBounds.left - (frameCenterX - imgCenterX);
-                const by = window.pageYOffset + tBounds.top - (frameCenterY - imgCenterY);
-                block.querySelector('.box .front').style.setProperty('--bg-posx', `${-bx}px`)
-                block.querySelector('.box .front').style.setProperty('--bg-posy', `${-by}px`)
-                block.querySelector('.box .front').style.setProperty('--bg-size', `${width}px ${height}px`)
-                block.querySelector('.box .back').style.backgroundPosition = `left ${-bx}px top ${-by}px, center`;
-                block.querySelector('.box .back').style.backgroundSize = `${width}px ${height}px, auto`;
-            });
-        }
-        img.src = src;
-        if (img.complete) {
-            updateBlocks()
-        } else {
-            img.onload = () => {
-                updateBlocks()
-            }
-        }
-
-        window.addEventListener('resize', () => {
-            setTimeout(() => {
-                updateBlocks()
-            }, 250)
-        })
-
-        let currentPlayer = 0;
-        let gameInProgress = false;
-        let board = [];
-        let winningPositions = [];
-
-        const checkWin = (x, y) => {
-            const player = currentPlayer;
-            let count = 0;
-            const rows = board.length;
-            const cols = board[0].length;
-
-            const targetValue = board[y][x];
-
-            function checkDirection(dx, dy) {
-                function checkOneDirection(directionX, directionY) {
-                    let count = 0;
-                    let currentX = x;
-                    let currentY = y;
-                    let winningPositionsInDirection = [];
-
-                    while (
-                        currentX >= 0 &&
-                        currentX < cols &&
-                        currentY >= 0 &&
-                        currentY < rows &&
-                        board[currentY][currentX] === targetValue
-                    ) {
-                        count++;
-                        winningPositionsInDirection.push({ x: currentX, y: currentY });
-                        currentX += directionX;
-                        currentY += directionY;
-                    }
-
-                    return { count, winningPositionsInDirection };
-                }
-
-                const direction1 = checkOneDirection(dx, dy);
-                const direction2 = checkOneDirection(-dx, -dy);
-
-                const totalCount = direction1.count + direction2.count - 1; // Subtract 1 to avoid double counting the current move
-
-                if (totalCount >= 3) {
-                    winningPositions = direction1.winningPositionsInDirection.concat(direction2.winningPositionsInDirection);
-                    return true;
-                }
-
-                return false;
-            }
-
-            // let winningPositions = [];
-
-            // Check horizontally
-            if (checkDirection(0, 1) || checkDirection(0, -1)) {
-                return true;
-            }
-
-            // Check vertically
-            if (checkDirection(1, 0) || checkDirection(-1, 0)) {
-                return true;
-            }
-
-            // Check diagonally (top-left to bottom-right)
-            if (checkDirection(1, 1) || checkDirection(-1, -1)) {
-                return true;
-            }
-
-            // Check diagonally (top-right to bottom-left)
-            if (checkDirection(1, -1) || checkDirection(-1, 1)) {
-                return true;
-            }
-
-            // If no three in a row is found
-            return false;
-
-        }
-
-        const playMove = async (el, x, y) => {
-            const playerClass = currentPlayer == 0 ? 'nought' : 'cross';
-            el.classList.add(playerClass);
-
-            board[y][x] = currentPlayer;
-
-            if (checkWin(x, y)) {
-                winningPositions.forEach(pos => {
-                    const winningElement = header.querySelector(`.block-row:nth-child(${pos.y + 1}) .block:nth-child(${pos.x + 1})`);
-                    winningElement.classList.add('winning');
-                });
-                header.style.pointerEvents = 'none'
-
-
-                await resetBoard();
-
-            }
-            currentPlayer = 1 - currentPlayer;
-        }
-
-        const resetBoard = async () => {
-            board = [];
-            currentPlayer = 0;
-            document.querySelectorAll('.block-row').forEach((row, y) => {
-                board.push([]);
-                row.querySelectorAll('.block').forEach((col, x) => {
-                    board[y].push(null)
-                    col.classList.add('won')
-                    setTimeout(() => {
-                        header.style.pointerEvents = 'unset'
-                        col.classList.remove('played')
-                        col.classList.remove('winning')
-                        col.classList.remove('nought')
-                        col.classList.remove('cross')
-                        col.classList.remove('won')
-                    }, 1000);
-
-                })
-            })
-        }
-        document.querySelectorAll('.block-row').forEach((row, y) => {
-            board.push([]);
-            row.querySelectorAll('.block').forEach((col, x) => {
-                board[y].push(null)
-                col.addEventListener('click', () => {
-                    col.classList.add('played')
-                    playMove(col, x, y)
-                })
-            })
-        })
-
-    </script>
-    <script>
-        //box tilting
-        const box = document.querySelector('.box-holder .box')
-        const boxHolder = document.querySelector('.box-container');
-
-        const height = boxHolder.clientHeight
-        const width = boxHolder.clientWidth
-
-        boxHolder.addEventListener('mousemove', handleMove)
-        boxHolder.addEventListener('touchmove', handleMove)
-        function handleMove(e) {
-            if (e.touches?.length > 1) e.preventDefault();
-            box.style.transition = "0s"
-            boxHolder.querySelector('.box-holder').style.transition = "filter 0s, transform .5s"
-
-            const xVal = e.touches?.length > 1 ? e.touches[0].clientX : e.offsetX
-            const yVal = e.touches?.length > 1 ? e.touches[0].clientY : e.offsetY
-            const yRotation = 105 * ((xVal - width / 2) / width)
-
-            const xRotation = -55 * ((yVal - height / 2) / height)
-
-            const brightness = 1 - ((yVal / height) - (xVal / width)) / 1.5
-
-            const string = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`
-
-            box.style.transform = string
-            boxHolder.querySelector('.box-holder').style.filter = `brightness(${brightness})`
-
-        }
-
-        boxHolder.addEventListener('mouseout', function () {
-            box.style.transform = `perspective(1000px) rotateX(0) rotateY(0)`
-            box.style.transition = ".5s"
-            boxHolder.querySelector('.box-holder').style.transition = ".5s"
-            // boxHolder.style.transition = "filter .5s"
-        })
-
-        boxHolder.addEventListener('mouseout', function () {
-            box.classList.remove('show')
-            boxHolder.querySelector('.box-holder').classList.remove('show')
-            boxHolder.querySelector('.box-holder').style.filter = `brightness(1)`
-
-        })
-
-        boxHolder.addEventListener('mouseover', function () {
-            box.classList.remove('show')
-            boxHolder.classList.remove('show')
-
-        })
-
-        boxHolder.addEventListener('click', (e) => {
-            if (e.target != e.currentTarget) return
-            box.classList.toggle('show')
-            boxHolder.querySelector('.box-holder').classList.toggle('show')
-        })
-
-    </script>
-    <script>
-        //box selection
-        const icons = document.querySelectorAll('.versions .danlock');
-        icons.forEach(icon => {
-            const version = icon.getAttribute('version');
-            icon.addEventListener('mouseover', () => {
-                box.className = `box danlock-${version}`
-                icons.forEach(icon => icon.classList.remove('selected'))
-                icon.classList.add('selected')
-            })
-
-            // icon.addEventListener('touchstart', () => {
-            //     window.location = `/danlock${version == '1' ? '' : version}`
-            // })
-        })
-    </script>
-    
-</body>
-
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="">Read</a>
+        </li>
+        <li>
+          <a href="">Look</a>
+        </li>
+        <li>
+          <a href="">About</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
 </html>

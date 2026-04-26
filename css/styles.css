@@ -1,460 +1,134 @@
-.box-container {
-  cursor: pointer;
-  position: relative;
-}
-.box-container .versions {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 10;
-}
-.box-container .versions .danlock {
-  aspect-ratio: 1/1;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  filter: brightness(0.4);
-  transition: 0.5s;
-}
-.box-container .versions .danlock-1 {
-  background-image: url(../img/danlock1/icon.png);
-}
-.box-container .versions .danlock-2 {
-  background-image: url(../img/danlock2/icon.png);
-}
-.box-container .versions .danlock-3 {
-  background-image: url(../img/danlock3/icon.png);
-}
-.box-container .versions .danlock.selected, .box-container .versions .danlock:hover {
-  filter: brightness(1);
-}
-@media screen and (max-width: 750px) {
-  .box-container .versions {
-    flex-direction: row;
-    height: 80px;
-    width: min(400px, 100%);
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-  }
-  .box-container .versions .danlock {
-    width: 80px;
-    height: 100%;
-    aspect-ratio: 1/1;
-  }
-}
-
-.box-holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 320px;
-  height: 508px;
-  aspect-ratio: 400/635;
-  transition: transform 0.6s;
-  pointer-events: none;
-  padding: 20px;
-}
-.box-holder.show {
-  transform: scale(0.7);
-}
-@media screen and (max-width: 750px) {
-  .box-holder {
-    padding-top: 150px;
-  }
-  .box-holder.show {
-    transform: scale(0.5);
-    padding-top: 250px;
-  }
-}
-.box-holder .box {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  z-index: 2;
-}
-.box-holder .box .face {
-  position: absolute;
-  backface-visibility: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.box-holder .box .card {
-  position: absolute;
-  inset: 2px;
-  background-image: url(../img/danlock3/card.png);
-  transform: translateZ(-5px);
-  transition: 0.7s;
-  border-radius: 15px;
-}
-.box-holder .box.show .card {
-  transform: translateZ(-5px) translateY(-80%);
-}
-.box-holder .box .front, .box-holder .box .back {
-  inset: 0;
-}
-.box-holder .box .left, .box-holder .box .right {
-  height: 100%;
-  width: 102px;
-}
-.box-holder .box .top, .box-holder .box .bottom {
-  height: 102px;
-  width: 100%;
-}
-.box-holder .box .front {
-  background-image: url(../img/danlock3/box-front.png);
-}
-.box-holder .box .back {
-  background-image: url(../img/danlock3/box-back.png);
-  transform: translateZ(-102px) rotateY(180deg);
-}
-.box-holder .box .left {
-  background-image: url(../img/danlock3/box-side.png);
-  transform: translateZ(-51px) translateX(-51px) rotateY(90deg) rotateY(180deg);
-  left: 0;
-}
-.box-holder .box .right {
-  background-image: url(../img/danlock3/box-side.png);
-  transform: translateZ(-51px) translateX(51px) rotateY(-90deg) rotateY(180deg);
-  right: 0;
-}
-.box-holder .box .top {
-  background-image: url(../img/danlock3/box-top.png);
-  transform: translateZ(-51px) translateY(-51px) rotateX(90deg);
-  top: 0;
-}
-.box-holder .box .bottom {
-  background-image: url(../img/danlock3/box-bottom.png);
-  transform: translateZ(-51px) translateY(51px) rotateX(90deg) rotateY(180deg);
-  bottom: 0;
-}
-.box-holder .box.danlock-1 .front {
-  background-image: url(../img/danlock1/box-front.png);
-}
-.box-holder .box.danlock-1 .back {
-  background-image: url(../img/danlock1/box-back.png);
-}
-.box-holder .box.danlock-1 .left {
-  background-image: url(../img/danlock1/box-side.png);
-}
-.box-holder .box.danlock-1 .right {
-  background-image: url(../img/danlock1/box-side.png);
-}
-.box-holder .box.danlock-1 .top {
-  background-image: url(../img/danlock1/box-top.png);
-}
-.box-holder .box.danlock-1 .bottom {
-  background-image: url(../img/danlock1/box-top.png);
-}
-.box-holder .box.danlock-1 .card {
-  background-image: url(../img/danlock1/card.png);
-}
-.box-holder .box.danlock-2 .front {
-  background-image: url(../img/danlock2/box-front.png);
-}
-.box-holder .box.danlock-2 .back {
-  background-image: url(../img/danlock2/box-back.png);
-}
-.box-holder .box.danlock-2 .left {
-  background-image: url(../img/danlock2/box-side.png);
-}
-.box-holder .box.danlock-2 .right {
-  background-image: url(../img/danlock2/box-side.png);
-}
-.box-holder .box.danlock-2 .top {
-  background-image: url(../img/danlock2/box-top.png);
-}
-.box-holder .box.danlock-2 .bottom {
-  background-image: url(../img/danlock2/box-bottom.png);
-}
-.box-holder .box.danlock-2 .card {
-  background-image: url(../img/danlock2/card.png);
-}
-.box-holder .box.danlock-3 .front {
-  background-image: url(../img/danlock3/box-front.png);
-}
-.box-holder .box.danlock-3 .back {
-  background-image: url(../img/danlock3/box-back.png);
-}
-.box-holder .box.danlock-3 .left {
-  background-image: url(../img/danlock3/box-side.png);
-}
-.box-holder .box.danlock-3 .right {
-  background-image: url(../img/danlock3/box-side.png);
-}
-.box-holder .box.danlock-3 .top {
-  background-image: url(../img/danlock3/box-top.png);
-}
-.box-holder .box.danlock-3 .bottom {
-  background-image: url(../img/danlock3/box-bottom.png);
-}
-.box-holder .box.danlock-3 .card {
-  background-image: url(../img/danlock3/card.png);
-}
-
-html, body {
-  padding: 0;
-  margin: 0;
+* {
   box-sizing: border-box;
-  background: #101216;
-  min-height: 100%;
-  width: 100%;
-  font-size: 16px;
-  font-family: Roboto slab, Roboto, sans-serif;
-  background-size: 100% 100%;
 }
 
+html,
 body {
-  margin-bottom: 100px;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px;
-  width: 90vw;
-  margin: 0 auto;
-}
-header * {
-  box-sizing: border-box;
-}
-header .block-row {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-}
-header .block-row .block {
-  position: relative;
-  width: 16.6666666667%;
-  height: min(17vw, 20vh);
-  border-radius: 10px;
-  transition: 0.5s;
-}
-header .block-row .block .box {
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-}
-header .block-row .block .box .face {
-  position: absolute;
-  border-radius: 10px;
-  backface-visibility: hidden;
-}
-header .block-row .block .box .front {
-  transform: rotateY(0deg);
-  background-image: url(../img/header-3.png), url(../img/header.png);
-  background-size: var(--bg-size), var(--bg-size);
-  background-position: left var(--bg-posx) top var(--bg-posy), left var(--bg-posx) top var(--bg-posy);
-  animation: smoke 150s linear infinite;
-  background-repeat: repeat-y;
-}
-header .block-row .block .box .back {
-  transform: rotateY(180deg);
-  background-image: url(../img/header-2.png), linear-gradient(45deg, #101216, rgb(38, 48, 60), rgb(40, 54, 80));
-}
-header .block-row .block .box .front, header .block-row .block .box .back {
-  width: 100%;
-  height: 100%;
-}
-@media (hover: hover) {
-  header .block-row .block:hover .box {
-    transform: rotateY(180deg) scale(1.02);
-    cursor: pointer;
-  }
-}
-header .block-row .block.played .box {
-  transform: rotateY(180deg) scale(1.04);
-}
-header .block-row .block.played.nought .box, header .block-row .block.played.cross .box {
-  animation: playToken 0.5s forwards;
-}
-header .block-row .block.played.nought .box .back, header .block-row .block.played.cross .box .back {
-  background-image: url(../img/header-2.png), linear-gradient(45deg, #101216, rgb(34, 46, 59), rgb(59, 102, 128));
-}
-header .block-row .block.played.nought .box:after, header .block-row .block.played.cross .box:after {
-  content: "";
-  color: white;
-  font-size: 3rem;
-  position: absolute;
-  inset: 0;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotateY(180deg);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.8273 3 17.35 4.30367 19 6.34267' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  backface-visibility: hidden;
-}
-header .block-row .block.played.nought.cross .box .back, header .block-row .block.played.cross.cross .box .back {
-  background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(50, 25, 40), rgb(54, 34, 59), #e69191);
-}
-header .block-row .block.played.nought.cross .box:after, header .block-row .block.played.cross.cross .box:after {
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5L5 19M5 5L9.5 9.5M12 12L19 19' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-header .block-row .block.played.winning .back {
-  background-image: url(../img/header-2.png), linear-gradient(45deg, rgb(35, 43, 35), rgb(45, 61, 47), rgb(115, 158, 117)) !important;
-}
-header .block-row .block.played.won .box {
-  animation-name: won;
-  animation-delay: 0.4s;
-  animation-duration: 0.5s;
-  animation-direction: forwards;
-}
-@media screen and (max-width: 720px) {
-  header {
-    gap: 2px;
-  }
-  header .block-row {
-    gap: 2px;
-  }
-}
-
-@keyframes playToken {
-  0% {
-    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
-  }
-  20% {
-    transform: translateZ(-50px) rotateY(180deg) scale(0.9);
-  }
-  50% {
-    transform: translateZ(-50px) rotateY(180deg) scale(1.05);
-  }
-  100% {
-    transform: translateZ(-50px) rotateY(180deg) scale(1.02);
-  }
-}
-@keyframes smoke {
-  from {
-    background-position: left var(--bg-posx, 0) top var(--bg-posy, 0), left var(--bg-posx) top var(--bg-posy);
-  }
-  to {
-    background-position: left var(--bg-posx) top calc(var(--bg-posy) + 130%), left var(--bg-posx) top var(--bg-posy);
-  }
-}
-@keyframes won {
-  from {
-    transform: rotateY(180deg) scale(1.05);
-  }
-  to {
-    transform: rotateY(0);
-  }
-}
-h1, h2 {
-  color: #e69191;
-  text-transform: lowercase;
-  font-weight: 500;
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
-h1 {
-  font-size: calc(3rem + 10vw);
-}
-
-h2 {
-  font-size: calc(2rem + 2vw);
-}
-
-p {
-  color: white;
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  background: rgb(236, 235, 220);
+  background-image: radial-gradient(rgba(68, 68, 85, 0.0666666667) 3px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
+  height: 200vh;
+  font-family: "Luckiest Guy", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: #fff;
-  border-bottom: 2px solid #777;
-  transition: 0.3s;
-}
-a:hover {
-  border-color: #e69191;
+  color: inherit;
 }
 
-iframe {
-  display: block;
-  margin: 0 auto;
+header {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: rgb(102, 148, 190);
+  z-index: 2;
+  padding: 60px;
+}
+header .name {
+  text-transform: uppercase;
+  color: rgb(17, 51, 95);
+  text-align: center;
+  font-size: 8rem;
 }
 
-.section {
-  width: 90vw;
-  margin: 0 auto;
+.waves {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 1;
 }
-.section .container {
-  margin-top: 100px;
+
+.wave-1,
+.wave-2,
+.wave-3 {
+  width: 100%;
+  animation: parallax linear;
+  animation-timeline: scroll();
+  position: absolute;
+  top: 0px;
+  height: 180px;
+  width: 100%;
+  background: rgb(102, 148, 190);
+  --mask: radial-gradient(
+        129.69px at 50% calc(100% - 174px),
+        #000 99%,
+        #0000 101%
+      )
+      calc(50% - 116px) 0/232px 100%,
+    radial-gradient(129.69px at 50% calc(100% + 116px), #0000 99%, #000 101%)
+      50% calc(100% - 58px) / 232px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  filter: drop-shadow(0 10px black);
+}
+
+.wave-2 {
+  height: 220px;
+  bottom: -220px;
+  background: color-mix(rgb(102, 148, 190), transparent 50%);
+  --mask: radial-gradient(
+        111.8px at 50% calc(100% - 150px),
+        #000 99%,
+        #0000 101%
+      )
+      calc(50% - 100px) 0/200px 100%,
+    radial-gradient(111.8px at 50% calc(100% + 100px), #0000 99%, #000 101%) 50%
+      calc(100% - 50px) / 200px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  z-index: -1;
+}
+
+.wave-3 {
+  height: 250px;
+  bottom: -250px;
+  background: color-mix(rgb(102, 148, 190), transparent 80%);
+  --mask: radial-gradient(
+        78.26px at 50% calc(100% - 105px),
+        #000 99%,
+        #0000 101%
+      )
+      calc(50% - 70px) 0/140px 100%,
+    radial-gradient(78.26px at 50% calc(100% + 70px), #0000 99%, #000 101%) 50%
+      calc(100% - 35px) / 140px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  z-index: -2;
+}
+
+nav {
+  position: sticky;
+  top: 40px;
+  font-size: 2rem;
+}
+nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
   justify-content: center;
 }
-.section .container.centered {
-  align-items: center;
-  justify-content: center;
+nav li {
+  text-decoration: none;
+  color: rgb(17, 51, 95);
+  transition: 0.2s;
 }
-.section .container.reverse {
-  flex-direction: row-reverse;
+nav li:hover {
+  transform: rotate(2deg) scale(1.1);
 }
-.section .container .text {
-  flex: 1 1 70%;
-}
-@media screen and (max-width: 814px) {
-  .section .container:not(.separate) {
-    display: grid;
-    grid-template-areas: "top" "bottom";
-    align-items: center;
-    justify-items: center;
-  }
-  .section .container:not(.separate) .block-marker {
-    grid-area: top;
-    width: 100%;
-  }
-  .section .container:not(.separate) .text {
-    display: contents;
-    z-index: 2;
-  }
-  .section .container:not(.separate) .text h2 {
-    grid-area: top;
-    z-index: 2;
-    text-shadow: 0 0 15px #223;
-  }
-  .section .container:not(.separate) .text .paragraphs {
-    grid-area: bottom;
-  }
+nav li:nth-child(even):hover {
+  transform: rotate(-2deg) scale(1.1);
 }
 
-.block-marker {
-  width: 200px;
-  height: 190px;
-  background-image: url(../img/header-3.png), url(../img/header-3.png);
-  background-size: 200%, 200%;
-  background-position: left top, right top;
-  animation: markerSmoke 180s linear infinite;
-  background-repeat: repeat-y;
-  border-radius: 10px;
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
-@keyframes markerSmoke {
+@keyframes parallax {
   from {
-    background-position: left 0, right 0;
+    transform: translateY(0);
   }
   to {
-    background-position: left -2000px, right -1000px;
+    transform: translateY(-300%);
   }
 }/*# sourceMappingURL=styles.css.map */

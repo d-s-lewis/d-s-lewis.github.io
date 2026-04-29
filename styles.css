@@ -54,6 +54,7 @@ header .name {
   color: rgb(17, 51, 95);
   text-align: center;
   font-size: 8rem;
+  pointer-events: none;
 }
 @media screen and (max-width: 650px) {
   header .name {
@@ -242,8 +243,12 @@ section a {
   border-bottom: 1px dashed rgb(102, 148, 190);
 }
 section a::before {
-  content: "↪";
-  margin-right: 10px;
+  content: url(/img/arrow.svg);
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  transform: rotate(90deg);
 }
 section.written p {
   margin: 0;
@@ -441,4 +446,27 @@ footer {
 #reader #close:hover {
   color: rgb(17, 51, 95);
   background: white;
+}
+
+.sea-zone {
+  position: relative;
+}
+
+#tank {
+  position: relative;
+  overflow: hidden;
+}
+
+#fish {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  left: 0;
+  top: 0;
+  transform-origin: center center;
+  transform: translate(-100px, -100px);
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 10;
+  transition: opacity 0.7s;
 }/*# sourceMappingURL=styles.css.map */

@@ -19,29 +19,32 @@
   </head>
 
   <body>
-    <header>
-      <div class="name">D S Lewis</div>
-    </header>
-    <div class="waves">
-      <div class="wave-1"></div>
-      <div class="wave-2"></div>
-      <div class="wave-3"></div>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">News</a>
-          </li>
-          <li>
-            <a href="/writing">Read</a>
-          </li>
-          <li>
-            <a href="/stuff">Look</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="sea-zone" id="seaZone">
+      <header id="tank">
+        <img src="/img/fish.svg" id="fish" />
+        <div class="name">D S Lewis</div>
+      </header>
+      <div class="waves">
+        <div class="wave-1"></div>
+        <div class="wave-2"></div>
+        <div class="wave-3"></div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">News</a>
+            </li>
+            <li>
+              <a href="/writing">Read</a>
+            </li>
+            <li>
+              <a href="/stuff">Look</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <main>
@@ -135,6 +138,116 @@
       window.addEventListener("resize", () => {
         headings.forEach(checkHeading);
       });
+    </script>
+    <script>
+      const zone = document.getElementById("seaZone");
+      const tank = document.getElementById("tank");
+      const fish = document.getElementById("fish");
+
+      let fishX = 200;
+      let fishY = 100;
+
+      let targetX = 200;
+      let targetY = 100;
+
+      let angle = 0;
+
+      let active = false;
+      let fleeing = false;
+      let hoverTimer = null;
+
+      function clamp(v, min, max) {
+        return Math.max(min, Math.min(max, v));
+      }
+
+      zone.addEventListener("mouseenter", () => {
+        clearTimeout(hoverTimer);
+
+        fleeing = false;
+        active = false;
+
+        hoverTimer = setTimeout(() => {
+          active = true;
+          fish.style.opacity = ".6";
+        }, 5000);
+      });
+
+      zone.addEventListener("mouseleave", () => {
+        clearTimeout(hoverTimer);
+
+        if (active) {
+          fleeing = true;
+        }
+
+        active = false;
+      });
+
+      zone.addEventListener("mousemove", (e) => {
+        const rect = tank.getBoundingClientRect();
+
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+
+        targetX = clamp(x, 40, rect.width - 40);
+        targetY = clamp(y, 30, rect.height - 30);
+      });
+
+      function animate() {
+        if (active || fleeing) {
+          if (fleeing) {
+            const zoneCenterX = window.innerWidth / 2;
+            const dir = fishX < zoneCenterX ? -1 : 1;
+
+            targetY = fishY - 400;
+            targetX = fishX + dir * 250;
+
+            const escaped =
+              fishY < -150 || fishX < -150 || fishX > window.innerWidth + 150;
+
+            if (escaped) {
+              active = false;
+              fleeing = false;
+
+              fish.style.opacity = "0";
+
+              fishX = 200;
+              fishY = 100;
+
+              requestAnimationFrame(animate);
+              return;
+            }
+          }
+
+          fishX += (targetX - fishX) * 0.035;
+          fishY += (targetY - fishY) * 0.035;
+
+          const dx = targetX - fishX;
+          const dy = targetY - fishY;
+
+          const speed = Math.sqrt(dx * dx + dy * dy);
+
+          if (speed > 0.1) {
+            angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+          }
+
+          const maxSpeed = 25;
+          const t = Math.min(speed / maxSpeed, 1);
+          const wiggleAmp = t * 3;
+
+          const time = performance.now() * 0.01;
+          const wiggle = Math.sin(time) * wiggleAmp;
+
+          fish.style.transform = `
+            translate(${fishX}px, ${fishY}px)
+            translate(-50%, -50%)
+            rotate(${angle + wiggle}deg)
+          `;
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
     </script>
   </body>
 </html>

@@ -1024,16 +1024,24 @@
       });
       const openReadingMode = (e) => {
         reader.classList.toggle("open");
+        document.body.classList.add("reading");
         reader.querySelector("#words").innerHTML =
           e.currentTarget.parentElement.innerHTML;
         reader.querySelector(".reading-mode").remove();
         reader.querySelector("h2").classList.add("wordy");
+        const closeReader = () => {
+          reader.classList.remove("open");
+          document.body.classList.remove("reading");
+          [...stories].forEach((s) => {
+            s.classList.remove("revealed");
+          });
+        };
         reader
           .querySelector("#close")
-          .addEventListener("click", () => reader.classList.remove("open"));
+          .addEventListener("click", () => closeReader());
         reader
           .querySelector("#overlay")
-          .addEventListener("click", () => reader.classList.remove("open"));
+          .addEventListener("click", () => closeReader());
       };
       [...stories].forEach((s) => {
         s.addEventListener("click", () => {

@@ -22,6 +22,10 @@ body {
   scrollbar-width: thin;
   scrollbar-color: rgb(102, 148, 190) #ddd;
 }
+html.reading,
+body.reading {
+  overflow: hidden;
+}
 
 a {
   text-decoration: none;
@@ -361,7 +365,7 @@ footer {
   }
 }
 #reader {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 10;
   display: none;

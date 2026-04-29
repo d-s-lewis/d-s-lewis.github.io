@@ -17,6 +17,7 @@ body {
   color: rgb(17, 51, 95);
   animation: background 60s linear infinite;
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   scrollbar-width: thin;
   scrollbar-color: rgb(102, 148, 190) #ddd;
@@ -360,7 +361,7 @@ footer {
   }
 }
 #reader {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 10;
   display: none;

@@ -301,6 +301,7 @@ main.writing {
   margin: 0 auto;
   section {
     width: auto;
+
     img {
       width: 200px;
       height: auto;
@@ -308,6 +309,9 @@ main.writing {
       &:hover {
         transform: scale(1.05) rotate(-2deg);
       }
+    }
+    &:nth-child(even) img:hover {
+      transform: scale(1.05) rotate(2deg);
     }
     a {
       border: none;

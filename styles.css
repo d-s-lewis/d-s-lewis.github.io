@@ -320,6 +320,9 @@ main.writing section img {
 main.writing section img:hover {
   transform: scale(1.05) rotate(-2deg);
 }
+main.writing section:nth-child(even) img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
 main.writing section a {
   border: none;
 }

@@ -55,6 +55,7 @@ header {
     @media screen and (max-width: 650px) {
       font-size: 3rem;
     }
+    cursor: default;
   }
 }
 .waves {
@@ -204,7 +205,6 @@ h2 {
   animation-timeline: scroll();
   animation-range: 0 300px;
   background: linear-gradient(to bottom, rgb(236, 235, 220) 60%, transparent);
-  /* background: pink; */
   z-index: -2;
 }
 main {
@@ -216,15 +216,9 @@ main {
   flex-direction: column;
   gap: 40px;
   align-items: center;
-  //   --mask: linear-gradient(to bottom, transparent 0px, black 100px, black 100%);
-  //   mask-image: va(--mask);
-  //   -webkit-mask-image: var(--mask);
+  scroll-padding-top: 500px;
 }
 section {
-  &:first-of-type {
-    scroll-snap-align: start;
-    scroll-margin-top: 100px;
-  }
   &:last-of-type {
     margin-bottom: 200px;
   }

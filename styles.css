@@ -60,6 +60,9 @@ header .name {
     font-size: 3rem;
   }
 }
+header .name {
+  cursor: default;
+}
 
 .waves {
   position: sticky;
@@ -210,7 +213,6 @@ h2.fill::after {
   animation-timeline: scroll();
   animation-range: 0 300px;
   background: linear-gradient(to bottom, rgb(236, 235, 220) 60%, transparent);
-  /* background: pink; */
   z-index: -2;
 }
 
@@ -223,12 +225,9 @@ main {
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  scroll-padding-top: 500px;
 }
 
-section:first-of-type {
-  scroll-snap-align: start;
-  scroll-margin-top: 100px;
-}
 section:last-of-type {
   margin-bottom: 200px;
 }

@@ -1,18 +1,17 @@
-* {
-  box-sizing: border-box;
-}
-
-html,
 body {
-  overscroll-behavior: none;
+  background: black;
+}/*# sourceMappingURL=styles.css.map */verscroll-behavior: none;
   margin: 0;
   padding: 0;
   background: rgb(236, 235, 220);
   background-image: radial-gradient(rgba(68, 68, 85, 0.0666666667) 3px, transparent 0);
   background-size: 40px 40px;
   background-position: -19px -19px;
-  height: 200vh;
+  min-height: 100vh;
   font-family: "Luckiest Guy", sans-serif;
+  color: rgb(17, 51, 95);
+  scroll-snap-type: y proximity;
+  animation: background 60s linear infinite;
 }
 
 a {
@@ -25,6 +24,10 @@ header {
   width: 100%;
   height: 200px;
   background: rgb(102, 148, 190);
+  background-image: radial-gradient(rgba(68, 68, 85, 0.0666666667) 3px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
+  animation: background 60s linear infinite;
   z-index: 2;
   padding: 60px;
 }
@@ -36,9 +39,10 @@ header .name {
 }
 
 .waves {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
-  height: 40px;
+  height: 140px;
   z-index: 1;
 }
 
@@ -48,6 +52,7 @@ header .name {
   width: 100%;
   animation: parallax linear;
   animation-timeline: scroll();
+  animation-range: 0 300px;
   position: absolute;
   top: 0px;
   height: 180px;
@@ -63,7 +68,7 @@ header .name {
       50% calc(100% - 58px) / 232px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  filter: drop-shadow(0 10px black);
+  transform: translateY(-60%);
 }
 
 .wave-2 {
@@ -97,13 +102,17 @@ header .name {
       calc(100% - 35px) / 140px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  z-index: -2;
+  z-index: -1;
 }
 
 nav {
   position: sticky;
-  top: 40px;
+  top: 0px;
   font-size: 2rem;
+  height: 100px;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
 }
 nav ul {
   list-style: none;
@@ -111,6 +120,7 @@ nav ul {
   gap: 30px;
   width: 100%;
   justify-content: center;
+  padding: 0;
 }
 nav li {
   text-decoration: none;
@@ -118,10 +128,69 @@ nav li {
   transition: 0.2s;
 }
 nav li:hover {
-  transform: rotate(2deg) scale(1.1);
+  transform: rotate(-2deg) scale(1.1);
 }
 nav li:nth-child(even):hover {
-  transform: rotate(-2deg) scale(1.1);
+  transform: rotate(2deg) scale(1.1);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.waves::after {
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+  animation: parallax linear;
+  animation-timeline: scroll();
+  animation-range: 0 300px;
+  background: linear-gradient(to bottom, rgb(236, 235, 220) 60%, transparent);
+  /* background: pink; */
+  z-index: -2;
+}
+
+main {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+section:first-of-type {
+  scroll-snap-align: start;
+  scroll-margin-top: 100px;
+}
+section:last-of-type {
+  margin-bottom: 200px;
+}
+section {
+  width: 100%;
+  max-width: 600px;
+}
+section p {
+  font-family: "Open Sans";
+}
+section a {
+  border-bottom: 1px dashed rgb(102, 148, 190);
+}
+section a::before {
+  content: "↪";
+  margin-right: 10px;
 }
 
 @keyframes parallax {
@@ -129,6 +198,14 @@ nav li:nth-child(even):hover {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-300%);
+    transform: translateY(-60%);
+  }
+}
+@keyframes background {
+  from {
+    background-position: -19px -19px;
+  }
+  to {
+    background-position: 20px 20px;
   }
 }/*# sourceMappingURL=styles.css.map */

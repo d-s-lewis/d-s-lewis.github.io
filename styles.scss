@@ -1,3 +1,6 @@
+$headerCol: rgb(102, 148, 190);
+$headerTextCol: rgb(17, 51, 95);
+$backgroundAnim: background 60s linear infinite;
 * {
   box-sizing: border-box;
 }
@@ -10,8 +13,14 @@ body {
   background-image: radial-gradient(#4451 3px, transparent 0);
   background-size: 40px 40px;
   background-position: -19px -19px;
-  height: 200vh; //todo remove
+  min-height: 100vh;
   font-family: "Luckiest Guy", sans-serif;
+  color: $headerTextCol;
+  animation: $backgroundAnim;
+  min-height: 100vh;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: $headerCol #ddd;
 }
 
 a {
@@ -19,28 +28,35 @@ a {
   color: inherit;
 }
 
-$headerCol: rgb(102, 148, 190);
-$headerTextCol: rgb(17, 51, 95);
-
 header {
   position: relative;
   width: 100%;
   height: 200px;
   background: $headerCol;
+  background-image: radial-gradient(#4451 3px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
+  animation: $backgroundAnim;
   z-index: 2;
   padding: 60px;
-
+  @media screen and (max-width: 600px) {
+    padding: 60px 10px;
+  }
   .name {
     text-transform: uppercase;
     color: $headerTextCol;
     text-align: center;
     font-size: 8rem;
+    @media screen and (max-width: 650px) {
+      font-size: 3rem;
+    }
   }
 }
 .waves {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
-  height: 40px;
+  height: 140px;
   z-index: 1;
 }
 .wave-1,
@@ -49,11 +65,13 @@ header {
   width: 100%;
   animation: parallax linear;
   animation-timeline: scroll();
+  animation-range: 0 300px;
   position: absolute;
   top: 0px;
   height: 180px;
   width: 100%;
   background: $headerCol;
+
   --mask: radial-gradient(
         129.69px at 50% calc(100% - 174px),
         #000 99%,
@@ -64,7 +82,7 @@ header {
       50% calc(100% - 58px) / 232px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  filter: drop-shadow(0 10px black);
+  transform: translateY(-60%);
 }
 .wave-2 {
   height: 220px;
@@ -96,20 +114,27 @@ header {
       calc(100% - 35px) / 140px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  z-index: -2;
+  z-index: -1;
 }
 
 nav {
   position: sticky;
-  top: 40px;
+  top: 0px;
   font-size: 2rem;
-
+  height: 100px;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  @media screen and (max-width: 600px) {
+    font-size: 1.3rem;
+  }
   ul {
     list-style: none;
     display: flex;
     gap: 30px;
     width: 100%;
     justify-content: center;
+    padding: 0;
   }
 
   li {
@@ -117,12 +142,193 @@ nav {
     color: $headerTextCol;
     transition: 0.2s;
     &:hover {
-      transform: rotate(2deg) scale(1.1);
-    }
-    &:nth-child(even):hover {
       transform: rotate(-2deg) scale(1.1);
     }
+    &:nth-child(even):hover {
+      transform: rotate(2deg) scale(1.1);
+    }
   }
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-size: 3rem;
+  @media screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-weight: 300;
+  position: relative;
+  color: $headerTextCol;
+
+  &.fill::after {
+    content: attr(data-title);
+    position: absolute;
+    inset: 0;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    background: $headerTextCol;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: textFill 1s ease-in-out both;
+    // animation-timeline: scroll();
+  }
+
+  @supports (-webkit-text-stroke: 1px grey) {
+    &[data-title]:not(.wordy) {
+      color: #d1dad6;
+      -webkit-text-stroke: 1px $headerTextCol;
+      text-stroke: 1px $headerTextCol;
+    }
+  }
+}
+.waves::after {
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+  animation: parallax linear;
+  animation-timeline: scroll();
+  animation-range: 0 300px;
+  background: linear-gradient(to bottom, rgb(236, 235, 220) 60%, transparent);
+  /* background: pink; */
+  z-index: -2;
+}
+main {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  //   --mask: linear-gradient(to bottom, transparent 0px, black 100px, black 100%);
+  //   mask-image: va(--mask);
+  //   -webkit-mask-image: var(--mask);
+}
+section {
+  &:first-of-type {
+    scroll-snap-align: start;
+    scroll-margin-top: 100px;
+  }
+  &:last-of-type {
+    margin-bottom: 200px;
+  }
+  width: 100%;
+  max-width: 600px;
+  p {
+    font-family: "Open Sans";
+  }
+
+  a {
+    border-bottom: 1px dashed $headerCol;
+    &::before {
+      content: "↪";
+      margin-right: 10px;
+    }
+  }
+
+  &.written {
+    p {
+      margin: 0;
+      text-indent: 5ch;
+    }
+    button.reading-mode {
+      appearance: none;
+      border: none;
+      background: transparent;
+      padding: 10px 20px;
+      font-family: inherit;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center;
+      color: $headerTextCol;
+      margin: 20px 0;
+      border-radius: 15px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      &::before {
+        content: "📖";
+        margin-right: 10px;
+      }
+      &:hover {
+        background: $headerCol;
+      }
+    }
+
+    max-height: 400px;
+    overflow: hidden;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "Reveal all";
+      background: linear-gradient(transparent 0, rgb(236, 235, 220) 60%);
+      width: 100%;
+      height: 60px;
+      bottom: 0;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      cursor: pointer;
+    }
+    &.revealed {
+      max-height: unset;
+      &::after {
+        content: none;
+        display: none;
+      }
+    }
+  }
+}
+
+main.writing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  section {
+    width: auto;
+    img {
+      width: 200px;
+      height: auto;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.05) rotate(-2deg);
+      }
+    }
+    a {
+      border: none;
+      &::before {
+        content: "";
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+footer {
+  text-align: end;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 @keyframes parallax {
@@ -130,6 +336,107 @@ nav {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-300%);
+    transform: translateY(-60%);
+  }
+}
+
+@keyframes background {
+  from {
+    background-position: -19px -19px;
+  }
+
+  to {
+    background-position: 20px 20px;
+  }
+}
+@keyframes textFill {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+#reader {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  font-family: "Open Sans", sans-serif;
+
+  &.open {
+    display: block;
+  }
+
+  #overlay {
+    position: absolute;
+    inset: 0;
+    background: #000d;
+    display: flex;
+    justify-content: center;
+    padding: 50px 2%;
+  }
+
+  #words {
+    border-radius: 10px;
+    background: white;
+    color: black;
+    width: 100%;
+    padding: 30px 20px;
+    max-width: 700px;
+    z-index: 11;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $headerCol #ddd;
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      text-indent: 3ch;
+      margin: 0;
+      line-height: 1.5rem;
+      font-size: 1.2rem;
+
+      &:first-of-type {
+        text-indent: 0;
+        &::first-letter {
+          font-family: Georgia, "Times New Roman", Times, serif;
+          color: $headerTextCol;
+          float: left;
+          font-size: 75px;
+          line-height: 60px;
+          padding-top: 2px;
+          padding-right: 8px;
+          padding-left: 3px;
+        }
+      }
+    }
+  }
+
+  #close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: white;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    &:hover {
+      color: $headerTextCol;
+      background: white;
+    }
   }
 }

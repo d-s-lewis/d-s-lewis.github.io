@@ -245,6 +245,9 @@ section {
 section p {
   font-family: "Open Sans";
 }
+section span.quote-author {
+  float: right;
+}
 section a {
   border-bottom: 1px dashed rgb(102, 148, 190);
 }

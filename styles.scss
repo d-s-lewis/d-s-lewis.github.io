@@ -234,6 +234,9 @@ section {
   p {
     font-family: "Open Sans";
   }
+  span.quote-author {
+    float: right;
+  }
 
   a {
     border-bottom: 1px dashed $headerCol;

@@ -22,9 +22,63 @@ body {
   position: relative;
   scrollbar-width: thin;
   scrollbar-color: $headerCol #ddd;
-
+  transition: 0.3s;
   &.reading {
     overflow: hidden;
+  }
+
+  &.dark {
+    background: rgb(14, 15, 35);
+    background-image: radial-gradient(#72728d11 3px, transparent 0);
+    color: $headerCol;
+
+    .waves::after {
+      background: linear-gradient(to bottom, rgb(14, 15, 35) 60%, transparent);
+    }
+
+    nav ul li {
+      color: white;
+    }
+
+    #reader #words {
+      background: black;
+      color: white;
+      scrollbar-color: $headerTextCol #333;
+    }
+
+    section.written::after {
+      background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
+    }
+
+    .dark-mode {
+      background: rgb(229, 223, 141);
+      &::after {
+        transform: translate(25px, -25px);
+      }
+    }
+  }
+}
+
+.dark-mode {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  &::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    inset: 0;
+    background: $headerCol;
+    border-radius: 50%;
+    z-index: 10;
+    transform: translate(10px, -5px);
+    transition: 0.5s ease;
   }
 }
 

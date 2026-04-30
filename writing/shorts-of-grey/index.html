@@ -18,6 +18,7 @@
   <body>
     <header class="grey">
       <div class="name">D S Lewis</div>
+      <div class="dark-mode"></div>
     </header>
     <div class="waves grey">
       <div class="wave-1"></div>
@@ -993,65 +994,6 @@
         <div id="words">hi</div>
       </div>
     </div>
-    <script>
-      const headings = document.querySelectorAll("h2");
-
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-
-            entry.target.classList.add("fill");
-            observer.unobserve(entry.target);
-          });
-        },
-        {
-          root: null,
-          threshold: 0,
-          rootMargin: "0px 0px -50% 0px",
-        }
-      );
-
-      headings.forEach((h) => observer.observe(h));
-    </script>
-    <script>
-      const buttons = document.getElementsByClassName("reading-mode");
-      const stories = document.getElementsByClassName("written");
-      const reader = document.getElementById("reader");
-      [...buttons].forEach((b) => {
-        b.addEventListener("click", (e) => {
-          openReadingMode(e);
-        });
-      });
-      const openReadingMode = (e) => {
-        reader.classList.toggle("open");
-        document.body.classList.add("reading");
-        reader.querySelector("#words").innerHTML =
-          e.currentTarget.parentElement.innerHTML;
-        reader.querySelector(".reading-mode").remove();
-        reader.querySelector("h2").classList.add("wordy");
-        const closeReader = () => {
-          reader.classList.remove("open");
-          document.body.classList.remove("reading");
-          [...stories].forEach((s) => {
-            s.classList.remove("revealed");
-          });
-        };
-        reader.querySelector("#words").addEventListener("click", (e) => {
-          e.stopPropagation();
-        });
-        reader
-          .querySelector("#close")
-          .addEventListener("click", () => closeReader());
-        reader
-          .querySelector("#overlay")
-          .addEventListener("click", () => closeReader());
-      };
-      [...stories].forEach((s) => {
-        s.addEventListener("click", () => {
-          s.classList.add("revealed");
-        });
-      });
-    </script>
+    <script src="/scripts.js"></script>
   </body>
 </html>

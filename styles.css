@@ -21,10 +21,66 @@ body {
   position: relative;
   scrollbar-width: thin;
   scrollbar-color: rgb(102, 148, 190) #ddd;
+  transition: 0.3s;
 }
 html.reading,
 body.reading {
   overflow: hidden;
+}
+html.dark,
+body.dark {
+  background: rgb(14, 15, 35);
+  background-image: radial-gradient(rgba(114, 114, 141, 0.0666666667) 3px, transparent 0);
+  color: rgb(102, 148, 190);
+}
+html.dark .waves::after,
+body.dark .waves::after {
+  background: linear-gradient(to bottom, rgb(14, 15, 35) 60%, transparent);
+}
+html.dark nav ul li,
+body.dark nav ul li {
+  color: white;
+}
+html.dark #reader #words,
+body.dark #reader #words {
+  background: black;
+  color: white;
+  scrollbar-color: rgb(17, 51, 95) #333;
+}
+html.dark section.written::after,
+body.dark section.written::after {
+  background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
+}
+html.dark .dark-mode,
+body.dark .dark-mode {
+  background: rgb(229, 223, 141);
+}
+html.dark .dark-mode::after,
+body.dark .dark-mode::after {
+  transform: translate(25px, -25px);
+}
+
+.dark-mode {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dark-mode::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  inset: 0;
+  background: rgb(102, 148, 190);
+  border-radius: 50%;
+  z-index: 10;
+  transform: translate(10px, -5px);
+  transition: 0.5s ease;
 }
 
 a {

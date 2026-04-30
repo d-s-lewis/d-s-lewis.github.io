@@ -27,36 +27,55 @@ html.reading,
 body.reading {
   overflow: hidden;
 }
-html.dark,
-body.dark {
+html.dark body,
+body.dark body {
   background: rgb(14, 15, 35);
   background-image: radial-gradient(rgba(114, 114, 141, 0.0666666667) 3px, transparent 0);
   color: rgb(102, 148, 190);
 }
-html.dark .waves::after,
-body.dark .waves::after {
+html.dark body h1,
+html.dark body h2,
+body.dark body h1,
+body.dark body h2 {
+  color: rgb(102, 148, 190);
+}
+html.dark body h2.fill::after,
+body.dark body h2.fill::after {
+  background-color: rgb(102, 148, 190);
+}
+html.dark body .waves::after,
+body.dark body .waves::after {
   background: linear-gradient(to bottom, rgb(14, 15, 35) 60%, transparent);
 }
-html.dark nav ul li,
-body.dark nav ul li {
+html.dark body nav ul li,
+body.dark body nav ul li {
   color: white;
 }
-html.dark #reader #words,
-body.dark #reader #words {
+html.dark body #reader #words,
+body.dark body #reader #words {
   background: black;
   color: white;
   scrollbar-color: rgb(17, 51, 95) #333;
 }
-html.dark section.written::after,
-body.dark section.written::after {
+html.dark body section.written::after,
+body.dark body section.written::after {
   background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
 }
-html.dark .dark-mode,
-body.dark .dark-mode {
-  background: rgb(229, 223, 141);
+html.dark body section.written button.reading-mode,
+body.dark body section.written button.reading-mode {
+  color: rgb(102, 148, 190);
 }
-html.dark .dark-mode::after,
-body.dark .dark-mode::after {
+html.dark body section.written button.reading-mode:hover,
+body.dark body section.written button.reading-mode:hover {
+  color: rgb(17, 51, 95);
+}
+html.dark body .dark-mode,
+body.dark body .dark-mode {
+  background: rgb(229, 223, 141);
+  box-shadow: 0 0 5px white;
+}
+html.dark body .dark-mode::after,
+body.dark body .dark-mode::after {
   transform: translate(25px, -25px);
 }
 

@@ -43,17 +43,15 @@ window.addEventListener("resize", () => {
   headings.forEach(checkHeading);
 });
 
-let isDark = JSON.parse(localStorage.getItem("darkMode")) ?? false;
 const darkModeBtn = document.querySelector(".dark-mode");
 if (darkModeBtn) {
   darkModeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    isDark = !isDark;
+    const isDark = document.documentElement.classList.toggle("dark");
     localStorage.setItem("darkMode", isDark);
   });
 }
 if (isDark) {
-  document.body.classList.add("dark");
+  document.documentElement.classList.add("dark");
 }
 
 (() => {

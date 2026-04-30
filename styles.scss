@@ -27,10 +27,19 @@ body {
     overflow: hidden;
   }
 
-  &.dark {
+  &.dark body {
     background: rgb(14, 15, 35);
     background-image: radial-gradient(#72728d11 3px, transparent 0);
     color: $headerCol;
+
+    h1,
+    h2 {
+      color: $headerCol;
+    }
+
+    h2.fill::after {
+      background-color: $headerCol;
+    }
 
     .waves::after {
       background: linear-gradient(to bottom, rgb(14, 15, 35) 60%, transparent);
@@ -50,8 +59,16 @@ body {
       background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
     }
 
+    section.written button.reading-mode {
+      color: $headerCol;
+      &:hover {
+        color: $headerTextCol;
+      }
+    }
+
     .dark-mode {
       background: rgb(229, 223, 141);
+      box-shadow: 0 0 5px white;
       &::after {
         transform: translate(25px, -25px);
       }

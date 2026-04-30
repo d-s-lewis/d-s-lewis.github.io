@@ -24,29 +24,28 @@
         <img src="/img/fish.svg" id="fish" />
         <div class="name">D S Lewis</div>
       </header>
-      <div class="waves">
-        <div class="wave-1"></div>
-        <div class="wave-2"></div>
-        <div class="wave-3"></div>
-        <nav>
-          <ul>
-            <li>
-              <a href="/">News</a>
-            </li>
-            <li>
-              <a href="/writing">Read</a>
-            </li>
-            <li>
-              <a href="/stuff">Look</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </div>
-
+    <div class="waves">
+      <div class="wave-1"></div>
+      <div class="wave-2"></div>
+      <div class="wave-3"></div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">News</a>
+          </li>
+          <li>
+            <a href="/writing">Read</a>
+          </li>
+          <li>
+            <a href="/stuff">Look</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <main>
       <section>
         <h2 data-title="Shorts of Grey">Shorts of Grey</h2>
@@ -143,6 +142,7 @@
       const zone = document.getElementById("seaZone");
       const tank = document.getElementById("tank");
       const fish = document.getElementById("fish");
+      const waves = document.querySelector(".waves");
 
       let fishX = 200;
       let fishY = 100;
@@ -160,7 +160,10 @@
         return Math.max(min, Math.min(max, v));
       }
 
-      zone.addEventListener("mouseenter", () => {
+      function handleEnter(e) {
+        if (zone.contains(e.relatedTarget) || waves.contains(e.relatedTarget))
+          return;
+
         clearTimeout(hoverTimer);
 
         fleeing = false;
@@ -169,10 +172,15 @@
         hoverTimer = setTimeout(() => {
           active = true;
           fish.style.opacity = ".6";
-        }, 5000);
-      });
+        }, 3500);
+      }
 
-      zone.addEventListener("mouseleave", () => {
+      zone.addEventListener("mouseenter", handleEnter);
+      waves.addEventListener("mouseenter", handleEnter);
+
+      zone.addEventListener("mouseleave", (e) => {
+        if (waves.contains(e.relatedTarget)) return;
+
         clearTimeout(hoverTimer);
 
         if (active) {
@@ -182,7 +190,19 @@
         active = false;
       });
 
-      zone.addEventListener("mousemove", (e) => {
+      waves.addEventListener("mouseleave", (e) => {
+        if (zone.contains(e.relatedTarget)) return;
+
+        clearTimeout(hoverTimer);
+
+        if (active) {
+          fleeing = true;
+        }
+
+        active = false;
+      });
+
+      function handleMove(e) {
         const rect = tank.getBoundingClientRect();
 
         let x = e.clientX - rect.left;
@@ -190,7 +210,9 @@
 
         targetX = clamp(x, 40, rect.width - 40);
         targetY = clamp(y, 30, rect.height - 30);
-      });
+      }
+
+      document.addEventListener("mousemove", handleMove);
 
       function animate() {
         if (active || fleeing) {

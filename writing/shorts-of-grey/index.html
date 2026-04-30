@@ -1037,6 +1037,9 @@
             s.classList.remove("revealed");
           });
         };
+        reader.querySelector("#words").addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
         reader
           .querySelector("#close")
           .addEventListener("click", () => closeReader());

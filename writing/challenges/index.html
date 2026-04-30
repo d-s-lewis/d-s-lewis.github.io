@@ -51,12 +51,12 @@
       </section>
       <section class="written">
         <h2>Ducks In A Row</h2>
-        <blockquote>
+        <blockquote class="remove">
           "Well then I would like 500 words on a rootin tootin western shoot
           out, but the word for gun is duck (the quacking kind)"
         </blockquote>
-        <span class="quote-author">- Billie-Joe</span>
-        <button class="reading-mode">Open in reading mode</button>
+        <span class="quote-author remove">- Billie-Joe</span>
+        <button class="reading-mode remove">Open in reading mode</button>
         <p>
           Ice was hard to come by this far west, but my agent pointed me to this
           bar and said I’d have no trouble getting my whiskey on the rocks. It
@@ -166,10 +166,10 @@
         </p>
 
         <p>
-          “Time to die.” His duck sputtered a staccato rhythm - Quack! Quack!
-          Quack! - tearing up the upturned table the sheriff was crouched
-          behind. The lawman’s own duck fired blind shots toward the intruder,
-          flying high and migrating further under fire.
+          “Time to die.” His duck sputtered a staccato rhythm -
+          <i> Quack! Quack! Quack! </i> - tearing up the upturned table the
+          sheriff was crouched behind. The lawman’s own duck fired blind shots
+          toward the intruder, flying high and migrating further under fire.
         </p>
 
         <p>
@@ -247,7 +247,7 @@
           me.
         </p>
 
-        <p>QUACK!</p>
+        <p><i>QUACK!</i></p>
 
         <p>
           His skull shattered like so many bottles of whiskey, its contents
@@ -313,7 +313,7 @@
         document.body.classList.add("reading");
         reader.querySelector("#words").innerHTML =
           e.currentTarget.parentElement.innerHTML;
-        reader.querySelector(".reading-mode").remove();
+        reader.querySelectorAll(".remove").forEach((e) => e.remove());
         reader.querySelector("h2").classList.add("wordy");
         const closeReader = () => {
           reader.classList.remove("open");
@@ -322,6 +322,9 @@
             s.classList.remove("revealed");
           });
         };
+        reader.querySelector("#words").addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
         reader
           .querySelector("#close")
           .addEventListener("click", () => closeReader());

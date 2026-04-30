@@ -73,6 +73,7 @@ html.dark body .dark-mode,
 body.dark body .dark-mode {
   background: rgb(229, 223, 141);
   box-shadow: 0 0 5px white;
+  transition: box-shadow 0.5s 0.3s;
 }
 html.dark body .dark-mode::after,
 body.dark body .dark-mode::after {

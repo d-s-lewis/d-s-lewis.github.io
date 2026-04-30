@@ -69,6 +69,7 @@ body {
     .dark-mode {
       background: rgb(229, 223, 141);
       box-shadow: 0 0 5px white;
+      transition: box-shadow 0.5s 0.3s;
       &::after {
         transform: translate(25px, -25px);
       }

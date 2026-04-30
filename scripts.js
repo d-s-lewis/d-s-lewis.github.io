@@ -191,3 +191,39 @@ if (isDark) {
 
   animate();
 })();
+
+const buttons = document.getElementsByClassName("reading-mode");
+const stories = document.getElementsByClassName("written");
+const reader = document.getElementById("reader");
+[...buttons].forEach((b) => {
+  b.addEventListener("click", (e) => {
+    openReadingMode(e);
+  });
+});
+const openReadingMode = (e) => {
+  reader.classList.toggle("open");
+  document.body.classList.add("reading");
+  reader.querySelector("#words").innerHTML =
+    e.currentTarget.parentElement.innerHTML;
+  reader.querySelector(".reading-mode").remove();
+  reader.querySelector("h2").classList.add("wordy");
+  const closeReader = () => {
+    reader.classList.remove("open");
+    document.body.classList.remove("reading");
+    [...stories].forEach((s) => {
+      s.classList.remove("revealed");
+    });
+  };
+  reader.querySelector("#words").addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+  reader.querySelector("#close").addEventListener("click", () => closeReader());
+  reader
+    .querySelector("#overlay")
+    .addEventListener("click", () => closeReader());
+};
+[...stories].forEach((s) => {
+  s.addEventListener("click", () => {
+    s.classList.add("revealed");
+  });
+});

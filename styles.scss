@@ -420,7 +420,7 @@ div.writing {
     a {
       border: none;
       &::before {
-        content: "";
+        content: none;
       }
     }
     &:last-of-type {
@@ -541,6 +541,7 @@ footer {
     font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
+    z-index: 10;
     &:hover {
       color: $headerTextCol;
       background: white;

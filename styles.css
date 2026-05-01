@@ -399,7 +399,7 @@ section.written.revealed::after {
   display: none;
 }
 
-main.writing {
+div.writing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1rem;
@@ -409,28 +409,29 @@ main.writing {
   align-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  padding-top: 100px;
 }
-main.writing section {
+div.writing section {
   width: auto;
 }
-main.writing section img {
+div.writing section img {
   width: 200px;
   height: auto;
   transition: 0.2s;
 }
-main.writing section img:hover {
+div.writing section img:hover {
   transform: scale(1.05) rotate(-2deg);
 }
-main.writing section:nth-child(even) img:hover {
+div.writing section:nth-child(even) img:hover {
   transform: scale(1.05) rotate(2deg);
 }
-main.writing section a {
+div.writing section a {
   border: none;
 }
-main.writing section a::before {
+div.writing section a::before {
   content: "";
 }
-main.writing section:last-of-type {
+div.writing section:last-of-type {
   margin-bottom: 0;
 }
 

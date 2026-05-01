@@ -387,7 +387,7 @@ section {
   }
 }
 
-main.writing {
+div.writing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1rem;
@@ -397,6 +397,7 @@ main.writing {
   align-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  padding-top: 100px;
   section {
     width: auto;
 

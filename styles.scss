@@ -55,6 +55,10 @@ body {
       scrollbar-color: $headerTextCol #333;
     }
 
+    section a:hover {
+      color: white;
+    }
+
     section.written::after {
       background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
     }
@@ -315,6 +319,7 @@ section {
 
   a {
     border-bottom: 1px dashed $headerCol;
+    transition: 0.2s ease;
     &::before {
       content: url(/img/arrow.svg);
       margin-right: 5px;
@@ -322,6 +327,10 @@ section {
       height: 20px;
       display: inline-block;
       transform: rotate(90deg);
+    }
+
+    &:hover {
+      color: $headerCol;
     }
   }
 

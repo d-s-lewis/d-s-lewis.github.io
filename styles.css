@@ -57,6 +57,10 @@ body.dark body #reader #words {
   color: white;
   scrollbar-color: rgb(17, 51, 95) #333;
 }
+html.dark body section a:hover,
+body.dark body section a:hover {
+  color: white;
+}
 html.dark body section.written::after,
 body.dark body section.written::after {
   background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
@@ -329,6 +333,7 @@ section span.quote-author {
 }
 section a {
   border-bottom: 1px dashed rgb(102, 148, 190);
+  transition: 0.2s ease;
 }
 section a::before {
   content: url(/img/arrow.svg);
@@ -337,6 +342,9 @@ section a::before {
   height: 20px;
   display: inline-block;
   transform: rotate(90deg);
+}
+section a:hover {
+  color: rgb(102, 148, 190);
 }
 section.written p {
   margin: 0;

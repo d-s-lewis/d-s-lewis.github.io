@@ -85,6 +85,7 @@
             me any favours, either. I was the unfinished draft to his magnum
             opus.
           </p>
+
           <p>
             My phone buzzed. <i>Just tell me when you get here</i>, it read.
           </p>
@@ -140,6 +141,9 @@
             become robotic and uninspired. I agree, but invited you anyway as a
             favour to her.”
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>
             “Well, that is understandable. It is possible that I have found a
             better way to live, and that can be scary, sometimes.”
@@ -159,6 +163,7 @@
             whatever. I didn’t know whether to feel hurt, or loved. Maybe both.
             She could at least have explained why she was saying those things.
           </p>
+
           <p>
             “Hi there,” said a man with a trimmed ginger beard. He had missed a
             bit under his chin, and I couldn’t focus on anything else as we
@@ -188,6 +193,9 @@
             “Well, yeah, but what else is there to do when Nicks do all your
             life for you?”
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>
             “The management of Nicks often requires human input,” I supplied.
             “Or the management of Nicks who manage other Nicks. There is plenty
@@ -214,6 +222,9 @@
             third, at least I would be able talk about when the baby changing
             table was due to be serviced.
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>“Arby? Are you in there?”</p>
           <p>
             I woke up on the floor, my face pressed against the cold tiles that
@@ -272,6 +283,9 @@
           <p>
             “Thanks,” I said. “Are weddings always that hard? I can’t remember.”
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>
             “Weddings can be tough,” answered Nick from the back seat. “Lots of
             feelings, unfamiliar faces, and exuberant food and drink. It’s the
@@ -323,6 +337,9 @@
             “I am sorry, Arby,” one of them replied. “We are hard at work right
             now, but a fresh Nick will be available shortly to help you out.”
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>
             I backed off and placed the bowl on the windowsill, then sat on the
             bed that was now uncomfortably close to the door. Nick had said that
@@ -369,6 +386,9 @@
             “Arby’s lack of appetite suggests he may still be suffering
             neuropsychologial issues–”
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>“I don’t care,” I broke in. “Let me take the call.”</p>
           <p>
             “Please confirm you are willing to lengthen the recovery time by an
@@ -422,6 +442,9 @@
             Nick was still in the car, where I had asked him to stay. I motioned
             him over.
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>“Arby, how can I help?”</p>
           <p>“How can I save her?” I said.</p>
           <p>“You are not responsible for her choices. Only your own.”</p>
@@ -506,6 +529,9 @@
             than this.”
           </p>
           <p>“I was?”</p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>
             “You could think for yourself. You know how these Nicks are made?”
           </p>
@@ -527,6 +553,9 @@
             were rushed, breathy. She was tired. She was overwhelmed. She was
             embarrassed to be saved by Nicks.
           </p>
+          <div class="nick-zone remove">
+            <div class="nick"></div>
+          </div>
           <p>
             Nicks who were dressed smartly, who moved calmly, efficiently. Who
             spoke with real information, cutting to the heart of the matter. Who
@@ -540,6 +569,7 @@
           <p>“Yes, please.”</p>
         </div>
       </section>
+      <div class="big-nick hidden"></div>
     </main>
     <footer>
       <div class="container">
@@ -553,5 +583,42 @@
       </div>
     </div>
     <script src="/scripts.js"></script>
+    <script>
+      const bigNick = document.querySelector(".big-nick");
+      const readingContainer = document.querySelector(".written");
+
+      let bottomTimer = null;
+      let isAtBottom = false;
+
+      function checkIfBottom() {
+        if (!readingContainer.classList.contains("revealed")) return;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+
+        // small buffer for rounding issues
+        return scrollPosition >= pageHeight - 2;
+      }
+
+      function handleScroll() {
+        if (checkIfBottom()) {
+          if (!isAtBottom) {
+            isAtBottom = true;
+
+            bottomTimer = setTimeout(() => {
+              bigNick?.classList.remove("hidden");
+            }, 3000);
+          }
+        } else {
+          isAtBottom = false;
+
+          if (bottomTimer) {
+            clearTimeout(bottomTimer);
+            bottomTimer = null;
+          }
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+    </script>
   </body>
 </html>

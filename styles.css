@@ -585,4 +585,74 @@ footer {
   opacity: 0.6;
   z-index: 10;
   transition: opacity 0.7s;
+}
+
+.nicks main {
+  overflow: clip;
+}
+
+.nick-zone {
+  position: relative;
+  height: 1000vh; /* controls how long he sticks */
+  pointer-events: none;
+  margin-bottom: -1000vh;
+}
+@media screen and (max-width: 600px) {
+  .nick-zone {
+    display: none;
+  }
+}
+.nick-zone .nick {
+  position: sticky;
+  top: calc(100vh - 130px);
+  width: 50px;
+  height: 169px;
+  background: url(/img/nick.png) no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translatex(-50%);
+  margin-left: -10%;
+  opacity: 0.7;
+}
+.nick-zone:nth-of-type(2) .nick {
+  margin-left: 110%;
+}
+.nick-zone:nth-of-type(3) .nick {
+  margin-left: 30%;
+}
+.nick-zone:nth-of-type(4) .nick {
+  margin-left: 90%;
+}
+.nick-zone:nth-of-type(5) .nick {
+  margin-left: 10%;
+}
+.nick-zone:nth-of-type(6) .nick {
+  margin-left: 70%;
+}
+.nick-zone:nth-of-type(7) .nick {
+  margin-left: 50%;
+}
+.nick-zone:nth-of-type(8) .nick {
+  margin-left: 130%;
+}
+.nick-zone:nth-of-type(9) .nick {
+  margin-left: -30%;
+}
+
+.big-nick {
+  width: 300px;
+  height: 500px;
+  background: url(/img/nick.png) no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: -180px;
+  left: 50%;
+  transform: translatex(-50%) translatey(0);
+  transition: transform 10s ease;
+}
+.big-nick.hidden {
+  transform: translatey(150%) translatex(-50%);
 }/*# sourceMappingURL=styles.css.map */

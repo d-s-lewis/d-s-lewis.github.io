@@ -203,7 +203,8 @@ const openReadingMode = (e) => {
   document.body.classList.add("reading");
   reader.querySelector("#words").innerHTML =
     e.currentTarget.parentElement.innerHTML;
-  reader.querySelector(".reading-mode").remove();
+  const toRemove = reader.querySelectorAll(".remove");
+  toRemove.forEach((e) => e.remove());
   reader.querySelector("h2").classList.add("wordy");
   const closeReader = () => {
     reader.classList.remove("open");

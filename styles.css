@@ -70,10 +70,6 @@ html.dark body section a:hover,
 body.dark body section a:hover {
   color: white;
 }
-html.dark body section.written::after,
-body.dark body section.written::after {
-  background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
-}
 html.dark body section.written button.reading-mode,
 body.dark body section.written button.reading-mode {
   color: rgb(102, 148, 190);

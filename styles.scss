@@ -67,10 +67,6 @@ body {
       color: white;
     }
 
-    section.written::after {
-      background: linear-gradient(transparent 0, rgb(14, 15, 35) 60%);
-    }
-
     section.written button.reading-mode {
       color: $headerCol;
       &:hover {

@@ -592,9 +592,9 @@ footer {
 
 .nick-zone {
   position: relative;
-  height: 1000vh; /* controls how long he sticks */
+  height: 10000vh; /* controls how long he sticks */
   pointer-events: none;
-  margin-bottom: -1000vh;
+  margin-bottom: -10000vh;
 
   @media screen and (max-width: 600px) {
     display: none;

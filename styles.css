@@ -351,6 +351,16 @@ section a::before {
 section a:hover {
   color: rgb(102, 148, 190);
 }
+section.written:not(.revealed) .content {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(black 65%, transparent 95%);
+  -webkit-mask-image: linear-gradient(black 65%, transparent 95%);
+}
+section.written {
+  position: relative;
+}
 section.written p {
   margin: 0;
   text-indent: 5ch;
@@ -379,15 +389,9 @@ section.written button.reading-mode::before {
 section.written button.reading-mode:hover {
   background: rgb(102, 148, 190);
 }
-section.written {
-  max-height: 400px;
-  overflow: hidden;
-  position: relative;
-}
 section.written::after {
   position: absolute;
   content: "Reveal all";
-  background: linear-gradient(transparent 0, rgb(236, 235, 220) 60%);
   width: 100%;
   height: 60px;
   bottom: 0;
@@ -396,7 +400,7 @@ section.written::after {
   justify-content: center;
   cursor: pointer;
 }
-section.written.revealed {
+section.written.revealed .content {
   max-height: unset;
 }
 section.written.revealed::after {

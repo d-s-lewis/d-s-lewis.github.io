@@ -178,6 +178,8 @@ header.grey {
   animation: parallax linear;
   animation-timeline: scroll();
   animation-range: 0 300px;
+  -webkit-animation-timeline: scroll();
+  -webkit-animation-range: 0 300px;
   position: absolute;
   top: 0px;
   height: 180px;
@@ -199,7 +201,7 @@ header.grey {
 .wave-2 {
   height: 220px;
   bottom: -220px;
-  background: color-mix(rgb(102, 148, 190), transparent 50%);
+  background: rgba(102, 148, 190, 0.5);
   --mask: radial-gradient(
         111.8px at 50% calc(100% - 150px),
         #000 99%,
@@ -216,7 +218,7 @@ header.grey {
 .wave-3 {
   height: 250px;
   bottom: -250px;
-  background: color-mix(rgb(102, 148, 190), transparent 80%);
+  background: rgba(102, 148, 190, 0.2);
   --mask: radial-gradient(
         78.26px at 50% calc(100% - 105px),
         #000 99%,

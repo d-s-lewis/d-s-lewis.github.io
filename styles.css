@@ -538,10 +538,10 @@ footer {
   line-height: 1.5rem;
   font-size: 1.2rem;
 }
-#reader #words p:first-of-type {
+#reader #words :not(i) > p:first-of-type {
   text-indent: 0;
 }
-#reader #words p:first-of-type::first-letter {
+#reader #words :not(i) > p:first-of-type::first-letter {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(17, 51, 95);
   float: left;

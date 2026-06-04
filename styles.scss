@@ -512,6 +512,22 @@ footer {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: $headerCol #ddd;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline-start: 20px;
+
+    .content {
+      column-width: 700px;
+      column-gap: 30px;
+      height: 90%;
+      scroll-snap-type: x mandatory;
+      scroll-snap-align: start;
+      &::column {
+        scroll-snap-align: start;
+      }
+    }
     h2 {
       margin-bottom: 20px;
       text-align: center;

@@ -9,7 +9,10 @@ body {
   margin: 0;
   padding: 0;
   background: rgb(236, 235, 220);
-  background-image: radial-gradient(rgba(68, 68, 85, 0.0666666667) 3px, transparent 0);
+  background-image: radial-gradient(
+    rgba(68, 68, 85, 0.0666666667) 3px,
+    transparent 0
+  );
   background-size: 40px 40px;
   background-position: -19px -19px;
   min-height: 100vh;
@@ -39,7 +42,10 @@ body.nicks.dark {
 html.dark body,
 body.dark body {
   background-color: rgb(14, 15, 35);
-  background-image: radial-gradient(rgba(114, 114, 141, 0.0352941176) 3px, transparent 0);
+  background-image: radial-gradient(
+    rgba(114, 114, 141, 0.0352941176) 3px,
+    transparent 0
+  );
   color: rgb(102, 148, 190);
 }
 html.dark body h1,
@@ -129,7 +135,10 @@ header {
   width: 100%;
   height: 200px;
   background: rgb(102, 148, 190);
-  background-image: radial-gradient(rgba(68, 68, 85, 0.0666666667) 3px, transparent 0);
+  background-image: radial-gradient(
+    rgba(68, 68, 85, 0.0666666667) 3px,
+    transparent 0
+  );
   background-size: 40px 40px;
   background-position: -19px -19px;
   animation: background 60s linear infinite;
@@ -373,8 +382,8 @@ section.written p {
 }
 section.written button.reading-mode {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: none;
   background: transparent;
   padding: 10px 20px;
@@ -657,4 +666,4 @@ footer {
 }
 .big-nick.hidden {
   transform: translatey(150%) translatex(-50%);
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */

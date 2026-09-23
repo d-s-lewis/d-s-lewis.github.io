@@ -14,10 +14,7 @@ self.addEventListener("push", (event) => {
     "Hey, guess what",
   ];
 
-  let title = titles[Math.floor(Math.random() * titles.length)];
-
   let data = {
-    title: title,
     body: "A new aphorism awaits.",
     url: "/aphorisms/",
   };
@@ -32,6 +29,8 @@ self.addEventListener("push", (event) => {
       data.body = event.data.text();
     }
   }
+
+  data.title = titles[Math.floor(Math.random() * titles.length)];
 
   event.waitUntil(
     self.registration.showNotification(data.title, {
